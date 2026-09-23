@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #e9e9e7;
+}
+.experience-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #f8faf7;
+  min-height: 700px;
+  padding: 28px 38px 70px;
+}
+
+/*  HEADER */
+
+.experience-header {
+  margin-bottom: 30px;
+}
+.step-label {
+  display: inline-block;
+  background: #d7f95c;
+  color: #4b6200;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.experience-header h1 {
+  margin: 0;
+  font-size: 31px;
+  line-height: 1.2;
+  color: #17231f;
+  font-weight: 700;
+}
+.rating {
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: #7b8581;
+  font-size: 13px;
+}
+
+/* MAIN CONTENT */
+
+.experience-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr);
+  gap: 20px;
+}
+
+/* LEFT SIDE */
+
+.left-content {
+  min-width: 0;
+}
+
+/* IMAGE */
+
+.image-wrapper {
+  height: 265px;
+  border-radius: 17px;
+  overflow: hidden;
+  border: 1px solid #1c2723;
+  background:orange;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-wrapper img {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+/* ABOUT */
+
+.about-section {
+  margin-top: 25px;
+  padding-left: 7px;
+}
+.about-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.about-icon {
+  font-size: 44px;
+  width: 66px;
+  text-align: center;
+}
+.about-title h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #26332f;
+}
+.about-section p {
+  margin: 18px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #7a8581;
+}
+.experience-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+.experience-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+  border: 1px solid #d4dfd9;
+  border-radius: 10px;
+  background: #ffffff;
+}
+.experience-details span {
+  color: #7a8581;
+  font-size: 11px;
+}
+.experience-details strong {
+  color: #26332f;
+  font-size: 13px;
+}
+
+/* RIGHT SIDE */
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+}
+
+/* PRICE CARD */
+
+.price-card {
+  background: #ffffff;
+  border: 1px solid #202a26;
+  border-radius: 17px;
+  padding: 25px;
+  min-height: 263px;
+}
+.price-card h2 {
+  margin: 0;
+  font-size: 19px;
+  color: #27322e;
+}
+.price-description {
+  margin-top: 14px;
+  color: #7c8581;
+  font-size: 12px;
+  line-height: 1.45;
+  max-width: 290px;
+}
+.features {
+  margin-top: 25px;
+  color: #26312d;
+  font-size: 11px;
+  line-height: 1.45;
+}
+.features div {
+  margin-bottom: 1px;
+}
+
+/*  BUTTON */
+
+.select-button {
+  width: 100%;
+  height: 36px;
+  margin-top: 28px;
+
+  border: none;
+  border-radius: 25px;
+
+  background: #08654e;
+  color: white;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+.select-button:hover {
+  background: #064e3d;
+}
+
+/*  LOCATION */
+
+.location-card {
+  background: #dff4eb;
+  border: 1px solid #202a26;
+  border-radius: 17px;
+  padding: 22px;
+  min-height: 124px;
+}
+.location-card h3 {
+  margin: 0 0 14px;
+  font-size: 12px;
+  color: #09624d;
+}
+.location-card p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #26322e;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .experience-page {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .experience-content {
+    grid-template-columns: 1fr;
+  }
+
+  .right-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .experience-page {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .experience-header h1 {
+    font-size: 26px;
+  }
+  .image-wrapper {
+    height: 220px;
+  }
+  .image-wrapper img {
+    width: 90%;
+  }
+  .right-content {
+    grid-template-columns: 1fr;
+  }
+  .experience-details {
+    grid-template-columns: 1fr;
+  }
+  .price-card {
+    min-height: auto;
+  }
+}

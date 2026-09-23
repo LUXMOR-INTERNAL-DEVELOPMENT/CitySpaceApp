@@ -1,0 +1,143 @@
+.dining-container {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(24px, 4vw, 48px) clamp(20px, 4vw, 64px);
+  background: #f5f7fb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.dining-header {
+  width: 100%;
+  margin: 0 0 clamp(24px, 4vw, 40px);
+}
+
+.dining-header h1 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: #111827;
+}
+
+.dining-header p {
+  color: #6b7280;
+  font-size: clamp(14px, 2vw, 15px);
+  margin: 0 0 clamp(20px, 3vw, 28px);
+}
+
+.top-banners {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+  width: 100%;
+  margin: 0 0 clamp(28px, 4vw, 44px);
+  align-items: stretch;
+}
+
+.main-banner {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 48%, #15803d 100%);
+  border-radius: 24px;
+  padding: clamp(20px, 3vw, 32px);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: clamp(180px, 20vw, 230px);
+  box-sizing: border-box;
+  margin-top: 0;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.banner-text h2 {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.banner-text p {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.banner-icon {
+  font-size: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nutrition-banner {
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 180px;
+  height: 100%;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.nutrition-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
+
+.dining-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: clamp(16px, 2vw, 24px);
+  width: 100%;
+  margin: 0;
+  align-items: stretch;
+}
+
+.dining-grid > * {
+  min-width: 0;
+}
+
+.loading,
+.error,
+.no-results {
+  text-align: center;
+  padding: 40px 0;
+  color: #6b7280;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .top-banners {
+    grid-template-columns: 1fr;
+  }
+
+  .main-banner {
+    min-height: 160px;
+  }
+
+  .nutrition-banner {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dining-container {
+    padding: 20px 14px 28px;
+  }
+
+  .main-banner {
+    padding: 20px;
+  }
+
+  .banner-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 30px;
+    flex: 0 0 48px;
+  }
+}

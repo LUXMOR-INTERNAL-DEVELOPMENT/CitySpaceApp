@@ -1,0 +1,234 @@
+.tickets-page {
+  min-height: 100vh;
+  padding: 32px 56px 64px;
+  background: #f5f5f3;
+  color: #10201d;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.step-label {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #d9fb57;
+  color: #1d5d45;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+}
+
+.page-header h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 12px;
+}
+
+.page-header p {
+  color: #6f756f;
+  font-size: 1.1rem;
+}
+
+.booking-layout {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.booking-steps {
+  flex: 0 0 240px;
+  background: #fff;
+  border: 1px solid #ded7ce;
+  border-radius: 20px;
+  padding: 28px 22px;
+  box-shadow: 0 12px 26px rgba(21, 24, 19, 0.05);
+}
+
+.booking-steps h3 {
+  margin-bottom: 22px;
+  font-size: 1.15rem;
+}
+
+.booking-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  color: #7b817d;
+}
+
+.booking-step.active {
+  color: #006b58;
+  font-weight: 700;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e6f3ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.booking-step.active .step-number {
+  background: #006b58;
+  color: #fff;
+}
+
+.step-link {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.guest-card {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ded7ce;
+  border-radius: 22px;
+  padding: 28px 26px;
+  box-shadow: 0 12px 26px rgba(21, 24, 19, 0.05);
+}
+
+.guest-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid #efeae2;
+}
+
+.guest-info {
+  min-width: 140px;
+}
+
+.guest-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.guest-info p {
+  color: #7a7d7a;
+  font-size: 0.92rem;
+}
+
+.guest-price {
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  color: #1e2c29;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f5f9f6;
+  border-radius: 999px;
+  padding: 8px 12px;
+}
+
+.counter button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #1a322f;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.counter button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.counter span {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.guest-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 22px;
+  padding-top: 12px;
+}
+
+.guest-footer h3 {
+  font-size: 1.15rem;
+}
+
+.continue-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 999px;
+  background: #006b58;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  background: #005543;
+}
+
+@media (max-width: 768px) {
+  .tickets-page {
+    padding: 22px 20px 32px;
+  }
+
+  .booking-layout {
+    flex-direction: column;
+  }
+
+  .booking-steps {
+    flex-basis: auto;
+    padding: 18px 16px;
+  }
+
+  .booking-step {
+    margin-bottom: 10px;
+  }
+
+  .guest-row {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .guest-info {
+    flex: 1 1 100%;
+  }
+
+  .guest-price {
+    text-align: left;
+    flex: 1;
+  }
+
+  .guest-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .continue-btn {
+    width: 100%;
+  }
+}

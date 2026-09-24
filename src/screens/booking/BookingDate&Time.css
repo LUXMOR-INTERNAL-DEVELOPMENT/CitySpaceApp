@@ -1,0 +1,262 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f3;
+  color: #10201d;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+/* Main */
+
+.page main {
+  min-height: 100svh;
+  padding: 25px 55px;
+  text-align: left;
+}
+
+.step-title {
+  display: inline-block;
+
+  background: #baff00;
+  color: #12694f;
+
+  padding: 12px 25px;
+
+  border-radius: 30px;
+
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.page h1 {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.page .subtitle {
+  color: #777;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+
+/* Booking Card */
+
+.booking-card {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  min-height: calc(100svh - 235px);
+}
+
+/* Booking Steps */
+
+.booking-steps {
+  flex: 0 0 240px;
+  padding: 28px 24px;
+  border: 1px solid #ded7ce;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(67, 49, 35, 0.08);
+}
+
+.booking-steps h3 {
+  margin-bottom: 30px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 28px;
+  color: #888;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.step:hover {
+  color: #006b58;
+}
+
+.step:hover span {
+  text-decoration: underline;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: #e1f4e9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+}
+
+.step.current {
+  color: #006b58;
+  font-weight: bold;
+}
+
+.step.current .step-number {
+  background: #006b58;
+  color: white;
+}
+
+/* Date section */
+
+.date-section {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+
+  border-radius: 20px;
+  padding: 28px 40px;
+  border: 1px solid #ded7ce;
+  background: white;
+  box-shadow: 0 12px 30px rgba(67, 49, 35, 0.08);
+
+  position: relative;
+}
+
+.date-section > .react-calendar {
+  flex: 1;
+  width: 100%;
+  max-width: none;
+  border: 0;
+}
+
+.date-section h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Time */
+
+.time-section {
+  margin-top: 40px;
+}
+
+.time-section h3 {
+  margin-bottom: 15px;
+}
+
+.time-slots {
+  display: flex;
+  gap: 15px;
+}
+
+.time-slots button {
+  padding: 12px 25px;
+
+  border-radius: 25px;
+
+  border: 1px solid #ddd;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+.time-slots .selected-time {
+  background: #baff00;
+  border-color: #baff00;
+  font-weight: bold;
+}
+
+/* Continue */
+
+.continue-btn {
+  display: block;
+  width: min(230px, 100%);
+  margin-left: auto;
+  margin-top: 30px;
+
+  padding: 17px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #006b58;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  background: #005543;
+} 
+
+@media (max-width: 700px) {
+  main {
+    padding: 25px 20px;
+  }
+
+  .booking-card {
+    flex-direction: column;
+    gap: 18px;
+    min-height: auto;
+  }
+
+  .booking-steps {
+    flex-basis: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    padding: 20px;
+  }
+
+  .booking-steps h3 {
+    grid-column: 1 / -1;
+  }
+
+  .step {
+    display: block;
+    min-width: 0;
+    margin-bottom: 0;
+    padding: 4px;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+
+  .step span {
+    display: block;
+    overflow-wrap: anywhere;
+  }
+
+  .step-number {
+    margin: 0 auto 5px;
+  }
+
+  .date-section {
+    padding: 20px;
+  }
+
+  .date-section > .react-calendar {
+    flex: initial;
+  }
+
+  .continue-btn {
+    width: 100%;
+  }
+}

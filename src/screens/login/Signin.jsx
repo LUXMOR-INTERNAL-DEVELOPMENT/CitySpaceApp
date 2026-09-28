@@ -9,6 +9,16 @@ const mainBanner = 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220
 
 const SIGNIN_API_URL = import.meta.env.VITE_SIGNIN_API_URL || 'http://localhost:5000/api/signin';
 const STORAGE_KEY = 'app_db_users';
+const AUTH_KEY = 'cityspace_user';
+
+const persistAuthUser = (user) => {
+  if (user) {
+    localStorage.setItem(AUTH_KEY, JSON.stringify(user));
+  } else {
+    localStorage.removeItem(AUTH_KEY);
+  }
+  window.dispatchEvent(new Event('auth-change'));
+};
 
 const authenticateUser = (credentials) => {
   let users = initialDb?.users || [];
@@ -236,10 +246,12 @@ const Signin = ({ onSuccess }) => {
       const data = await response.json();
 
       if (response.ok && data.success !== false) {
+        const loggedInUser = data.user || payload;
         toast.success(data.message || 'Login successful!');
+        persistAuthUser(loggedInUser);
         setTimeout(() => {
           if (onSuccess) {
-            onSuccess(data.user || payload);
+            onSuccess(loggedInUser);
           } else {
             navigate('/');
           }
@@ -256,6 +268,7 @@ const Signin = ({ onSuccess }) => {
     const result = authenticateUser(payload);
     if (result.success) {
       toast.success(result.message);
+      persistAuthUser(result.user);
       setTimeout(() => {
         if (onSuccess) {
           onSuccess(result.user);

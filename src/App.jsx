@@ -47,7 +47,7 @@ function App() {
         <Route path="/dining/:id" element={<Diningdetail />} />
         <Route path="/diningmatches" element={<ResultsPage />} />
         <Route path="/dining/:id" element={<Diningdetail />} />
-        <Route path="/dining" element={<Diningcard />} />
+        <Route path="/dining" element={<Diningexperience />} />
         <Route path="/Diningexperience" element={<Diningexperience />} />
         <Route path="/events" element={<Eventscreen />} />
         <Route path="/events/:id" element={<Eventdetails />} />

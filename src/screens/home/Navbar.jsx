@@ -15,6 +15,7 @@ const getStoredUser = () => {
 
 const Navbar = () => {
   const [currentUser, setCurrentUser] = useState(getStoredUser());
+  const [location, setLocation] = useState("Detecting location...");
   const isLoggedIn = Boolean(currentUser);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -35,7 +36,47 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close dropdown when clicking outside
+  useEffect(() => {
+    if (!navigator.geolocation) {
+      setLocation("Location unavailable");
+      return;
+    }
+
+    const handlePosition = async ({ coords }) => {
+      try {
+        const response = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${coords.latitude}&lon=${coords.longitude}`
+        );
+
+        if (!response.ok) throw new Error("Unable to find location");
+
+        const data = await response.json();
+        const address = data.address || {};
+        const area =
+          address.neighbourhood ||
+          address.suburb ||
+          address.city_district ||
+          address.quarter;
+        const city =
+          address.city || address.town || address.village || address.municipality;
+
+        setLocation(
+          area && city && area.toLowerCase() !== city.toLowerCase()
+            ? `${area}, ${city}`
+            : area || city || address.state || "Current location"
+        );
+      } catch {
+        setLocation("Current location");
+      }
+    };
+
+    navigator.geolocation.getCurrentPosition(
+      handlePosition,
+      () => setLocation("Location unavailable"),
+      { enableHighAccuracy: true, maximumAge: 60000, timeout: 10000 }
+    );
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -79,7 +120,7 @@ const Navbar = () => {
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          <span>Tamilnadu</span>
+          <span>{location}</span>
         </div>
       </div>
 
@@ -99,6 +140,9 @@ const Navbar = () => {
         <NavLink to="/activities" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
           Activities
         </NavLink>
+        <NavLink to="/play" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+          Play
+        </NavLink>
       </div>
 
       <div className="navbar-right">
@@ -106,7 +150,6 @@ const Navbar = () => {
           <input type="text" placeholder="Search experiences" />
         </div>
 
-        {/* Profile Button + Dropdown */}
         <div className="profile-wrapper" ref={dropdownRef}>
           <div
             className="profile-btn"
@@ -130,11 +173,9 @@ const Navbar = () => {
                   </button>
                 </>
               ) : (
-                <>
-                  <button className="dropdown-item" onClick={handleLogin}>
-                    Sign In
-                  </button>
-                </>
+                <button className="dropdown-item" onClick={handleLogin}>
+                  Sign In
+                </button>
               )}
             </div>
           )}

@@ -13,7 +13,6 @@ import Navbar from "./screens/home/Navbar";
 import Signin from "./screens/login/Signin";
 import Signup from "./screens/login/Signup";  
 import Diningexperience from "./screens/dinning/Diningexperience";
-import Diningcard from "./screens/dinning/Diningcard";
 import Diningdetail from "./screens/dinning/Diningdetail";
 import Eventscreen from "./screens/events/Eventscreen";
 import Eventdetails from "./screens/events/Eventdetail";

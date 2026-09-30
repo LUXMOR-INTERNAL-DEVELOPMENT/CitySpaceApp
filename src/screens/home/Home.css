@@ -227,14 +227,20 @@ body {
   font-weight: 700;
 }
 
-.section-header a {
+.section-header a,
+.section-header button {
+  border: 0;
+  padding: 0;
+  background: transparent;
   font-size: 0.9rem;
   font-weight: 500;
   color: #0f766e;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.section-header a:hover {
+.section-header a:hover,
+.section-header button:hover {
   text-decoration: underline;
 }
 
@@ -247,12 +253,19 @@ body {
 }
 
 .event-card {
+  display: block;
+  width: 100%;
   background: white;
+  border: 0;
   border-radius: 0.85rem;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
 }
 
 .event-card:hover {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import db from '../../data/db.json';
 import './Home.css';
 import Footer from '../footer/Footer';
@@ -99,36 +100,67 @@ const fallbackHomepage = {
 
 const homepageData = db?.homepage || fallbackHomepage;
 
-const CategoryFilter = ({ categories = homepageData.categories || fallbackHomepage.categories }) => (
+const filterCategories = {
+  Music: 'Events',
+  'Food & Drink': 'Dining',
+  Workshops: 'Activities',
+  'Art & Culture': 'Events',
+  Sports: 'Activities',
+  Community: 'Events',
+  Outdoor: 'Activities',
+  Kids: 'Activities',
+};
+
+const toExperience = (event, category) => ({
+  ...event,
+  name: event.name || event.title,
+  title: event.title || event.name,
+  category: event.category || category,
+  price: Number(String(event.price ?? '').replace(/[^\d.]/g, '')) || undefined,
+  rating: event.rating ?? 4.5,
+  distance: event.distance ?? 0,
+  location: event.location || 'Chennai',
+});
+
+const CategoryFilter = ({ categories = homepageData.categories || fallbackHomepage.categories, onSelect }) => (
   <div className="category-filter">
     {categories.map((cat) => (
-      <button key={cat} className="chip">
+      <button key={cat} className="chip" onClick={() => onSelect(cat)}>
         {cat}
       </button>
     ))}
   </div>
 );
 
-const EventCard = ({ title, date, location, price, image }) => (
-  <article className="event-card">
-    <div className="card-image-placeholder">
-      {image && <img src={image} alt={title} />}
-    </div>
-    <h3>{title}</h3>
-    <p className="meta">{date}</p>
-    <p className="location">{location}</p>
-    <p className="price">From {price}</p>
-  </article>
-);
+const EventCard = ({ event, category }) => {
+  const experience = toExperience(event, category);
 
-const SectionHeader = ({ title, linkText = 'See All' }) => (
+  return (
+  <Link
+    className="event-card"
+    to={`/experience/${encodeURIComponent(event.id)}`}
+    state={{ experience }}
+    aria-label={`View details for ${experience.title}`}
+  >
+    <div className="card-image-placeholder">
+      {experience.image && <img src={experience.image} alt={experience.title} />}
+    </div>
+    <h3>{experience.title}</h3>
+    <p className="meta">{experience.date}</p>
+    <p className="location">{experience.location}</p>
+    <p className="price">From {event.price}</p>
+  </Link>
+  );
+};
+
+const SectionHeader = ({ title, linkText = 'See All', onSeeAll }) => (
   <div className="section-header">
     <h2>{title}</h2>
-    {linkText && <a href="#">{linkText}</a>}
+    {linkText && <button type="button" onClick={onSeeAll}>{linkText}</button>}
   </div>
 );
 
-const HeroSection = ({ featured = homepageData.featuredBanner || fallbackHomepage.featuredBanner }) => (
+const HeroSection = ({ featured = homepageData.featuredBanner || fallbackHomepage.featuredBanner, onBook }) => (
   <section className="hero for-you">
     <h1>For You</h1>
     <p className="subtitle">Experiences picked just for you</p>
@@ -144,7 +176,7 @@ const HeroSection = ({ featured = homepageData.featuredBanner || fallbackHomepag
       <h2>{featured.title}</h2>
       <p>{featured.description}</p>
       <p>{featured.details}</p>
-      <button className="cta" onClick={() => (window.location.href = '/booking')}>
+      <button className="cta" onClick={onBook}>
         Book Now →
       </button>
       <div className="tagline">More Music More Life</div>
@@ -152,23 +184,23 @@ const HeroSection = ({ featured = homepageData.featuredBanner || fallbackHomepag
   </section>
 );
 
-const RecommendedSection = ({ events = homepageData.recommended || fallbackHomepage.recommended }) => (
+const RecommendedSection = ({ events = homepageData.recommended || fallbackHomepage.recommended, onSeeAll }) => (
   <section className="recommended">
-    <SectionHeader title="Recommended For You" />
+    <SectionHeader title="Recommended For You" onSeeAll={onSeeAll} />
     <div className="card-grid">
       {events.map((event) => (
-        <EventCard key={event.id} {...event} />
+        <EventCard key={event.id} event={event} category="Recommended" />
       ))}
     </div>
   </section>
 );
 
-const WeekendSpecial = ({ image = homepageData.recommended?.[0]?.image || fallbackHomepage.recommended[0].image }) => (
+const WeekendSpecial = ({ image = homepageData.recommended?.[0]?.image || fallbackHomepage.recommended[0].image, onExplore }) => (
   <section className="weekend-special">
     <div className="copy">
       <h2>Let&apos;s Make This Weekend Special</h2>
       <p>Discover exclusive experiences for a brighter you!</p>
-      <button>Explore Now</button>
+      <button onClick={onExplore}>Explore Now</button>
     </div>
     <div className="images-placeholder">
       {image && <img src={image} alt="Weekend special" />}
@@ -176,23 +208,23 @@ const WeekendSpecial = ({ image = homepageData.recommended?.[0]?.image || fallba
   </section>
 );
 
-const TrendingSection = ({ events = homepageData.trending || fallbackHomepage.trending }) => (
+const TrendingSection = ({ events = homepageData.trending || fallbackHomepage.trending, onSeeAll }) => (
   <section className="trending">
-    <SectionHeader title="Trending Near You" />
+    <SectionHeader title="Trending Near You" onSeeAll={onSeeAll} />
     <div className="card-grid">
       {events.map((event) => (
-        <EventCard key={event.id} {...event} />
+        <EventCard key={event.id} event={event} category="Trending" />
       ))}
     </div>
   </section>
 );
 
-const ExploreByCategory = ({ categories = homepageData.categories || fallbackHomepage.categories }) => (
+const ExploreByCategory = ({ categories = homepageData.categories || fallbackHomepage.categories, onSelect }) => (
   <section className="explore-category">
     <SectionHeader title="Explore by Category" linkText="" />
     <div className="category-pills">
       {categories.filter((category) => category !== 'All').map((cat) => (
-        <button key={cat} className="category-pill">
+          <button key={cat} className="category-pill" onClick={() => onSelect(cat)}>
           {cat}
         </button>
       ))}
@@ -200,12 +232,12 @@ const ExploreByCategory = ({ categories = homepageData.categories || fallbackHom
   </section>
 );
 
-const CitySpacePlus = ({ image = homepageData.featuredBanner?.image || fallbackHomepage.featuredBanner.image }) => (
+const CitySpacePlus = ({ image = homepageData.featuredBanner?.image || fallbackHomepage.featuredBanner.image, onLearnMore }) => (
   <section className="cityspace-plus">
     <div className="copy">
       <h2>CitySpace Plus</h2>
       <p>More exclusive. Early bird tickets. Exclusive experiences.</p>
-      <button>Learn More</button>
+      <button onClick={onLearnMore}>Learn More</button>
     </div>
     <div className="bg-placeholder">
       {image && <img src={image} alt="CitySpace plus" />}
@@ -213,12 +245,12 @@ const CitySpacePlus = ({ image = homepageData.featuredBanner?.image || fallbackH
   </section>
 );
 
-const TopPicks = ({ events = homepageData.topPicks || fallbackHomepage.topPicks }) => (
+const TopPicks = ({ events = homepageData.topPicks || fallbackHomepage.topPicks, onSeeAll }) => (
   <section className="top-picks">
-    <SectionHeader title="Top Picks in Chennai" />
+    <SectionHeader title="Top Picks in Chennai" onSeeAll={onSeeAll} />
     <div className="card-grid">
       {events.map((event) => (
-        <EventCard key={event.id} {...event} />
+        <EventCard key={event.id} event={event} category="Top Picks" />
       ))}
     </div>
   </section>
@@ -239,6 +271,7 @@ const OffersSection = ({ offers = homepageData.offers || fallbackHomepage.offers
 );
 
 export default function CitySpaceHome() {
+  const navigate = useNavigate();
   const featuredBanner = homepageData.featuredBanner || fallbackHomepage.featuredBanner;
   const categories = homepageData.categories || fallbackHomepage.categories;
   const recommendedEvents = homepageData.recommended || fallbackHomepage.recommended;
@@ -246,18 +279,52 @@ export default function CitySpaceHome() {
   const topPicksEvents = homepageData.topPicks || fallbackHomepage.topPicks;
   const offers = homepageData.offers || fallbackHomepage.offers;
   const weekendImage = recommendedEvents[0]?.image || fallbackHomepage.recommended[0].image;
+  const openCategory = (category) => {
+    const filterCategory = filterCategories[category] || category;
+    navigate(category === 'All' ? '/filter' : `/filter/${encodeURIComponent(filterCategory)}`);
+  };
+  const openEventList = (events, heading, category) => {
+    navigate('/matches', {
+      state: {
+        heading,
+        results: events.map((event) => toExperience(event, category)),
+      },
+    });
+  };
+  const featuredExperience = {
+    ...featuredBanner,
+    id: 'featured',
+    name: featuredBanner.title,
+    category: 'Events',
+    location: featuredBanner.details?.split('·').at(-1)?.trim() || 'Chennai',
+  };
 
   return (
     <div className="cityspace-home">
       <main>
-        <HeroSection featured={featuredBanner} />
-        <CategoryFilter categories={categories} />
-        <RecommendedSection events={recommendedEvents} />
-        <WeekendSpecial image={weekendImage} />
-        <TrendingSection events={trendingEvents} />
-        <ExploreByCategory categories={categories} />
-        <CitySpacePlus image={featuredBanner.image} />
-        <TopPicks events={topPicksEvents} />
+        <HeroSection
+          featured={featuredBanner}
+          onBook={() => navigate('/booking', { state: { experience: featuredExperience } })}
+        />
+        <CategoryFilter categories={categories} onSelect={openCategory} />
+        <RecommendedSection
+          events={recommendedEvents}
+          onSeeAll={() => openEventList(recommendedEvents, 'Recommended For You', 'Recommended')}
+        />
+        <WeekendSpecial
+          image={weekendImage}
+          onExplore={() => openEventList(recommendedEvents, 'Weekend Experiences', 'Recommended')}
+        />
+        <TrendingSection
+          events={trendingEvents}
+          onSeeAll={() => openEventList(trendingEvents, 'Trending Near You', 'Trending')}
+        />
+        <ExploreByCategory categories={categories} onSelect={openCategory} />
+        <CitySpacePlus image={featuredBanner.image} onLearnMore={() => navigate('/signup')} />
+        <TopPicks
+          events={topPicksEvents}
+          onSeeAll={() => openEventList(topPicksEvents, 'Top Picks in Chennai', 'Top Picks')}
+        />
         <OffersSection offers={offers} />
       </main>
       <Footer />

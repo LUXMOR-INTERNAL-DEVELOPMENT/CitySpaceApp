@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import "./NavBar.css";
+import LocationModal from "./Navigation";
+import "./Navbar.css";
 
 const AUTH_KEY = "cityspace_user";
 
@@ -15,9 +16,11 @@ const getStoredUser = () => {
 
 const Navbar = () => {
   const [currentUser, setCurrentUser] = useState(getStoredUser());
-  const [location, setLocation] = useState("Detecting location...");
+  const [fetchedLocation, setFetchedLocation] = useState("Detecting location...");
+  const [manualLocation, setManualLocation] = useState("");
   const isLoggedIn = Boolean(currentUser);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isLocationOpen, setIsLocationOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
@@ -38,7 +41,7 @@ const Navbar = () => {
 
   useEffect(() => {
     if (!navigator.geolocation) {
-      setLocation("Location unavailable");
+      setFetchedLocation("Location unavailable");
       return;
     }
 
@@ -60,19 +63,19 @@ const Navbar = () => {
         const city =
           address.city || address.town || address.village || address.municipality;
 
-        setLocation(
+        setFetchedLocation(
           area && city && area.toLowerCase() !== city.toLowerCase()
             ? `${area}, ${city}`
             : area || city || address.state || "Current location"
         );
       } catch {
-        setLocation("Current location");
+        setFetchedLocation("Current location");
       }
     };
 
     navigator.geolocation.getCurrentPosition(
       handlePosition,
-      () => setLocation("Location unavailable"),
+      () => setFetchedLocation("Location unavailable"),
       { enableHighAccuracy: true, maximumAge: 60000, timeout: 10000 }
     );
   }, []);
@@ -109,7 +112,11 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-left">
         <div className="logo">cityspace</div>
-        <div className="location">
+        <button
+          className="location"
+          type="button"
+          onClick={() => setIsLocationOpen(true)}
+        >
           <svg
             className="location-icon"
             viewBox="0 0 24 24"
@@ -120,8 +127,8 @@ const Navbar = () => {
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          <span>{location}</span>
-        </div>
+          <span>{manualLocation || fetchedLocation}</span>
+        </button>
       </div>
 
       <div className="navbar-center">
@@ -181,6 +188,13 @@ const Navbar = () => {
           )}
         </div>
       </div>
+      {isLocationOpen && (
+        <LocationModal
+          onClose={() => setIsLocationOpen(false)}
+          onSelectCity={setManualLocation}
+          onUseCurrentLocation={() => setManualLocation("")}
+        />
+      )}
     </nav>
   );
 };

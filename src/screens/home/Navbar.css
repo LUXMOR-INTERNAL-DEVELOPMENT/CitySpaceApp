@@ -37,6 +37,7 @@
   padding: 0;
   cursor: pointer;
   outline: none;
+  font-family: inherit;
 }
 
 .location:hover {
@@ -285,4 +286,95 @@
 
 .dropdown-item.logout:hover {
   background: #ffebee;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px 14px;
+    padding: 10px 16px;
+  }
+
+  .navbar-left {
+    display: contents;
+  }
+
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .location {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .location span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .navbar-center {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+
+  .navbar-right {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .search-box {
+    min-width: 0;
+  }
+
+  .search-box input {
+    width: clamp(96px, 24vw, 180px);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    gap: 10px 8px;
+    padding: 10px 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .location {
+    font-size: 13px;
+  }
+
+  .navbar-center {
+    justify-content: flex-start;
+    gap: 8px 14px;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+
+  .search-box input {
+    width: clamp(88px, 29vw, 120px);
+    padding: 8px 10px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
 }

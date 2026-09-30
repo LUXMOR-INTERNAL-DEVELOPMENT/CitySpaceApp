@@ -13,7 +13,6 @@ import Navbar from "./screens/home/Navbar";
 import Signin from "./screens/login/Signin";
 import Signup from "./screens/login/Signup";  
 import Diningexperience from "./screens/dinning/Diningexperience";
-import Diningcard from "./screens/dinning/Diningcard";
 import Diningdetail from "./screens/dinning/Diningdetail";
 import Eventscreen from "./screens/events/Eventscreen";
 import Eventdetails from "./screens/events/Eventdetail";
@@ -47,7 +46,7 @@ function App() {
         <Route path="/dining/:id" element={<Diningdetail />} />
         <Route path="/diningmatches" element={<ResultsPage />} />
         <Route path="/dining/:id" element={<Diningdetail />} />
-        <Route path="/dining" element={<Diningcard />} />
+        <Route path="/dining" element={<Diningexperience />} />
         <Route path="/Diningexperience" element={<Diningexperience />} />
         <Route path="/events" element={<Eventscreen />} />
         <Route path="/events/:id" element={<Eventdetails />} />

@@ -42,7 +42,7 @@ const ResultsPage = () => {
     <main className="results-page">
       <div className="results-header">
         {/* <div className="step-badge">04 Choose an experience</div> */}
-        <h1>Available experiences</h1>
+        <h1>{location.state?.heading || "Available experiences"}</h1>
         <p>{results.length} experiences match your search.</p>
       </div>
 

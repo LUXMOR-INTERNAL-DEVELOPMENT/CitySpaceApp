@@ -1,0 +1,302 @@
+* {
+  box-sizing: border-box;
+}
+
+.location-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: clamp(8px, 2vw, 20px);
+}
+
+.location-overlay .location-modal {
+  width: min(960px, calc(100vw - 40px));
+  max-height: calc(100vh - 40px);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 30px 38px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+  scrollbar-color: #a8a8b2 transparent;
+  scrollbar-width: thin;
+}
+
+.location-overlay .location-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.location-overlay .location-modal::-webkit-scrollbar-thumb {
+  background: #a8a8b2;
+  border-radius: 8px;
+}
+
+/* Heading */
+
+.location-modal h2 {
+  margin: 0 0 22px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #55545c;
+}
+
+/* Search */
+
+.location-search {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #d5d5d9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  margin-bottom: 18px;
+}
+
+.search-icon {
+  display: none;
+}
+
+.location-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 19px;
+  color: #333;
+  background: transparent;
+}
+
+.location-search input::placeholder {
+  color: #a8a8b2;
+}
+
+.location-address-choice {
+  display: block;
+  width: 100%;
+  margin: -4px 0 16px;
+  padding: 12px 14px;
+  border: 1px solid #d5d5d9;
+  border-radius: 8px;
+  background: #f7f8f6;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+}
+
+.location-address-choice:hover {
+  border-color: #1a7a4c;
+}
+
+.no-cities {
+  color: #667080;
+  font-size: 15px;
+}
+
+/* Current Location */
+
+.current-location {
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f1f24;
+  cursor: pointer;
+}
+
+.location-target {
+  width: 27px;
+  height: 27px;
+  border: 3px solid #6847ff;
+  color: #6847ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  line-height: 1;
+}
+
+/* Sections */
+
+.popular-section {
+  margin-top: 36px;
+}
+
+.popular-section h3,
+.all-cities h3 {
+  margin: 0 0 22px;
+  color: #5c5b63;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+/* Popular Cities */
+
+.popular-cities {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px 24px;
+}
+
+.city-card {
+  height: 127px;
+  border: none;
+  border-radius: 17px;
+  background: #f5f3ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.city-card:hover {
+  transform: translateY(-3px);
+  background: #eeeaff;
+}
+
+.city-icon {
+  width: 70px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7154ff;
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 3px;
+}
+
+.city-card span {
+  color: #27262d;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* All Cities */
+
+.all-cities {
+  margin-top: 40px;
+}
+
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 23px;
+}
+
+.alphabet button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 18px;
+  color: #667080;
+  cursor: pointer;
+}
+
+.alphabet button:hover {
+  color: #6747ff;
+}
+
+.alphabet button:disabled {
+  color: #c5c7cc;
+  cursor: not-allowed;
+}
+
+.alphabet button.active {
+  color: #6747ff;
+  font-weight: 600;
+}
+
+/* City List */
+
+.city-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 55px;
+  row-gap: 22px;
+}
+
+.city-name {
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: #3d3d46;
+  font-size: 18px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.city-name:hover {
+  color: #6747ff;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .popular-cities {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .city-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .location-overlay .location-modal {
+    width: calc(100vw - 24px);
+    max-height: min(680px, 78vh);
+    max-height: min(680px, 78dvh);
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+
+  .popular-cities {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .city-card {
+    height: 110px;
+  }
+
+  .city-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .alphabet {
+    gap: 11px;
+  }
+}
+
+@media (max-width: 450px) {
+  .popular-cities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .city-list {
+    grid-template-columns: 1fr;
+  }
+
+  .location-overlay .location-modal h2 {
+    font-size: 20px;
+  }
+
+  .popular-section h3,
+  .all-cities h3 {
+    font-size: 19px;
+  }
+}

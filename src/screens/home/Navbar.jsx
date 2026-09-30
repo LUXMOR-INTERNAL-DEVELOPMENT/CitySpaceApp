@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import "./NavBar.css";
+import LocationModal from "./Navigation";
+import "./Navbar.css";
 
 const AUTH_KEY = "cityspace_user";
 
@@ -15,8 +16,11 @@ const getStoredUser = () => {
 
 const Navbar = () => {
   const [currentUser, setCurrentUser] = useState(getStoredUser());
+  const [fetchedLocation, setFetchedLocation] = useState("Detecting location...");
+  const [manualLocation, setManualLocation] = useState("");
   const isLoggedIn = Boolean(currentUser);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isLocationOpen, setIsLocationOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
@@ -35,7 +39,47 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close dropdown when clicking outside
+  useEffect(() => {
+    if (!navigator.geolocation) {
+      setFetchedLocation("Location unavailable");
+      return;
+    }
+
+    const handlePosition = async ({ coords }) => {
+      try {
+        const response = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${coords.latitude}&lon=${coords.longitude}`
+        );
+
+        if (!response.ok) throw new Error("Unable to find location");
+
+        const data = await response.json();
+        const address = data.address || {};
+        const area =
+          address.neighbourhood ||
+          address.suburb ||
+          address.city_district ||
+          address.quarter;
+        const city =
+          address.city || address.town || address.village || address.municipality;
+
+        setFetchedLocation(
+          area && city && area.toLowerCase() !== city.toLowerCase()
+            ? `${area}, ${city}`
+            : area || city || address.state || "Current location"
+        );
+      } catch {
+        setFetchedLocation("Current location");
+      }
+    };
+
+    navigator.geolocation.getCurrentPosition(
+      handlePosition,
+      () => setFetchedLocation("Location unavailable"),
+      { enableHighAccuracy: true, maximumAge: 60000, timeout: 10000 }
+    );
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -68,7 +112,11 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-left">
         <div className="logo">cityspace</div>
-        <div className="location">
+        <button
+          className="location"
+          type="button"
+          onClick={() => setIsLocationOpen(true)}
+        >
           <svg
             className="location-icon"
             viewBox="0 0 24 24"
@@ -79,8 +127,8 @@ const Navbar = () => {
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          <span>Tamilnadu</span>
-        </div>
+          <span>{manualLocation || fetchedLocation}</span>
+        </button>
       </div>
 
       <div className="navbar-center">
@@ -99,6 +147,9 @@ const Navbar = () => {
         <NavLink to="/activities" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
           Activities
         </NavLink>
+        <NavLink to="/play" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+          Play
+        </NavLink>
       </div>
 
       <div className="navbar-right">
@@ -106,7 +157,6 @@ const Navbar = () => {
           <input type="text" placeholder="Search experiences" />
         </div>
 
-        {/* Profile Button + Dropdown */}
         <div className="profile-wrapper" ref={dropdownRef}>
           <div
             className="profile-btn"
@@ -130,16 +180,21 @@ const Navbar = () => {
                   </button>
                 </>
               ) : (
-                <>
-                  <button className="dropdown-item" onClick={handleLogin}>
-                    Sign In
-                  </button>
-                </>
+                <button className="dropdown-item" onClick={handleLogin}>
+                  Sign In
+                </button>
               )}
             </div>
           )}
         </div>
       </div>
+      {isLocationOpen && (
+        <LocationModal
+          onClose={() => setIsLocationOpen(false)}
+          onSelectCity={setManualLocation}
+          onUseCurrentLocation={() => setManualLocation("")}
+        />
+      )}
     </nav>
   );
 };

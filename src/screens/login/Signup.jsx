@@ -9,6 +9,16 @@ const mainBanner = 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220
 
 const SIGNUP_API_URL = import.meta.env.VITE_SIGNUP_API_URL || 'http://localhost:5000/api/signup';
 const STORAGE_KEY = 'app_db_users';
+const AUTH_KEY = 'cityspace_user';
+
+const persistAuthUser = (user) => {
+  if (user) {
+    localStorage.setItem(AUTH_KEY, JSON.stringify(user));
+  } else {
+    localStorage.removeItem(AUTH_KEY);
+  }
+  window.dispatchEvent(new Event('auth-change'));
+};
 
 const saveToLocalDb = (userData) => {
   let users = initialDb?.users || [];
@@ -119,8 +129,10 @@ const Signup = ({ onSuccess }) => {
           });
           const data = await res.json();
           if (res.ok && data.success !== false) {
+            const signedUpUser = data.user || registeredUser;
             toast.success(data.message || 'Google account connected successfully!');
-            if (onSuccess) onSuccess(data.user || registeredUser);
+            persistAuthUser(signedUpUser);
+            if (onSuccess) onSuccess(signedUpUser);
             else navigate('/');
             return;
           }
@@ -131,6 +143,7 @@ const Signup = ({ onSuccess }) => {
         const result = saveToLocalDb(registeredUser);
         if (result.success) {
           toast.success(result.message);
+          persistAuthUser(result.user);
           if (onSuccess) onSuccess(result.user);
           else navigate('/');
         } else {
@@ -262,10 +275,12 @@ const Signup = ({ onSuccess }) => {
       const data = await response.json();
 
       if (response.ok && data.success !== false) {
+        const signedUpUser = data.user || payload;
         toast.success(data.message || 'Account created successfully!');
+        persistAuthUser(signedUpUser);
         setTimeout(() => {
           if (onSuccess) {
-            onSuccess(data.user || payload);
+            onSuccess(signedUpUser);
           } else {
             navigate('/signin');
           }
@@ -282,6 +297,7 @@ const Signup = ({ onSuccess }) => {
     const mockResult = saveToLocalDb(payload);
     if (mockResult.success) {
       toast.success(mockResult.message);
+      persistAuthUser(mockResult.user);
       setTimeout(() => {
         if (onSuccess) {
           onSuccess(mockResult.user);

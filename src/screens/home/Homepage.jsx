@@ -1,6 +1,6 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import db from '../../data/db.json';
+import FavoriteButton from '../../components/FavoriteButton';
 import './Home.css';
 import Footer from '../footer/Footer';
 
@@ -136,20 +136,36 @@ const EventCard = ({ event, category }) => {
   const experience = toExperience(event, category);
 
   return (
-  <Link
-    className="event-card"
-    to={`/experience/${encodeURIComponent(event.id)}`}
-    state={{ experience }}
-    aria-label={`View details for ${experience.title}`}
-  >
-    <div className="card-image-placeholder">
-      {experience.image && <img src={experience.image} alt={experience.title} />}
-    </div>
-    <h3>{experience.title}</h3>
-    <p className="meta">{experience.date}</p>
-    <p className="location">{experience.location}</p>
-    <p className="price">From {event.price}</p>
-  </Link>
+  <article className="event-card home-event-card">
+    <Link
+      className="home-event-card-link"
+      to={`/experience/${encodeURIComponent(event.id)}`}
+      state={{ experience }}
+      aria-label={`View details for ${experience.title}`}
+    >
+      <div className="card-image-placeholder">
+        {experience.image && <img src={experience.image} alt={experience.title} />}
+      </div>
+      <h3>{experience.title}</h3>
+      <p className="meta">{experience.date}</p>
+      <p className="location">{experience.location}</p>
+      <p className="price">From {event.price}</p>
+    </Link>
+    <FavoriteButton
+      className="card-favorite-button"
+      item={{
+        id: `experience:${event.id}`,
+        title: experience.title,
+        category: experience.category,
+        location: experience.location,
+        price: experience.price,
+        rating: experience.rating,
+        image: experience.image,
+        route: `/experience/${encodeURIComponent(event.id)}`,
+        state: { experience },
+      }}
+    />
+  </article>
   );
 };
 

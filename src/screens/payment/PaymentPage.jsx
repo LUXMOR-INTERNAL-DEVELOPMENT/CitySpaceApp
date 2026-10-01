@@ -31,11 +31,14 @@ function PaymentPage() {
     experience: { date: "Sat, 12 Sep", time: "7:30 PM", location: "Nungambakkam" },
   };
   const { priceDetails, guestSummary } = booking;
+  const experience = booking.experience || {};
   const bookingLocation = booking.experience?.location || "Nungambakkam";
   const [locationName, setLocationName] = useState(bookingLocation);
   const formatPrice = (amount) => `₹${amount.toLocaleString("en-IN")}`;
 
   useEffect(() => {
+    if (experience.viewingArea) return;
+
     let isMounted = true;
 
     async function loadLocation() {
@@ -47,7 +50,7 @@ function PaymentPage() {
     return () => {
       isMounted = false;
     };
-  }, [bookingLocation]);
+  }, [bookingLocation, experience.viewingArea]);
 
   return (
     <main
@@ -118,7 +121,9 @@ function PaymentPage() {
                   <div style={{ color: "#58715f", fontSize: "12px", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
                     Experience
                   </div>
-                  <h2 style={{ margin: "8px 0 0", fontSize: "1.6rem" }}>Chef&apos;s Table Dinner</h2>
+                  <h2 style={{ margin: "8px 0 0", fontSize: "1.6rem" }}>
+                    {experience.title || experience.name || "Experience booking"}
+                  </h2>
                 </div>
                 <div
                   style={{
@@ -131,23 +136,29 @@ function PaymentPage() {
                     fontSize: "28px",
                   }}
                 >
-                  🍽️
+                  {experience.viewingArea ? "🎟️" : "🍽️"}
                 </div>
               </div>
 
               <div style={{ display: "grid", gap: "12px", color: "#2b332d" }}>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <span style={{ color: "#5d6b60" }}>Date</span>
-                  <strong>{booking.experience.date}</strong>
+                    <strong>{experience.date || "Date not listed by organizer"}</strong>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <span style={{ color: "#5d6b60" }}>Time</span>
-                  <strong>{booking.experience.time}</strong>
+                    <strong>{experience.time || "Time not listed by organizer"}</strong>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <span style={{ color: "#5d6b60" }}>Guests</span>
                   <strong>{guestSummary}</strong>
                 </div>
+                {experience.viewingArea && (
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span style={{ color: "#5d6b60" }}>Viewing area</span>
+                    <strong>{experience.viewingArea}</strong>
+                  </div>
+                )}
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <span style={{ color: "#5d6b60" }}>Location</span>
                   <strong>{locationName}</strong>
@@ -325,7 +336,19 @@ function PaymentPage() {
           <div style={{ marginTop: "auto", display: "flex", gap: "12px" }}>
             <button
               type="button"
-              onClick={() => navigate("/screen3", { state: { guests: booking.guests } })}
+              onClick={() => {
+                if (experience.ticketAreaId && experience.id) {
+                  navigate(`/events/${experience.id}/book`, {
+                    state: {
+                      experience,
+                      selectedAreaId: experience.ticketAreaId,
+                      ticketQuantity: booking.ticketQuantity || booking.guests?.adult,
+                    },
+                  });
+                } else {
+                  navigate("/screen3", { state: { guests: booking.guests } });
+                }
+              }}
               style={{
                 flex: 1,
                 border: "1px solid #0d5a49",

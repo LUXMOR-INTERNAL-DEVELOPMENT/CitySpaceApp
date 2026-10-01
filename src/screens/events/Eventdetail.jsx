@@ -15,11 +15,7 @@ const Eventdetail = () => {
         const response = await fetch("/db.json");
         const data = await response.json();
 
-        console.log("All data:", data);
-        console.log("Looking for id:", id);
-
-        const selected = data.find((item) => item.id == id);
-        console.log("Selected:", selected);
+        const selected = (data.Events || []).find((item) => String(item.id) === id);
 
         setEvent(selected);
       } catch (err) {
@@ -68,7 +64,13 @@ const Eventdetail = () => {
             Experience the best of {event.title}. A wonderful {event.category} event!
           </p>
 
-          <button className="book-btn">Book Now</button>
+          <button
+            className="book-btn"
+            type="button"
+            onClick={() => navigate(`/events/${event.id}/book`, { state: { experience: event } })}
+          >
+            Book Now
+          </button>
         </div>
       </div>
     </div>

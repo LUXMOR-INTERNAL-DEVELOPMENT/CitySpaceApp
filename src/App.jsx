@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import BookingPage from "./screens/booking/BookingPage";
 import Guestcount from "./screens/guestcount/Guestcount";
@@ -12,24 +12,29 @@ import ExperienceDetails from "./screens/exploreexperience/Experiencedetails";
 import Navbar from "./screens/home/Navbar";
 import Signin from "./screens/login/Signin";
 import Signup from "./screens/login/Signup";  
+import Store from "./screens/store/Store";
+import StoreDetail from "./screens/store/StoreDetail";
+import CategoryList from "./screens/store/CategoryList";
 import Diningexperience from "./screens/dinning/Diningexperience";
+import Diningcard from "./screens/dinning/Diningcard";
 import Diningdetail from "./screens/dinning/Diningdetail";
 import Eventscreen from "./screens/events/Eventscreen";
 import Eventdetails from "./screens/events/Eventdetail";
-import EventBooking from "./screens/events/EventBooking";
-
-function RouteNavbar() {
-  const { pathname } = useLocation();
-  return pathname === "/signin" || pathname === "/signup" ? null : <Navbar />;
-}
+import SearchResults from "./screens/store/SearchResults";
+import Checkout from "./screens/checkout/Checkout";
 
 function App() {
   return (
     <BrowserRouter>
-      <RouteNavbar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/stores" element={<Store />} />
+        <Route path="/store/:id" element={<StoreDetail />} />
+        <Route path="/store-category/:name" element={<CategoryList />} />
+        <Route path="/store-search" element={<SearchResults />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/filter" element={<FilterPage />} />
@@ -56,7 +61,6 @@ function App() {
         <Route path="/dining" element={<Diningexperience />} />
         <Route path="/Diningexperience" element={<Diningexperience />} />
         <Route path="/events" element={<Eventscreen />} />
-        <Route path="/events/:id/book" element={<EventBooking />} />
         <Route path="/events/:id" element={<Eventdetails />} />
         <Route path="/Eventdetails" element={<Eventdetails />} />
         <Route path="/payment" element={<PaymentPage />} />

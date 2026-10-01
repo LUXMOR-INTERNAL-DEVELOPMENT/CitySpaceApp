@@ -1,0 +1,160 @@
+.checkout-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  gap: 20px;
+}
+
+.back-to-store-btn {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.checkout-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.checkout-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.checkout-back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.checkout-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.checkout-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.checkout-store-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #eee;
+}
+
+.checkout-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.checkout-item-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #eaeaea;
+}
+
+.checkout-item-details {
+  flex: 1;
+}
+
+.checkout-item-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.checkout-item-qty {
+  font-size: 13px;
+  color: #777;
+}
+
+.checkout-item-price {
+  font-weight: 700;
+  color: #111;
+}
+
+.checkout-summary {
+  background: #f7f9fa;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 14px;
+}
+
+.summary-row:last-child {
+  margin-bottom: 0;
+}
+
+.summary-divider {
+  border: 0;
+  border-top: 1px dashed #ccc;
+  margin: 16px 0;
+}
+
+.grand-total {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+
+.place-order-btn {
+  width: 100%;
+  background: #25a55f;
+  color: #fff;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.place-order-btn:hover {
+  background: #1e8b4e;
+}

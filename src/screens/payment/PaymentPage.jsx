@@ -24,6 +24,9 @@ function PaymentPage() {
 
   const isCardPayment = selectedMethod === "debit-card" || selectedMethod === "credit-card";
   const selectedMethodLabel = paymentMethods.find((method) => method.id === selectedMethod)?.label;
+  const isStoreOrder = location.state?.isStoreOrder;
+  const storeAmount = location.state?.amount;
+
   const booking = location.state?.booking ?? {
     guests: { adult: 2, child: 0, infant: 0 },
     guestSummary: "2 Adults",
@@ -31,9 +34,12 @@ function PaymentPage() {
     experience: { date: "Sat, 12 Sep", time: "7:30 PM", location: "Nungambakkam" },
   };
   const { priceDetails, guestSummary } = booking;
+  
+  const displayTotal = isStoreOrder ? storeAmount : priceDetails.total;
+  
   const bookingLocation = booking.experience?.location || "Nungambakkam";
-  const [locationName, setLocationName] = useState(bookingLocation);
-  const formatPrice = (amount) => `₹${amount.toLocaleString("en-IN")}`;
+  const [locationName, setLocationName] = useState(isStoreOrder ? (location.state?.storeName || 'Store') : bookingLocation);
+  const formatPrice = (amount) => `₹${Number(amount).toLocaleString("en-IN")}`;
 
   useEffect(() => {
     let isMounted = true;
@@ -113,46 +119,81 @@ function PaymentPage() {
                 border: "1px solid #e2dcce",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "18px" }}>
-                <div>
-                  <div style={{ color: "#58715f", fontSize: "12px", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                    Experience
+              {isStoreOrder ? (
+                <>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "18px" }}>
+                    <div>
+                      <div style={{ color: "#58715f", fontSize: "12px", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                        Store Order
+                      </div>
+                      <h2 style={{ margin: "8px 0 0", fontSize: "1.6rem" }}>{location.state?.storeName || 'Store'}</h2>
+                    </div>
+                    <div
+                      style={{
+                        width: "52px",
+                        height: "52px",
+                        borderRadius: "16px",
+                        background: "linear-gradient(135deg, #c0dba4 0%, #6ca870 100%)",
+                        display: "grid",
+                        placeItems: "center",
+                        fontSize: "28px",
+                      }}
+                    >
+                      🛍️
+                    </div>
                   </div>
-                  <h2 style={{ margin: "8px 0 0", fontSize: "1.6rem" }}>Chef&apos;s Table Dinner</h2>
-                </div>
-                <div
-                  style={{
-                    width: "52px",
-                    height: "52px",
-                    borderRadius: "16px",
-                    background: "linear-gradient(135deg, #c0dba4 0%, #6ca870 100%)",
-                    display: "grid",
-                    placeItems: "center",
-                    fontSize: "28px",
-                  }}
-                >
-                  🍽️
-                </div>
-              </div>
 
-              <div style={{ display: "grid", gap: "12px", color: "#2b332d" }}>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "#5d6b60" }}>Date</span>
-                  <strong>{booking.experience.date}</strong>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "#5d6b60" }}>Time</span>
-                  <strong>{booking.experience.time}</strong>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "#5d6b60" }}>Guests</span>
-                  <strong>{guestSummary}</strong>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "#5d6b60" }}>Location</span>
-                  <strong>{locationName}</strong>
-                </div>
-              </div>
+                  <div style={{ display: "grid", gap: "12px", color: "#2b332d" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "#5d6b60" }}>Items</span>
+                      <strong>{location.state?.cartItems?.map(i => `${i.quantity}x ${i.name}`).join(', ') || 'N/A'}</strong>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "18px" }}>
+                    <div>
+                      <div style={{ color: "#58715f", fontSize: "12px", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                        Experience
+                      </div>
+                      <h2 style={{ margin: "8px 0 0", fontSize: "1.6rem" }}>Chef&apos;s Table Dinner</h2>
+                    </div>
+                    <div
+                      style={{
+                        width: "52px",
+                        height: "52px",
+                        borderRadius: "16px",
+                        background: "linear-gradient(135deg, #c0dba4 0%, #6ca870 100%)",
+                        display: "grid",
+                        placeItems: "center",
+                        fontSize: "28px",
+                      }}
+                    >
+                      🍽️
+                    </div>
+                  </div>
+
+                  <div style={{ display: "grid", gap: "12px", color: "#2b332d" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "#5d6b60" }}>Date</span>
+                      <strong>{booking.experience.date}</strong>
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "#5d6b60" }}>Time</span>
+                      <strong>{booking.experience.time}</strong>
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "#5d6b60" }}>Guests</span>
+                      <strong>{guestSummary}</strong>
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "#5d6b60" }}>Location</span>
+                      <strong>{locationName}</strong>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
@@ -165,14 +206,29 @@ function PaymentPage() {
               padding: "18px",
             }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
-              <span style={{ color: "#5d6b60" }}>Subtotal</span>
-              <strong>{formatPrice(priceDetails.subtotal)}</strong>
-            </div>
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
-              <span style={{ color: "#5d6b60" }}>Taxes & fees</span>
-              <strong>{formatPrice(priceDetails.taxesAndFees)}</strong>
-            </div>
+            {isStoreOrder ? (
+              <>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
+                  <span style={{ color: "#5d6b60" }}>Subtotal</span>
+                  <strong>{formatPrice(location.state?.amount - 40 - ((location.state?.amount - 40) / 1.05 * 0.05))}</strong>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
+                  <span style={{ color: "#5d6b60" }}>Delivery & Taxes</span>
+                  <strong>{formatPrice(40 + ((location.state?.amount - 40) / 1.05 * 0.05))}</strong>
+                </div>
+              </>
+            ) : (
+              <>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
+                  <span style={{ color: "#5d6b60" }}>Subtotal</span>
+                  <strong>{formatPrice(priceDetails.subtotal)}</strong>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
+                  <span style={{ color: "#5d6b60" }}>Taxes & fees</span>
+                  <strong>{formatPrice(priceDetails.taxesAndFees)}</strong>
+                </div>
+              </>
+            )}
             <div style={{ borderTop: "1px solid #e5ddd1", margin: "14px 0 10px", paddingTop: "14px" }} />
             <div style={{ display: "flex", justifyContent: "space-between", fontSize: "1.1rem" }}>
               <span style={{ fontWeight: 700 }}>Total</span>
@@ -325,7 +381,7 @@ function PaymentPage() {
           <div style={{ marginTop: "auto", display: "flex", gap: "12px" }}>
             <button
               type="button"
-              onClick={() => navigate("/screen3", { state: { guests: booking.guests } })}
+              onClick={() => navigate(-1)}
               style={{
                 flex: 1,
                 border: "1px solid #0d5a49",
@@ -342,7 +398,7 @@ function PaymentPage() {
 
             <button
               type="button"
-              onClick={() => navigate("/confirmation", { state: { paymentMethod: selectedMethodLabel, booking } })}
+              onClick={() => navigate("/confirmation", { state: { ...location.state, paymentMethod: selectedMethodLabel, booking } })}
               style={{
                 flex: 1.3,
                 border: "none",
@@ -355,7 +411,7 @@ function PaymentPage() {
                 boxShadow: "0 12px 22px rgba(13, 90, 73, 0.18)",
               }}
             >
-              {selectedMethod === "cod" ? `Confirm booking · ${formatPrice(priceDetails.total)}` : `Pay with ${selectedMethodLabel} · ${formatPrice(priceDetails.total)}`}
+              {selectedMethod === "cod" ? `Confirm order · ${formatPrice(displayTotal)}` : `Pay with ${selectedMethodLabel} · ${formatPrice(displayTotal)}`}
             </button>
           </div>
         </section>

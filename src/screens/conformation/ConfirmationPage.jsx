@@ -7,12 +7,17 @@ function ConfirmationPage() {
   const location = useLocation();
   const paymentMethod = location.state?.paymentMethod || "Selected payment method";
   const booking = location.state?.booking;
+  const isStoreOrder = location.state?.isStoreOrder;
+  const storeName = location.state?.storeName;
+  const cartItems = location.state?.cartItems;
+  const amount = location.state?.amount;
+
   const confirmationNumber = "ST-2026-0325-8472";
-  const guestSummary = booking?.guestSummary || "2 Adults";
-  const total = booking?.priceDetails?.total ?? 3270;
+  const guestSummary = isStoreOrder ? `${cartItems?.length || 1} Item(s)` : (booking?.guestSummary || "2 Adults");
+  const total = isStoreOrder ? amount : (booking?.priceDetails?.total ?? 3270);
   const bookingLocation = booking?.experience?.location || "Nungambakkam";
-  const [locationName, setLocationName] = useState(bookingLocation);
-  const formatPrice = (amount) => `₹${amount.toLocaleString("en-IN")}`;
+  const [locationName, setLocationName] = useState(isStoreOrder ? (storeName || "Store") : bookingLocation);
+  const formatPrice = (amount) => `₹${Number(amount).toLocaleString("en-IN")}`;
 
   useEffect(() => {
     let isMounted = true;
@@ -111,16 +116,26 @@ function ConfirmationPage() {
               textAlign: "left",
             }}
           >
-            {[
-              ["Experience", "Chef's Table Dinner"],
-              ["Confirmation number", confirmationNumber],
-              ["Date", booking?.experience?.date || "Sat, 12 Sep"],
-              ["Time", booking?.experience?.time || "7:30 PM"],
-              ["Guests", guestSummary],
-              ["Location", locationName],
-              ["Payment", paymentMethod],
-              ["Amount paid", formatPrice(total)],
-            ].map(([label, value]) => (
+            {(isStoreOrder
+              ? [
+                  ["Store", storeName || "Store"],
+                  ["Confirmation number", confirmationNumber],
+                  ["Order Date", new Date().toLocaleDateString("en-US", { weekday: "short", day: "numeric", month: "short" })],
+                  ["Items", cartItems?.map(i => `${i.quantity}x ${i.name}`).join(', ') || "N/A"],
+                  ["Payment", paymentMethod],
+                  ["Amount paid", formatPrice(total)],
+                ]
+              : [
+                  ["Experience", "Chef's Table Dinner"],
+                  ["Confirmation number", confirmationNumber],
+                  ["Date", booking?.experience?.date || "Sat, 12 Sep"],
+                  ["Time", booking?.experience?.time || "7:30 PM"],
+                  ["Guests", guestSummary],
+                  ["Location", locationName],
+                  ["Payment", paymentMethod],
+                  ["Amount paid", formatPrice(total)],
+                ]
+            ).map(([label, value]) => (
               <div key={label} style={{ background: "#fbfcf9", padding: "16px 18px" }}>
                 <div style={{ color: "#718076", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "7px" }}>
                   {label}

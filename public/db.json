@@ -1,221 +1,220 @@
 {
-"Filter": [
-  {
-    "id": 1,
-    "name": "The Green Leaf Restaurant",
-    "category": "Dining",
-    "date": "2026-09-12",
-    "price": 800,
-    "location": "Chennai",
-    "distance": 3,
-    "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
-    "icon": "🍽️"
-  },
-  {
-    "id": 2,
-    "name": "Weekend Music Festival",
-    "category": "Events",
-    "date": "2026-09-13",
-    "price": 1500,
-    "location": "Chennai",
-    "distance": 7,
-    "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a",
-    "icon": "🎵"
-  },
-  {
-    "id": 3,
-    "name": "Adventure Park",
-    "category": "Activities",
-    "date": "2026-09-14",
-    "price": 600,
-    "location": "Chennai",
-    "distance": 9,
-    "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077",
-    "icon": "🎯"
-  },
-  {
-    "id": 4,
-    "name": "Spice Garden",
-    "category": "Dining",
-    "date": "2026-09-20",
-    "price": 1200,
-    "location": "Chennai",
-    "distance": 5,
-    "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f",
-    "icon": "🍽️"
-  },
-  {
-    "id": 5,
-    "name": "Live Jazz Night",
-    "category": "Events",
-    "date": "2026-09-20",
-    "price": 2000,
-    "location": "Chennai",
-    "distance": 12,
-    "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629",
-    "icon": "🎵"
-  },
-  {
-    "id": 6,
-    "name": "Bowling Arena",
-    "category": "Activities",
-    "date": "2026-09-21",
-    "price": 500,
-    "location": "Chennai",
-    "distance": 4,
-    "rating": 4.1,
-    "image":"https://www.tenpin.co.uk/media/5357/cambrige-bowling-lane-pink-hue-front-on.jpg",
-    "icon": "🎳"
-  },
-  {
-    "id": 7,
-    "name": "Ocean View Restaurant",
-    "category": "Dining",
-    "date": "2026-09-27",
-    "price": 1800,
-    "location": "Chennai",
-    "distance": 8,
-    "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b",
-    "icon": "🍽️"
-  },
-  {
-    "id": 8,
-    "name": "Food Carnival",
-    "category": "Events",
-    "date": "2026-09-27",
-    "price": 1000,
-    "location": "Chennai",
-    "distance": 6,
-    "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
-    "icon": "🎵"
-  },
-  {
-    "id": 9,
-    "name": "Go Karting",
-    "category": "Activities",
-    "date": "2026-09-28",
-    "price": 1400,
-    "location": "Chennai",
-    "distance": 15,
-    "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39",
-    "icon": "🏎️"
-  },
-  {
-    "id": 10,
-    "name": "Royal Biryani House",
-    "category": "Dining",
-    "date": "2026-10-03",
-    "price": 700,
-    "location": "Chennai",
-    "distance": 2,
-    "rating": 3.9,
-    "image":"https://images.unsplash.com/photo-1633945274405-b6c8069047b0",
-    "icon": "🍽️"
-  },
-  {
-    "id": 11,
-    "name": "Stand Up Comedy",
-    "category": "Events",
-    "date": "2026-10-04",
-    "price": 900,
-    "location": "Chennai",
-    "distance": 10,
-    "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1585699324551-f6c309eedeca",
-    "icon": "🎤"
-  },
-  {
-    "id": 12,
-    "name": "Swimming Club",
-    "category": "Activities",
-    "date": "2026-10-05",
-    "price": 400,
-    "location": "Chennai",
-    "distance": 6,
-    "rating": 3.8,
-    "image": "https://images.unsplash.com/photo-1600965962361-9035dbfd1c50",
-    "icon": "🏊"
-  },
-  {
-    "id": 13,
-    "name": "Premium Steak House",
-    "category": "Dining",
-    "date": "2026-10-10",
-    "price": 2000,
-    "location": "Chennai",
-    "distance": 11,
-    "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947",
-    "icon": "🍽️"
-  },
-  {
-    "id": 14,
-    "name": "Art Exhibition",
-    "category": "Events",
-    "date": "2026-10-11",
-    "price": 500,
-    "location": "Chennai",
-    "distance": 3,
-    "rating": 4.0,
-    "image": "https://images.unsplash.com/photo-1561214115-f2f134cc4912",
-    "icon": "🎨"
-  },
-  {
-    "id": 15,
-    "name": "Cycling Tour",
-    "category": "Activities",
-    "date": "2026-10-12",
-    "price": 800,
-    "location": "Chennai",
-    "distance": 18,
-    "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1541625602330-2277a4c46182",
-    "icon": "🚴"
-  }
-],
- "Events":[
-  {
-    "id": 1,
-    "title": "Chef's Table",
-    "location": "Alwarpet",
-    "price": "₹1,999",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 2,
-    "title": "Sunday Brunch",
-    "location": "Guindy",
-    "price": "₹1,499",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 3,
-    "title": "Coastal Feast",
-    "location": "ECR",
-    "price": "₹1,299",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 4,
-    "title": "Garden Café",
-    "location": "Adyar",
-    "price": "₹799",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop"
-  }
-],
-
+  "Filter": [
+    {
+      "id": 1,
+      "name": "The Green Leaf Restaurant",
+      "category": "Dining",
+      "date": "2026-09-12",
+      "price": 800,
+      "location": "Chennai",
+      "distance": 3,
+      "rating": 4.6,
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+      "icon": "🍽️"
+    },
+    {
+      "id": 2,
+      "name": "Weekend Music Festival",
+      "category": "Events",
+      "date": "2026-09-13",
+      "price": 1500,
+      "location": "Chennai",
+      "distance": 7,
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a",
+      "icon": "🎵"
+    },
+    {
+      "id": 3,
+      "name": "Adventure Park",
+      "category": "Activities",
+      "date": "2026-09-14",
+      "price": 600,
+      "location": "Chennai",
+      "distance": 9,
+      "rating": 4.2,
+      "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077",
+      "icon": "🎯"
+    },
+    {
+      "id": 4,
+      "name": "Spice Garden",
+      "category": "Dining",
+      "date": "2026-09-20",
+      "price": 1200,
+      "location": "Chennai",
+      "distance": 5,
+      "rating": 4.4,
+      "image": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f",
+      "icon": "🍽️"
+    },
+    {
+      "id": 5,
+      "name": "Live Jazz Night",
+      "category": "Events",
+      "date": "2026-09-20",
+      "price": 2000,
+      "location": "Chennai",
+      "distance": 12,
+      "rating": 4.9,
+      "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629",
+      "icon": "🎵"
+    },
+    {
+      "id": 6,
+      "name": "Bowling Arena",
+      "category": "Activities",
+      "date": "2026-09-21",
+      "price": 500,
+      "location": "Chennai",
+      "distance": 4,
+      "rating": 4.1,
+      "image": "https://www.tenpin.co.uk/media/5357/cambrige-bowling-lane-pink-hue-front-on.jpg",
+      "icon": "🎳"
+    },
+    {
+      "id": 7,
+      "name": "Ocean View Restaurant",
+      "category": "Dining",
+      "date": "2026-09-27",
+      "price": 1800,
+      "location": "Chennai",
+      "distance": 8,
+      "rating": 4.7,
+      "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b",
+      "icon": "🍽️"
+    },
+    {
+      "id": 8,
+      "name": "Food Carnival",
+      "category": "Events",
+      "date": "2026-09-27",
+      "price": 1000,
+      "location": "Chennai",
+      "distance": 6,
+      "rating": 4.5,
+      "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+      "icon": "🎵"
+    },
+    {
+      "id": 9,
+      "name": "Go Karting",
+      "category": "Activities",
+      "date": "2026-09-28",
+      "price": 1400,
+      "location": "Chennai",
+      "distance": 15,
+      "rating": 4.6,
+      "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39",
+      "icon": "🏎️"
+    },
+    {
+      "id": 10,
+      "name": "Royal Biryani House",
+      "category": "Dining",
+      "date": "2026-10-03",
+      "price": 700,
+      "location": "Chennai",
+      "distance": 2,
+      "rating": 3.9,
+      "image": "https://images.unsplash.com/photo-1633945274405-b6c8069047b0",
+      "icon": "🍽️"
+    },
+    {
+      "id": 11,
+      "name": "Stand Up Comedy",
+      "category": "Events",
+      "date": "2026-10-04",
+      "price": 900,
+      "location": "Chennai",
+      "distance": 10,
+      "rating": 4.3,
+      "image": "https://images.unsplash.com/photo-1585699324551-f6c309eedeca",
+      "icon": "🎤"
+    },
+    {
+      "id": 12,
+      "name": "Swimming Club",
+      "category": "Activities",
+      "date": "2026-10-05",
+      "price": 400,
+      "location": "Chennai",
+      "distance": 6,
+      "rating": 3.8,
+      "image": "https://images.unsplash.com/photo-1600965962361-9035dbfd1c50",
+      "icon": "🏊"
+    },
+    {
+      "id": 13,
+      "name": "Premium Steak House",
+      "category": "Dining",
+      "date": "2026-10-10",
+      "price": 2000,
+      "location": "Chennai",
+      "distance": 11,
+      "rating": 4.9,
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947",
+      "icon": "🍽️"
+    },
+    {
+      "id": 14,
+      "name": "Art Exhibition",
+      "category": "Events",
+      "date": "2026-10-11",
+      "price": 500,
+      "location": "Chennai",
+      "distance": 3,
+      "rating": 4,
+      "image": "https://images.unsplash.com/photo-1561214115-f2f134cc4912",
+      "icon": "🎨"
+    },
+    {
+      "id": 15,
+      "name": "Cycling Tour",
+      "category": "Activities",
+      "date": "2026-10-12",
+      "price": 800,
+      "location": "Chennai",
+      "distance": 18,
+      "rating": 4.7,
+      "image": "https://images.unsplash.com/photo-1541625602330-2277a4c46182",
+      "icon": "🚴"
+    }
+  ],
+  "Events": [
+    {
+      "id": 1,
+      "title": "Chef's Table",
+      "location": "Alwarpet",
+      "price": "₹1,999",
+      "rating": "4.8",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 2,
+      "title": "Sunday Brunch",
+      "location": "Guindy",
+      "price": "₹1,499",
+      "rating": "4.8",
+      "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 3,
+      "title": "Coastal Feast",
+      "location": "ECR",
+      "price": "₹1,299",
+      "rating": "4.8",
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 4,
+      "title": "Garden Café",
+      "location": "Adyar",
+      "price": "₹799",
+      "rating": "4.8",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop"
+    }
+  ],
   "homepage": {
     "home": {
       "title": "Your city, beautifully planned.",
@@ -281,40 +280,40 @@
         "image": "https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=800&q=80"
       }
     ],
-   "Dining": [ 
-  {
-    "id": 1,
-    "title": "Chef's Table",
-    "location": "Alwarpet",
-    "price": "₹1,999",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 2,
-    "title": "Sunday Brunch",
-    "location": "Guindy",
-    "price": "₹1,499",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 3,
-    "title": "Coastal Feast",
-    "location": "ECR",
-    "price": "₹1,299",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 4,
-    "title": "Garden Café",
-    "location": "Adyar",
-    "price": "₹799",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop"
-  }
-]
+    "Dining": [
+      {
+        "id": 1,
+        "title": "Chef's Table",
+        "location": "Alwarpet",
+        "price": "₹1,999",
+        "rating": "4.8",
+        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 2,
+        "title": "Sunday Brunch",
+        "location": "Guindy",
+        "price": "₹1,499",
+        "rating": "4.8",
+        "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 3,
+        "title": "Coastal Feast",
+        "location": "ECR",
+        "price": "₹1,299",
+        "rating": "4.8",
+        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 4,
+        "title": "Garden Café",
+        "location": "Adyar",
+        "price": "₹799",
+        "rating": "4.8",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop"
+      }
+    ]
   },
   "Homepages": [
     {
@@ -366,8 +365,18 @@
       "details": "Sun, 19 Oct · 9:30 AM · Guindy National Park",
       "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
     }
-  ], 
-    "categories": ["All", "Music", "Food & Drink", "Workshops", "Art & Culture", "Sports", "Community", "Outdoor", "Kids"],
+  ],
+  "categories": [
+    "All",
+    "Music",
+    "Food & Drink",
+    "Workshops",
+    "Art & Culture",
+    "Sports",
+    "Community",
+    "Outdoor",
+    "Kids"
+  ],
   "featuredBanner": {
     "badge": "MUSIC · LIVE CONCERT",
     "title": "Yuvan Shankar Raja Live in Chennai",
@@ -454,10 +463,823 @@
     }
   ],
   "offers": [
-    { "id": 1, "title": "Early Bird Offers", "image": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80" },
-    { "id": 2, "title": "Member Deals", "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80" },
-    { "id": 3, "title": "Weekend Bundles", "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" }
+    {
+      "id": 1,
+      "title": "Early Bird Offers",
+      "image": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": 2,
+      "title": "Member Deals",
+      "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": 3,
+      "title": "Weekend Bundles",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+    }
+  ],
+  "StoreCategories": [
+    {
+      "name": "Sneakers",
+      "img": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=150&q=80"
+    },
+    {
+      "name": "Western Casual",
+      "img": "https://images.unsplash.com/photo-1550639525-c97d455acf70?w=150&q=80"
+    },
+    {
+      "name": "Ethnic Wear",
+      "img": "https://images.unsplash.com/photo-1583391733958-d25e07fac044?w=150&q=80"
+    },
+    {
+      "name": "Beauty & Wellness",
+      "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=150&q=80"
+    },
+    {
+      "name": "Accessories",
+      "img": "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=150&q=80"
+    },
+    {
+      "name": "Formal & Workwear",
+      "img": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=150&q=80"
+    },
+    {
+      "name": "Footwear",
+      "img": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=150&q=80"
+    },
+    {
+      "name": "Jewellery",
+      "img": "https://images.unsplash.com/photo-1599643478524-fb66f70d00f0?w=150&q=80"
+    },
+    {
+      "name": "Sports Wear",
+      "img": "https://images.unsplash.com/photo-1483721310020-03333e577078?w=150&q=80"
+    },
+    {
+      "name": "Bags & Luggage",
+      "img": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=150&q=80"
+    },
+    {
+      "name": "Sunglasses",
+      "img": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=150&q=80"
+    },
+    {
+      "name": "Watches",
+      "img": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=150&q=80"
+    },
+    {
+      "name": "Gifting",
+      "img": "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=150&q=80"
+    },
+    {
+      "name": "Electronics",
+      "img": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=150&q=80"
+    },
+    {
+      "name": "Salon & Spa",
+      "img": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=150&q=80"
+    },
+    {
+      "name": "Home & Furniture",
+      "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=150&q=80"
+    }
+  ],
+  "Stores": [
+    {
+      "id": "s1",
+      "name": "Paul's City",
+      "location": "T Nagar, Chennai",
+      "city": "Chennai",
+      "category": "Retail",
+      "subCategory": "Supermarket",
+      "offer": "₹50 OFF on Rs ₹2000",
+      "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 5,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Groceries", "Daily Needs"],
+      "products": []
+    },
+    {
+      "name": "Apollo Pharmacy",
+      "location": "Adyar, Chennai",
+      "category": "Personal",
+      "offer": "₹50 OFF on Rs ₹2000",
+      "image": "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 12,
+      "audience": ["Men", "Women", "Kids"]
+    },
+    {
+      "name": "Daawat Restaurant",
+      "location": "Velachery, Chennai",
+      "category": "Shop",
+      "offer": "₹50 OFF on Rs ₹2000",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 8,
+      "audience": ["Men", "Women", "Kids"]
+    },
+    {
+      "name": "adidas",
+      "location": "Anna Nagar, Chennai",
+      "category": "Accessories",
+      "offer": "₹50 OFF on Rs ₹2000",
+      "image": "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 15,
+      "audience": ["Men", "Kids"]
+    },
+    {
+      "name": "Zudio",
+      "location": "ECR, Chennai",
+      "category": "Apparel",
+      "offer": "₹50 OFF on Rs ₹2000",
+      "image": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 6,
+      "audience": ["Women", "Kids"]
+    },
+    {
+      "name": "Shoppers Stop",
+      "location": "Nungambakkam, Chennai",
+      "category": "Apparel",
+      "offer": "₹50 OFF on Rs ₹2000",
+      "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 3,
+      "audience": ["Men", "Women", "Kids"]
+    },
+    {
+      "name": "Lifestyle",
+      "location": "Mylapore, Chennai",
+      "category": "Apparel",
+      "offer": "₹50 OFF on Rs ₹2000",
+      "image": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 7,
+      "audience": ["Women"]
+    },
+    {
+      "name": "Nykaa",
+      "location": "T Nagar, Chennai",
+      "category": "Personal",
+      "offer": "₹50 OFF on Rs ₹2000",
+      "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 4,
+      "audience": ["Women"]
+    },
+    {
+      "name": "Haldiram's",
+      "location": "Adyar, Chennai",
+      "category": "Shop",
+      "offer": "₹50 OFF on Rs ₹2000",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 9,
+      "audience": ["Men", "Women", "Kids"]
+    },
+    {
+      "name": "The Body Shop",
+      "location": "Phoenix Marketcity, Chennai",
+      "category": "Personal",
+      "offer": "Flat 10% OFF",
+      "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 15,
+      "audience": ["Women", "Men"]
+    },
+    {
+      "name": "Nike",
+      "location": "Express Avenue, Chennai",
+      "category": "Accessories",
+      "offer": "Up to ₹1000 OFF",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 8,
+      "audience": ["Men", "Women", "Kids"]
+    },
+    {
+      "name": "Zara",
+      "location": "Palladium, Chennai",
+      "category": "Apparel",
+      "offer": "End of Season Sale",
+      "image": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 12,
+      "audience": ["Women", "Men"]
+    },
+    {
+      "name": "H&M",
+      "location": "VR Mall, Chennai",
+      "category": "Apparel",
+      "offer": "Buy 2 Get 1 Free",
+      "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 4,
+      "audience": ["Kids", "Women", "Men"]
+    },
+    {
+      "name": "Titan Eye+",
+      "location": "Anna Nagar, Chennai",
+      "category": "Accessories",
+      "offer": "Free Eye Checkup + 15% OFF",
+      "image": "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 9,
+      "audience": ["Men", "Women"]
+    },
+    {
+      "name": "MAC Cosmetics",
+      "location": "T Nagar, Chennai",
+      "category": "Personal",
+      "offer": "Special Gift on Purchase",
+      "image": "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 11,
+      "audience": ["Women"]
+    },
+    {
+      "name": "Decathlon",
+      "location": "OMR, Chennai",
+      "category": "Shop",
+      "offer": "Winter Clearance",
+      "image": "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 18,
+      "audience": ["Men", "Women", "Kids"]
+    },
+    {
+      "id": "s17",
+      "name": "Max Fashion",
+      "location": "Velachery, Chennai",
+      "city": "Chennai",
+      "category": "Apparel",
+      "subCategory": "Clothing",
+      "offer": "Kids Fest 20% OFF",
+      "image": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 5,
+      "audience": ["Kids"],
+      "gender": ["Kids"],
+      "tags": ["Kids", "Fashion"],
+      "products": []
+    },
+    {
+      "id": "s18",
+      "name": "Tanishq",
+      "location": "T Nagar, Chennai",
+      "city": "Chennai",
+      "category": "Jewellery",
+      "subCategory": "Fine Jewellery",
+      "offer": "Zero Making Charges on Gold",
+      "image": "https://images.unsplash.com/photo-1599643478514-4a820cbf311e?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 6,
+      "audience": ["Women", "Men"],
+      "gender": ["Women", "Men"],
+      "tags": ["Gold", "Diamond", "Wedding"],
+      "products": []
+    },
+    {
+      "id": "s19",
+      "name": "Kalyan Jewellers",
+      "location": "Adyar, Chennai",
+      "city": "Chennai",
+      "category": "Jewellery",
+      "subCategory": "Gold & Diamonds",
+      "offer": "Flat 25% OFF on Diamond Value",
+      "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 8,
+      "audience": ["Women"],
+      "gender": ["Women"],
+      "tags": ["Gold", "Silver", "Necklace"],
+      "products": []
+    },
+    {
+      "id": "s20",
+      "name": "Malabar Gold & Diamonds",
+      "location": "Velachery, Chennai",
+      "city": "Chennai",
+      "category": "Jewellery",
+      "subCategory": "Jewellery",
+      "offer": "Free Gold Coin on Purchases above ₹50k",
+      "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 10,
+      "audience": ["Women", "Men"],
+      "gender": ["Women", "Men"],
+      "tags": ["Rings", "Earrings", "Gold"],
+      "products": []
+    },
+    {
+      "id": "s21",
+      "name": "Puma",
+      "location": "VR Mall, Chennai",
+      "city": "Chennai",
+      "category": "Footwear",
+      "subCategory": "Sneakers",
+      "offer": "Flat 30% OFF",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 4,
+      "audience": ["Men", "Women", "Kids"],
+      "gender": ["Men", "Women", "Kids"],
+      "tags": ["Sneakers", "Sports"],
+      "products": []
+    },
+    {
+      "id": "s22",
+      "name": "Levi's",
+      "location": "Express Avenue, Chennai",
+      "city": "Chennai",
+      "category": "Apparel",
+      "subCategory": "Western Casual",
+      "offer": "Buy 2 Get 1 Free",
+      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 6,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Jeans", "Western Casual", "Denim"],
+      "products": []
+    },
+    {
+      "id": "s23",
+      "name": "FabIndia",
+      "location": "Alwarpet, Chennai",
+      "city": "Chennai",
+      "category": "Apparel",
+      "subCategory": "Ethnic Wear",
+      "offer": "Festive Collection 15% OFF",
+      "image": "https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 3,
+      "audience": ["Men", "Women", "Kids"],
+      "gender": ["Men", "Women", "Kids"],
+      "tags": ["Ethnic Wear", "Traditional"],
+      "products": []
+    },
+    {
+      "id": "s24",
+      "name": "Louis Philippe",
+      "location": "Phoenix Marketcity, Chennai",
+      "city": "Chennai",
+      "category": "Apparel",
+      "subCategory": "Formal & Workwear",
+      "offer": "Free Tie on Shirt Purchase",
+      "image": "https://images.unsplash.com/photo-1593030761757-71fae46af504?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 9,
+      "audience": ["Men"],
+      "gender": ["Men"],
+      "tags": ["Formal", "Workwear", "Suits"],
+      "products": []
+    },
+    {
+      "id": "s25",
+      "name": "Bata",
+      "location": "T Nagar, Chennai",
+      "city": "Chennai",
+      "category": "Footwear",
+      "subCategory": "Shoes",
+      "offer": "End of Season Sale",
+      "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 5,
+      "audience": ["Men", "Women", "Kids"],
+      "gender": ["Men", "Women", "Kids"],
+      "tags": ["Footwear", "Leather"],
+      "products": []
+    },
+    {
+      "id": "s26",
+      "name": "Samsonite",
+      "location": "OMR, Chennai",
+      "city": "Chennai",
+      "category": "Accessories",
+      "subCategory": "Bags & Luggage",
+      "offer": "Flat 20% OFF on Trolleys",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 12,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Bags", "Luggage", "Travel"],
+      "products": []
+    },
+    {
+      "id": "s27",
+      "name": "Ray-Ban",
+      "location": "Nungambakkam, Chennai",
+      "city": "Chennai",
+      "category": "Accessories",
+      "subCategory": "Sunglasses",
+      "offer": "Buy 1 Get 1 at 50%",
+      "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 4,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Sunglasses", "Eyewear"],
+      "products": []
+    },
+    {
+      "id": "s28",
+      "name": "Casio",
+      "location": "Adyar, Chennai",
+      "city": "Chennai",
+      "category": "Accessories",
+      "subCategory": "Watches",
+      "offer": "Up to ₹500 Cashback",
+      "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 6,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Watches", "Timepieces"],
+      "products": []
+    },
+    {
+      "id": "s29",
+      "name": "Ferns N Petals",
+      "location": "Mylapore, Chennai",
+      "city": "Chennai",
+      "category": "Retail",
+      "subCategory": "Gifting",
+      "offer": "10% OFF on Bouquets",
+      "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 7,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Gifting", "Flowers", "Gifts"],
+      "products": []
+    },
+    {
+      "id": "s30",
+      "name": "Reliance Digital",
+      "location": "Velachery, Chennai",
+      "city": "Chennai",
+      "category": "Retail",
+      "subCategory": "Electronics",
+      "offer": "Diwali Blockbuster Deals",
+      "image": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 10,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Electronics", "Gadgets", "Home Appliances"],
+      "products": []
+    },
+    {
+      "id": "s31",
+      "name": "Toni & Guy",
+      "location": "Anna Nagar, Chennai",
+      "city": "Chennai",
+      "category": "Beauty",
+      "subCategory": "Salon & Spa",
+      "offer": "Flat 25% OFF on Haircut",
+      "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 8,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Salon", "Spa", "Haircut", "Wellness"],
+      "products": []
+    },
+    {
+      "id": "s32",
+      "name": "IKEA",
+      "location": "Navalur, Chennai",
+      "city": "Chennai",
+      "category": "Retail",
+      "subCategory": "Home & Furniture",
+      "offer": "Free Delivery on orders above ₹5000",
+      "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 18,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Home", "Furniture", "Decor"],
+      "products": []
+    },
+    {
+      "id": "s33",
+      "name": "Superkicks",
+      "location": "Nungambakkam, Chennai",
+      "city": "Chennai",
+      "category": "Footwear",
+      "subCategory": "Sneakers",
+      "offer": "Exclusive Drops",
+      "image": "https://images.unsplash.com/photo-1552346154-21d32810baa3?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 6,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Sneakers", "Streetwear"],
+      "products": []
+    },
+    {
+      "id": "s34",
+      "name": "GAP",
+      "location": "Phoenix Marketcity, Chennai",
+      "city": "Chennai",
+      "category": "Apparel",
+      "subCategory": "Western Casual",
+      "offer": "Flat 20% OFF",
+      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 8,
+      "audience": ["Men", "Women", "Kids"],
+      "gender": ["Men", "Women", "Kids"],
+      "tags": ["Western Casual", "Hoodies", "Jeans"],
+      "products": []
+    },
+    {
+      "id": "s35",
+      "name": "Manyavar",
+      "location": "T Nagar, Chennai",
+      "city": "Chennai",
+      "category": "Apparel",
+      "subCategory": "Ethnic Wear",
+      "offer": "Wedding Collection",
+      "image": "https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 5,
+      "audience": ["Men"],
+      "gender": ["Men"],
+      "tags": ["Ethnic Wear", "Wedding", "Kurta"],
+      "products": []
+    },
+    {
+      "id": "s36",
+      "name": "Biba",
+      "location": "Adyar, Chennai",
+      "city": "Chennai",
+      "category": "Apparel",
+      "subCategory": "Ethnic Wear",
+      "offer": "Flat 30% OFF",
+      "image": "https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 7,
+      "audience": ["Women", "Kids"],
+      "gender": ["Women", "Kids"],
+      "tags": ["Ethnic Wear", "Kurtis", "Women"],
+      "products": []
+    },
+    {
+      "id": "s37",
+      "name": "Allen Solly",
+      "location": "VR Mall, Chennai",
+      "city": "Chennai",
+      "category": "Apparel",
+      "subCategory": "Formal & Workwear",
+      "offer": "Buy 2 Get 2 Free",
+      "image": "https://images.unsplash.com/photo-1593030761757-71fae46af504?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 11,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Formal", "Workwear", "Shirts"],
+      "products": []
+    },
+    {
+      "id": "s38",
+      "name": "Metro Shoes",
+      "location": "Express Avenue, Chennai",
+      "city": "Chennai",
+      "category": "Footwear",
+      "subCategory": "Shoes",
+      "offer": "Up to 50% OFF",
+      "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 9,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Footwear", "Leather", "Heels"],
+      "products": []
+    },
+    {
+      "id": "s39",
+      "name": "Woodland",
+      "location": "Velachery, Chennai",
+      "city": "Chennai",
+      "category": "Footwear",
+      "subCategory": "Shoes",
+      "offer": "Winter Collection Launch",
+      "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 8,
+      "audience": ["Men"],
+      "gender": ["Men"],
+      "tags": ["Footwear", "Boots", "Outdoor"],
+      "products": []
+    },
+    {
+      "id": "s40",
+      "name": "Under Armour",
+      "location": "Phoenix Marketcity, Chennai",
+      "city": "Chennai",
+      "category": "Sports",
+      "subCategory": "Sports Wear",
+      "offer": "Flat 10% OFF on Rs 5000",
+      "image": "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 12,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Sports Wear", "Athleisure", "Activewear"],
+      "products": []
+    },
+    {
+      "id": "s41",
+      "name": "American Tourister",
+      "location": "T Nagar, Chennai",
+      "city": "Chennai",
+      "category": "Accessories",
+      "subCategory": "Bags & Luggage",
+      "offer": "Up to 60% OFF",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 4,
+      "audience": ["Men", "Women", "Kids"],
+      "gender": ["Men", "Women", "Kids"],
+      "tags": ["Bags", "Luggage", "Backpacks"],
+      "products": []
+    },
+    {
+      "id": "s42",
+      "name": "Lenskart",
+      "location": "Adyar, Chennai",
+      "city": "Chennai",
+      "category": "Accessories",
+      "subCategory": "Sunglasses",
+      "offer": "Buy 1 Get 1 Free",
+      "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 5,
+      "audience": ["Men", "Women", "Kids"],
+      "gender": ["Men", "Women", "Kids"],
+      "tags": ["Sunglasses", "Eyewear", "Glasses"],
+      "products": []
+    },
+    {
+      "id": "s43",
+      "name": "Titan",
+      "location": "Alwarpet, Chennai",
+      "city": "Chennai",
+      "category": "Accessories",
+      "subCategory": "Watches",
+      "offer": "Flat 20% OFF",
+      "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 3,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Watches", "Accessories"],
+      "products": []
+    },
+    {
+      "id": "s44",
+      "name": "Miniso",
+      "location": "Express Avenue, Chennai",
+      "city": "Chennai",
+      "category": "Retail",
+      "subCategory": "Gifting",
+      "offer": "Everything under Rs 999",
+      "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 7,
+      "audience": ["Men", "Women", "Kids"],
+      "gender": ["Men", "Women", "Kids"],
+      "tags": ["Gifting", "Toys", "Accessories"],
+      "products": []
+    },
+    {
+      "id": "s45",
+      "name": "Croma",
+      "location": "OMR, Chennai",
+      "city": "Chennai",
+      "category": "Retail",
+      "subCategory": "Electronics",
+      "offer": "Up to 50% OFF on Laptops",
+      "image": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 15,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Electronics", "Mobiles", "Appliances"],
+      "products": []
+    },
+    {
+      "id": "s46",
+      "name": "Lakme Salon",
+      "location": "Mylapore, Chennai",
+      "city": "Chennai",
+      "category": "Beauty",
+      "subCategory": "Salon & Spa",
+      "offer": "Bridal Packages Starting ₹5000",
+      "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 6,
+      "audience": ["Women"],
+      "gender": ["Women"],
+      "tags": ["Salon", "Beauty", "Makeup"],
+      "products": []
+    },
+    {
+      "id": "s47",
+      "name": "Home Centre",
+      "location": "VR Mall, Chennai",
+      "city": "Chennai",
+      "category": "Retail",
+      "subCategory": "Home & Furniture",
+      "offer": "Up to 40% OFF on Decor",
+      "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 11,
+      "audience": ["Men", "Women"],
+      "gender": ["Men", "Women"],
+      "tags": ["Home", "Furniture", "Decor", "Gifting"],
+      "products": []
+    }
+  ],
+  "Locations": ["Chennai", "Gurgaon", "Mumbai", "Bangalore", "Delhi", "Pune", "Hyderabad"],
+  "DistrictOffers": [
+    {
+      "title": "EMMA BY ANJOU",
+      "address": "Any Branch From High Street, Sector 28, Gurgaon",
+      "city": "Gurgaon",
+      "distance": 3,
+      "offer": "Flat ₹500 OFF"
+    },
+    {
+      "title": "Gaurav Gupta",
+      "address": "Express Avenue, Royapettah, Chennai",
+      "city": "Chennai",
+      "distance": 8,
+      "offer": "Flat ₹500 OFF"
+    },
+    {
+      "title": "Ogaan",
+      "address": "Phoenix Marketcity, Velachery, Chennai",
+      "city": "Chennai",
+      "distance": 12,
+      "offer": "Flat ₹500 OFF"
+    },
+    {
+      "title": "Sabyasachi",
+      "address": "Palladium Mall, Lower Parel, Mumbai",
+      "city": "Mumbai",
+      "distance": 5,
+      "offer": "Flat ₹500 OFF"
+    },
+    {
+      "title": "Anita Dongre",
+      "address": "UB City Mall, Bangalore",
+      "city": "Bangalore",
+      "distance": 2,
+      "offer": "Flat ₹500 OFF"
+    },
+    {
+      "title": "Zara",
+      "address": "VR Mall, Anna Nagar, Chennai",
+      "city": "Chennai",
+      "distance": 4,
+      "offer": "Flat ₹500 OFF"
+    },
+    {
+      "title": "H&M",
+      "address": "Ambience Mall, Vasant Kunj, Delhi",
+      "city": "Delhi",
+      "distance": 15,
+      "offer": "Flat ₹500 OFF"
+    },
+    {
+      "title": "Nike Factory Store",
+      "address": "OMR, Chennai",
+      "city": "Chennai",
+      "distance": 18,
+      "offer": "Flat ₹500 OFF"
+    },
+    {
+      "title": "Shoppers Stop",
+      "address": "Sector 14, Gurgaon",
+      "city": "Gurgaon",
+      "distance": 9,
+      "offer": "Flat ₹500 OFF"
+    },
+    {
+      "title": "Pantaloons",
+      "address": "T Nagar, Chennai",
+      "city": "Chennai",
+      "distance": 3,
+      "offer": "Flat ₹500 OFF"
+    }
   ]
 }
-
-

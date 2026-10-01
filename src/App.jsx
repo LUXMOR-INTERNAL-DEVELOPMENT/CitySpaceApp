@@ -12,11 +12,17 @@ import ExperienceDetails from "./screens/exploreexperience/Experiencedetails";
 import Navbar from "./screens/home/Navbar";
 import Signin from "./screens/login/Signin";
 import Signup from "./screens/login/Signup";  
+import Store from "./screens/store/Store";
+import StoreDetail from "./screens/store/StoreDetail";
+import CategoryList from "./screens/store/CategoryList";
 import Diningexperience from "./screens/dinning/Diningexperience";
 import Diningcard from "./screens/dinning/Diningcard";
 import Diningdetail from "./screens/dinning/Diningdetail";
 import Eventscreen from "./screens/events/Eventscreen";
 import Eventdetails from "./screens/events/Eventdetail";
+import SearchResults from "./screens/store/SearchResults";
+import Checkout from "./screens/checkout/Checkout";
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +30,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/stores" element={<Store />} />
+        <Route path="/store/:id" element={<StoreDetail />} />
+        <Route path="/store-category/:name" element={<CategoryList />} />
+        <Route path="/store-search" element={<SearchResults />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/filter" element={<FilterPage />} />

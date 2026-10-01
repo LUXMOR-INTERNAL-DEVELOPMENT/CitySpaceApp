@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import FavoriteButton from "../../components/FavoriteButton";
 import "./ResultsPage.css";
 
 const ResultsPage = () => {
@@ -42,26 +43,41 @@ const ResultsPage = () => {
     <main className="results-page">
       <div className="results-header">
         {/* <div className="step-badge">04 Choose an experience</div> */}
-        <h1>Available experiences</h1>
+        <h1>{location.state?.heading || "Available experiences"}</h1>
         <p>{results.length} experiences match your search.</p>
       </div>
 
       <div className="results-list">
         {results.map((item) => (
-          <button
-            className="experience-card"
-            key={item.id}
-            type="button"
-            onClick={() => navigate("/experience", { state: { experience: item } })}
-          >
-            <img src={item.image} alt={item.name} />
-            <span className="experience-card-content">
-              <strong>{item.name}</strong>
-              <span>{item.category} · {item.location}</span>
-              <span>{item.date} · ₹{item.price} · {item.rating} ★</span>
-              <span className="view-details">View details</span>
-            </span>
-          </button>
+          <article className="experience-card" key={item.id}>
+            <button
+              className="experience-card-open"
+              type="button"
+              onClick={() => navigate("/experience", { state: { experience: item } })}
+            >
+              <img src={item.image} alt={item.name} />
+              <span className="experience-card-content">
+                <strong>{item.name}</strong>
+                <span>{item.category} · {item.location}</span>
+                <span>{item.date} · ₹{item.price} · {item.rating} ★</span>
+                <span className="view-details">View details</span>
+              </span>
+            </button>
+            <FavoriteButton
+              className="results-favorite-button"
+              item={{
+                id: `experience:${item.id}`,
+                title: item.name,
+                category: item.category,
+                location: item.location,
+                price: item.price,
+                rating: item.rating,
+                image: item.image,
+                route: "/experience",
+                state: { experience: item },
+              }}
+            />
+          </article>
         ))}
       </div>
     </main>

@@ -34,14 +34,20 @@ function PaymentPage() {
     experience: { date: "Sat, 12 Sep", time: "7:30 PM", location: "Nungambakkam" },
   };
   const { priceDetails, guestSummary } = booking;
+<<<<<<< Updated upstream
   
   const displayTotal = isStoreOrder ? storeAmount : priceDetails.total;
   
+=======
+  const experience = booking.experience || {};
+>>>>>>> Stashed changes
   const bookingLocation = booking.experience?.location || "Nungambakkam";
   const [locationName, setLocationName] = useState(isStoreOrder ? (location.state?.storeName || 'Store') : bookingLocation);
   const formatPrice = (amount) => `₹${Number(amount).toLocaleString("en-IN")}`;
 
   useEffect(() => {
+    if (experience.viewingArea) return;
+
     let isMounted = true;
 
     async function loadLocation() {
@@ -53,7 +59,7 @@ function PaymentPage() {
     return () => {
       isMounted = false;
     };
-  }, [bookingLocation]);
+  }, [bookingLocation, experience.viewingArea]);
 
   return (
     <main
@@ -142,6 +148,7 @@ function PaymentPage() {
                       🛍️
                     </div>
                   </div>
+<<<<<<< Updated upstream
 
                   <div style={{ display: "grid", gap: "12px", color: "#2b332d" }}>
                     <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -194,6 +201,51 @@ function PaymentPage() {
                   </div>
                 </>
               )}
+=======
+                  <h2 style={{ margin: "8px 0 0", fontSize: "1.6rem" }}>
+                    {experience.title || experience.name || "Experience booking"}
+                  </h2>
+                </div>
+                <div
+                  style={{
+                    width: "52px",
+                    height: "52px",
+                    borderRadius: "16px",
+                    background: "linear-gradient(135deg, #c0dba4 0%, #6ca870 100%)",
+                    display: "grid",
+                    placeItems: "center",
+                    fontSize: "28px",
+                  }}
+                >
+                  {experience.viewingArea ? "🎟️" : "🍽️"}
+                </div>
+              </div>
+
+              <div style={{ display: "grid", gap: "12px", color: "#2b332d" }}>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ color: "#5d6b60" }}>Date</span>
+                    <strong>{experience.date || "Date not listed by organizer"}</strong>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ color: "#5d6b60" }}>Time</span>
+                    <strong>{experience.time || "Time not listed by organizer"}</strong>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ color: "#5d6b60" }}>Guests</span>
+                  <strong>{guestSummary}</strong>
+                </div>
+                {experience.viewingArea && (
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <span style={{ color: "#5d6b60" }}>Viewing area</span>
+                    <strong>{experience.viewingArea}</strong>
+                  </div>
+                )}
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ color: "#5d6b60" }}>Location</span>
+                  <strong>{locationName}</strong>
+                </div>
+              </div>
+>>>>>>> Stashed changes
             </div>
           </div>
 
@@ -381,7 +433,23 @@ function PaymentPage() {
           <div style={{ marginTop: "auto", display: "flex", gap: "12px" }}>
             <button
               type="button"
+<<<<<<< Updated upstream
               onClick={() => navigate(-1)}
+=======
+              onClick={() => {
+                if (experience.ticketAreaId && experience.id) {
+                  navigate(`/events/${experience.id}/book`, {
+                    state: {
+                      experience,
+                      selectedAreaId: experience.ticketAreaId,
+                      ticketQuantity: booking.ticketQuantity || booking.guests?.adult,
+                    },
+                  });
+                } else {
+                  navigate("/screen3", { state: { guests: booking.guests } });
+                }
+              }}
+>>>>>>> Stashed changes
               style={{
                 flex: 1,
                 border: "1px solid #0d5a49",

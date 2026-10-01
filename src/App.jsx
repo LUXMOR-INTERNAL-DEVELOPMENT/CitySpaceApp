@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 import BookingPage from "./screens/booking/BookingPage";
 import Guestcount from "./screens/guestcount/Guestcount";
@@ -16,17 +16,25 @@ import Store from "./screens/store/Store";
 import StoreDetail from "./screens/store/StoreDetail";
 import CategoryList from "./screens/store/CategoryList";
 import Diningexperience from "./screens/dinning/Diningexperience";
-import Diningcard from "./screens/dinning/Diningcard";
 import Diningdetail from "./screens/dinning/Diningdetail";
 import Eventscreen from "./screens/events/Eventscreen";
 import Eventdetails from "./screens/events/Eventdetail";
+<<<<<<< Updated upstream
 import SearchResults from "./screens/store/SearchResults";
 import Checkout from "./screens/checkout/Checkout";
+=======
+import EventBooking from "./screens/events/EventBooking";
+
+function RouteNavbar() {
+  const { pathname } = useLocation();
+  return pathname === "/signin" || pathname === "/signup" ? null : <Navbar />;
+}
+>>>>>>> Stashed changes
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <RouteNavbar />
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
@@ -61,6 +69,7 @@ function App() {
         <Route path="/dining" element={<Diningexperience />} />
         <Route path="/Diningexperience" element={<Diningexperience />} />
         <Route path="/events" element={<Eventscreen />} />
+        <Route path="/events/:id/book" element={<EventBooking />} />
         <Route path="/events/:id" element={<Eventdetails />} />
         <Route path="/Eventdetails" element={<Eventdetails />} />
         <Route path="/payment" element={<PaymentPage />} />

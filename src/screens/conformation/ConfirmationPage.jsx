@@ -16,10 +16,18 @@ function ConfirmationPage() {
   const guestSummary = isStoreOrder ? `${cartItems?.length || 1} Item(s)` : (booking?.guestSummary || "2 Adults");
   const total = isStoreOrder ? amount : (booking?.priceDetails?.total ?? 3270);
   const bookingLocation = booking?.experience?.location || "Nungambakkam";
+<<<<<<< Updated upstream
   const [locationName, setLocationName] = useState(isStoreOrder ? (storeName || "Store") : bookingLocation);
   const formatPrice = (amount) => `₹${Number(amount).toLocaleString("en-IN")}`;
+=======
+  const experience = booking?.experience || {};
+  const [locationName, setLocationName] = useState(bookingLocation);
+  const formatPrice = (amount) => `₹${amount.toLocaleString("en-IN")}`;
+>>>>>>> Stashed changes
 
   useEffect(() => {
+    if (experience.viewingArea) return;
+
     let isMounted = true;
 
     async function loadLocation() {
@@ -31,7 +39,7 @@ function ConfirmationPage() {
     return () => {
       isMounted = false;
     };
-  }, [bookingLocation]);
+  }, [bookingLocation, experience.viewingArea]);
 
   return (
     <main
@@ -116,6 +124,7 @@ function ConfirmationPage() {
               textAlign: "left",
             }}
           >
+<<<<<<< Updated upstream
             {(isStoreOrder
               ? [
                   ["Store", storeName || "Store"],
@@ -136,6 +145,19 @@ function ConfirmationPage() {
                   ["Amount paid", formatPrice(total)],
                 ]
             ).map(([label, value]) => (
+=======
+            {[
+              ["Experience", experience.title || experience.name || "Chef's Table Dinner"],
+              ["Confirmation number", confirmationNumber],
+              ["Date", experience.date || "Sat, 12 Sep"],
+              ["Time", experience.time || "7:30 PM"],
+              ...(experience.viewingArea ? [["Viewing area", experience.viewingArea]] : []),
+              ["Guests", guestSummary],
+              ["Location", locationName],
+              ["Payment", paymentMethod],
+              ["Amount paid", formatPrice(total)],
+            ].map(([label, value]) => (
+>>>>>>> Stashed changes
               <div key={label} style={{ background: "#fbfcf9", padding: "16px 18px" }}>
                 <div style={{ color: "#718076", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "7px" }}>
                   {label}
@@ -157,7 +179,9 @@ function ConfirmationPage() {
               textAlign: "left",
             }}
           >
-            Please arrive 15 minutes before your selected time. Keep your confirmation number available when you arrive.
+            {experience.viewingArea
+              ? "Keep your confirmation number available when you arrive. Your selected viewing area is included above."
+              : "Please arrive 15 minutes before your selected time. Keep your confirmation number available when you arrive."}
           </div>
 
           <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap" }}>

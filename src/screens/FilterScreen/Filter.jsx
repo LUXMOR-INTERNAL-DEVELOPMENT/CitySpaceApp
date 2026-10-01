@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Filter.css";
 
 const FilterPage = () => {
   const navigate = useNavigate();
+  const { category: routeCategory } = useParams();
 
   // Input values
   const [db, setDb] = useState([]);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(routeCategory || "");
   const [date, setDate] = useState("");
   const [priceRange, setPriceRange] = useState("");
   const [location, setLocation] = useState("");
@@ -18,6 +19,10 @@ const FilterPage = () => {
 
   // Final filtered data
   const [filteredResults, setFilteredResults] = useState([]);
+
+  useEffect(() => {
+    setCategory(routeCategory || "");
+  }, [routeCategory]);
 
   useEffect(() => {
     fetch("/db.json")

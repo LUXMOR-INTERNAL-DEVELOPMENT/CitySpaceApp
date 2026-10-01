@@ -19,7 +19,7 @@ function BookingPage() {
   return (
     <div className="page">
       <main>
-        <div className="step-title">02 Date &amp; Time</div>
+        {/* <div className="step-title">02 Date &amp; Time</div> */}
         <h1>Choose date and time</h1>
         <p className="subtitle">
           {experience?.title || experience?.name || "Choose your experience"}

@@ -1188,7 +1188,7 @@
       "payViaDistrict": false,
       "distance": 6,
       "audience": ["Women"],
-      "gender": ["Women"],
+      "gender": ["Women"], 
       "tags": ["Salon", "Beauty", "Makeup"],
       "products": []
     },

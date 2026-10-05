@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './Store.css';
 import Footer from '../footer/Footer';
 import { FiSearch, FiChevronRight, FiMapPin, FiChevronDown, FiCrosshair, FiX } from 'react-icons/fi';
+import Filter, { useStoreFilters } from './Filter';
+import SearchSuggestions from './SearchSuggestions';
 
 const StoreImage = ({ offer }) => {
   return (
@@ -21,10 +23,8 @@ const Store = () => {
   const [isOffersLoading, setIsOffersLoading] = useState(false);
   const [availableLocations, setAvailableLocations] = useState([]);
 
-  const [activeFilters, setActiveFilters] = useState([]);
-  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
-  const [modalActiveTab, setModalActiveTab] = useState('Shopping Category');
   const [showAllStores, setShowAllStores] = useState(false);
+  const { activeFilters, filteredStores, toggleFilter, clearFilters } = useStoreFilters(stores);
 
   // Location filter states
   const [userLocation, setUserLocation] = useState(() => localStorage.getItem('districtLocation') || 'Chennai');
@@ -54,79 +54,11 @@ const Store = () => {
     setShowSuggestions(query.length > 0);
   };
 
-  const getSearchResults = () => {
-    if (!heroSearchQuery) return { stores: [], categories: [], brands: [] };
-    const lowerQ = heroSearchQuery.toLowerCase();
-    
-    const matchedStores = stores.filter(s => s.name.toLowerCase().includes(lowerQ) || s.location.toLowerCase().includes(lowerQ));
-    const matchedCategories = categories.filter(c => c.name.toLowerCase().includes(lowerQ));
-    const matchedBrands = districtOffers.filter(o => o.title.toLowerCase().includes(lowerQ));
-    
-    return {
-      stores: matchedStores,
-      categories: matchedCategories,
-      brands: matchedBrands
-    };
-  };
-
-  const searchResults = getSearchResults();
-
   const handleSearchSubmit = () => {
     if (heroSearchQuery.trim()) {
       navigate(`/store-search?q=${encodeURIComponent(heroSearchQuery)}`);
     }
   };
-
-  const modalCategories = [
-    'Apparel', 'Footwear', 'Accessories', 'Salon', 
-    'Jewellery', 'Bags', 'Sports & Outdoors', 
-    'Skincare', 'Wellness', 'Fragrances'
-  ];
-
-  const toggleFilter = (filterName) => {
-    setActiveFilters(prev => 
-      prev.includes(filterName) 
-        ? prev.filter(f => f !== filterName)
-        : [...prev, filterName]
-    );
-  };
-  
-  const clearFilters = () => setActiveFilters([]);
-
-  const filteredStores = stores.filter(store => {
-    if (activeFilters.length === 0) return true;
-
-    const paymentActive = activeFilters.includes('Pay via District');
-    const distanceActive = activeFilters.includes('Under 10 km');
-    
-    const knownGenders = ['Women', 'Men', 'Kids', 'Unisex'];
-    const specialFilters = ['Pay via District', 'Under 10 km'];
-    
-    const catFilters = activeFilters.filter(f => !knownGenders.includes(f) && !specialFilters.includes(f));
-    const audienceFilters = activeFilters.filter(f => knownGenders.includes(f));
-
-    let passPayment = true;
-    if (paymentActive) {
-      passPayment = store.payViaDistrict === true;
-    }
-
-    let passDistance = true;
-    if (distanceActive) {
-      passDistance = (store.distance || 0) <= 10;
-    }
-
-    let passCat = true;
-    if (catFilters.length > 0) {
-      passCat = catFilters.includes(store.category) || catFilters.some(c => (store.category || '').includes(c));
-    }
-
-    let passAudience = true;
-    if (audienceFilters.length > 0) {
-      passAudience = audienceFilters.some(aud => (store.audience || []).includes(aud));
-    }
-
-    return passPayment && passDistance && passCat && passAudience;
-  });
 
   const filteredDistrictOffers = districtOffers.filter(offer => {
     const locMatch = (offer.city || '').toLowerCase().includes(userLocation.toLowerCase()) || 
@@ -200,57 +132,13 @@ const Store = () => {
               )}
               <button className="search-btn" onClick={handleSearchSubmit}><FiChevronRight /></button>
 
-              {/* LIVE SUGGESTIONS DROPDOWN */}
               {showSuggestions && heroSearchQuery && (
-                <div className="search-suggestions" style={{ position: 'absolute', top: '100%', left: 0, right: 0, background: 'white', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.15)', padding: '16px', zIndex: 100, marginTop: '8px', maxHeight: '400px', overflowY: 'auto', textAlign: 'left' }}>
-                  {searchResults.stores.length === 0 && searchResults.categories.length === 0 && searchResults.brands.length === 0 ? (
-                    <div style={{ padding: '12px', color: '#888', textAlign: 'center' }}>No results found for "{heroSearchQuery}"</div>
-                  ) : (
-                    <>
-                      {searchResults.stores.length > 0 && (
-                        <div className="suggestion-group">
-                          <h4 style={{ fontSize: '12px', color: '#888', textTransform: 'uppercase', marginBottom: '8px', marginTop: 0 }}>Stores</h4>
-                          {searchResults.stores.slice(0, 3).map((store, idx) => (
-                            <div key={idx} style={{ padding: '8px 12px', cursor: 'pointer', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }} className="suggestion-item" onClick={() => navigate(`/store/${idx}`, { state: { store } })}>
-                              <div style={{ width: '32px', height: '32px', borderRadius: '6px', background: `url(${store.image}) center/cover` }}></div>
-                              <div>
-                                <div style={{ fontWeight: 600, color: '#333' }}>{store.name}</div>
-                                <div style={{ fontSize: '12px', color: '#888' }}>{store.location}</div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                      
-                      {searchResults.categories.length > 0 && (
-                        <div className="suggestion-group" style={{ marginTop: '16px' }}>
-                          <h4 style={{ fontSize: '12px', color: '#888', textTransform: 'uppercase', marginBottom: '8px', marginTop: 0 }}>Categories</h4>
-                          {searchResults.categories.slice(0, 3).map((cat, idx) => (
-                            <div key={idx} style={{ padding: '8px 12px', cursor: 'pointer', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }} className="suggestion-item" onClick={() => navigate(`/store-category/${encodeURIComponent(cat.name)}`)}>
-                              <FiSearch color="#aaa" />
-                              <span style={{ fontWeight: 500, color: '#333' }}>{cat.name}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      {searchResults.brands.length > 0 && (
-                        <div className="suggestion-group" style={{ marginTop: '16px' }}>
-                          <h4 style={{ fontSize: '12px', color: '#888', textTransform: 'uppercase', marginBottom: '8px', marginTop: 0 }}>Brands & Offers</h4>
-                          {searchResults.brands.slice(0, 3).map((offer, idx) => (
-                            <div key={idx} style={{ padding: '8px 12px', cursor: 'pointer', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }} className="suggestion-item" onClick={() => navigate(`/store-search?q=${encodeURIComponent(offer.title)}`)}>
-                              <FiSearch color="#aaa" />
-                              <div>
-                                <div style={{ fontWeight: 500, color: '#333' }}>{offer.title}</div>
-                                <div style={{ fontSize: '12px', color: '#267E3E' }}>{offer.offer}</div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </>
-                  )}
-                </div>
+                <SearchSuggestions
+                  query={heroSearchQuery}
+                  stores={stores}
+                  categories={categories}
+                  offers={districtOffers}
+                />
               )}
             </div>
       </section>
@@ -367,21 +255,11 @@ const Store = () => {
           )}
         </div>
         
-        <div className="store-filters">
-          <button className={`filter-btn ${activeFilters.length > 0 ? 'active' : ''}`} onClick={() => setIsFilterModalOpen(true)}>
-            <FiSearch style={{ marginRight: '5px' }} /> Filters {activeFilters.length > 0 && `(${activeFilters.length})`}
-          </button>
-          {['Pay via District', 'Under 10 km', 'Apparel', 'Accessories', 'Personal', 'Shop', 'Women', 'Men', 'Kids'].map(f => (
-            <button 
-              key={f} 
-              className={`filter-btn ${activeFilters.includes(f) ? 'active' : ''}`}
-              onClick={() => toggleFilter(f)}
-            >
-              {f}
-              {activeFilters.includes(f) && <span style={{ marginLeft: '6px', fontWeight: 'bold' }}>×</span>}
-            </button>
-          ))}
-        </div>
+        <Filter
+          activeFilters={activeFilters}
+          toggleFilter={toggleFilter}
+          clearFilters={clearFilters}
+        />
 
         {filteredStores.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '80px 20px', background: '#fcfcfc', border: '1px dashed #e5e5e5', borderRadius: '16px' }}>
@@ -445,63 +323,6 @@ const Store = () => {
       </section>
 
       <Footer />
-
-      {isFilterModalOpen && (
-        <div className="filter-modal-overlay" onClick={() => setIsFilterModalOpen(false)}>
-          <div className="filter-modal-content" onClick={e => e.stopPropagation()}>
-            <div className="filter-modal-header">
-              <h3>Filter by</h3>
-              <button className="close-modal-btn" onClick={() => setIsFilterModalOpen(false)}>✕</button>
-            </div>
-            
-            <div className="filter-modal-body">
-              <div className="filter-modal-sidebar">
-                <div 
-                  className={`sidebar-tab ${modalActiveTab === 'Shopping Category' ? 'active' : ''}`}
-                  onClick={() => setModalActiveTab('Shopping Category')}
-                >
-                  Shopping Category
-                </div>
-                <div 
-                  className={`sidebar-tab ${modalActiveTab === 'Gender' ? 'active' : ''}`}
-                  onClick={() => setModalActiveTab('Gender')}
-                >
-                  Gender
-                </div>
-              </div>
-              
-              <div className="filter-modal-options">
-                {modalActiveTab === 'Shopping Category' && modalCategories.map(cat => (
-                  <label key={cat} className="filter-checkbox-label">
-                    <input 
-                      type="checkbox" 
-                      checked={activeFilters.includes(cat)}
-                      onChange={() => toggleFilter(cat)}
-                    />
-                    <span>{cat}</span>
-                  </label>
-                ))}
-                
-                {modalActiveTab === 'Gender' && ['Men', 'Women', 'Kids', 'Unisex'].map(gender => (
-                  <label key={gender} className="filter-checkbox-label">
-                    <input 
-                      type="checkbox" 
-                      checked={activeFilters.includes(gender)}
-                      onChange={() => toggleFilter(gender)}
-                    />
-                    <span>{gender}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            <div className="filter-modal-footer">
-              <button className="clear-filters-btn" onClick={clearFilters}>Clear filters</button>
-              <button className="apply-filters-btn" onClick={() => setIsFilterModalOpen(false)}>Apply Filters</button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {isLocationModalOpen && (
         <div className="loc-selector-overlay" onClick={() => setIsLocationModalOpen(false)}>

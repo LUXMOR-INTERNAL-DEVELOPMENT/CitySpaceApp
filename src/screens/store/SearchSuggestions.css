@@ -1,0 +1,84 @@
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  max-height: 400px;
+  margin-top: 8px;
+  padding: 16px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.search-suggestions-empty {
+  padding: 12px;
+  color: #888;
+  text-align: center;
+}
+
+.suggestion-group + .suggestion-group {
+  margin-top: 16px;
+}
+
+.suggestion-heading {
+  margin: 0 0 8px;
+  color: #888;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.suggestion-store-image {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: 6px;
+  background-position: center;
+  background-size: cover;
+}
+
+.suggestion-item-details {
+  min-width: 0;
+}
+
+.suggestion-store-name {
+  color: #333;
+  font-weight: 600;
+}
+
+.suggestion-store-location {
+  color: #888;
+  font-size: 12px;
+}
+
+.suggestion-search-icon {
+  flex: 0 0 auto;
+  color: #aaa;
+}
+
+.suggestion-category-name {
+  color: #333;
+  font-weight: 500;
+}
+
+.suggestion-offer-title {
+  color: #333;
+  font-weight: 500;
+}
+
+.suggestion-offer-description {
+  color: #267e3e;
+  font-size: 12px;
+}

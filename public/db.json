@@ -949,7 +949,7 @@
       "distance": 8,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Salon", "Spa", "Haircut", "Wellness"],
+      "tags": ["Salon", "Spa", "Haircut", "Wellness", "Beauty & Wellness"],
       "products": []
     },
     {
@@ -1189,7 +1189,7 @@
       "distance": 6,
       "audience": ["Women"],
       "gender": ["Women"],
-      "tags": ["Salon", "Beauty", "Makeup"],
+      "tags": ["Salon", "Beauty", "Makeup", "Beauty & Wellness"],
       "products": []
     },
     {
@@ -1206,6 +1206,70 @@
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
       "tags": ["Home", "Furniture", "Decor", "Gifting"],
+      "products": []
+    },
+    {
+      "id": "s48",
+      "name": "Sephora",
+      "location": "Express Avenue, Chennai",
+      "city": "Chennai",
+      "category": "Beauty",
+      "subCategory": "Beauty & Cosmetics",
+      "offer": "Complimentary Beauty Consultation",
+      "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 7,
+      "audience": ["Women", "Men"],
+      "gender": ["Women", "Men"],
+      "tags": ["Beauty & Wellness", "Makeup", "Skincare", "Fragrance"],
+      "products": []
+    },
+    {
+      "id": "s49",
+      "name": "Health & Glow",
+      "location": "T Nagar, Chennai",
+      "city": "Chennai",
+      "category": "Beauty",
+      "subCategory": "Skincare & Beauty",
+      "offer": "15% OFF on Selected Skincare",
+      "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 5,
+      "audience": ["Women", "Men"],
+      "gender": ["Women", "Men"],
+      "tags": ["Beauty & Wellness", "Skincare", "Haircare", "Personal Care"],
+      "products": []
+    },
+    {
+      "id": "s50",
+      "name": "O2 Spa",
+      "location": "Phoenix Marketcity, Chennai",
+      "city": "Chennai",
+      "category": "Wellness",
+      "subCategory": "Spa & Massage",
+      "offer": "20% OFF on Signature Spa Packages",
+      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=300&q=80",
+      "payViaDistrict": false,
+      "distance": 9,
+      "audience": ["Women", "Men"],
+      "gender": ["Women", "Men"],
+      "tags": ["Beauty & Wellness", "Spa", "Massage", "Relaxation"],
+      "products": []
+    },
+    {
+      "id": "s51",
+      "name": "Sattva Yoga & Wellness",
+      "location": "Adyar, Chennai",
+      "city": "Chennai",
+      "category": "Wellness",
+      "subCategory": "Yoga & Meditation",
+      "offer": "First Class Free",
+      "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=80",
+      "payViaDistrict": true,
+      "distance": 4,
+      "audience": ["Women", "Men", "Kids"],
+      "gender": ["Women", "Men", "Kids"],
+      "tags": ["Beauty & Wellness", "Yoga", "Meditation", "Fitness"],
       "products": []
     }
   ],
@@ -1397,6 +1461,22 @@
     "Home Centre": [
       { "name": "Textured Accent Cushion", "price": "₹899", "rating": "4.6 (108)", "desc": "A decorative cushion to add a soft accent to your living room.", "img": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=300&q=80" },
       { "name": "Modern Table Lamp", "price": "₹2,499", "rating": "4.5 (91)", "desc": "A warm ambient table lamp with a contemporary silhouette.", "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=300&q=80" }
+    ],
+    "Sephora": [
+      { "name": "Everyday Glow Makeup Set", "price": "₹2,499", "rating": "4.7 (138)", "desc": "A curated set of everyday makeup essentials for a fresh, natural look.", "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&q=80" },
+      { "name": "Hydrating Face Serum", "price": "₹1,899", "rating": "4.6 (104)", "desc": "A lightweight hydrating serum for a smooth, radiant-feeling complexion.", "img": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80" }
+    ],
+    "Health & Glow": [
+      { "name": "Vitamin C Brightening Serum", "price": "₹999", "rating": "4.6 (116)", "desc": "A daily facial serum formulated for a bright, refreshed appearance.", "img": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80" },
+      { "name": "Nourishing Hair Mask", "price": "₹749", "rating": "4.5 (82)", "desc": "A weekly conditioning treatment for soft, manageable hair.", "img": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&q=80" }
+    ],
+    "O2 Spa": [
+      { "name": "Aromatherapy Massage", "price": "₹2,499", "rating": "4.8 (95)", "desc": "A relaxing massage experience using aromatic oils and calming techniques.", "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=300&q=80" },
+      { "name": "Express Refresh Facial", "price": "₹1,499", "rating": "4.6 (71)", "desc": "A refreshing facial service focused on cleansing and hydration.", "img": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&q=80" }
+    ],
+    "Sattva Yoga & Wellness": [
+      { "name": "Beginner Yoga Class", "price": "₹499", "rating": "4.8 (64)", "desc": "A guided beginner-friendly yoga session focused on movement and breath.", "img": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=80" },
+      { "name": "Guided Meditation Session", "price": "₹399", "rating": "4.7 (52)", "desc": "A calming guided meditation session for focus and relaxation.", "img": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=300&q=80" }
     ]
   },
   "Locations": ["Chennai", "Gurgaon", "Mumbai", "Bangalore", "Delhi", "Pune", "Hyderabad"],

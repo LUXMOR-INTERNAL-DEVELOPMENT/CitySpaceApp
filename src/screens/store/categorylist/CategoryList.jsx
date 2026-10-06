@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './CategoryList.css';
-import Filter, { useStoreFilters } from './Filter';
+import Filter, { useStoreFilters } from '../filter/Filter';
 
 const CategoryList = () => {
   const { name } = useParams();

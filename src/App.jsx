@@ -12,16 +12,16 @@ import ExperienceDetails from "./screens/exploreexperience/Experiencedetails";
 import Navbar from "./screens/home/Navbar";
 import Signin from "./screens/login/Signin";
 import Signup from "./screens/login/Signup";  
-import Store from "./screens/store/Store";
-import StoreDetail from "./screens/store/StoreDetail";
-import CategoryList from "./screens/store/CategoryList";
+import Store from "./screens/store/store/Store";
+import StoreDetail from "./screens/store/storedetail/StoreDetail";
+import CategoryList from "./screens/store/categorylist/CategoryList";
 import Diningexperience from "./screens/dinning/Diningexperience";
 import Diningcard from "./screens/dinning/Diningcard";
 import Diningdetail from "./screens/dinning/Diningdetail";
 import Eventscreen from "./screens/events/Eventscreen";
 import Eventdetails from "./screens/events/Eventdetail";
 import SearchResults from "./screens/store/SearchResults";
-import Checkout from "./screens/checkout/Checkout";
+import Checkout from "./screens/store/checkout/Checkout";
 
 function App() {
   return (
@@ -75,8 +75,6 @@ function App() {
 }
 
 export default App;
-
-
 
 
 

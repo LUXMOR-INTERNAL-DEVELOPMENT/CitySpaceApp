@@ -33,7 +33,7 @@ const SearchSuggestions = ({ query, stores, categories, offers }) => {
                 <div
                   key={idx}
                   className="suggestion-item suggestion-store-item"
-                  onClick={() => navigate(`/store/${idx}`, { state: { store } })}
+                  onClick={() => navigate(`/store/${encodeURIComponent(store.id || store.name)}`, { state: { store } })}
                 >
                   <div className="suggestion-store-image" style={{ backgroundImage: `url(${store.image})` }}></div>
                   <div className="suggestion-item-details">

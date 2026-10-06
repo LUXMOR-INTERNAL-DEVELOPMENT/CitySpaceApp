@@ -279,7 +279,7 @@ const Store = () => {
                 <div 
                   key={idx} 
                   className="store-card"
-                  onClick={() => navigate(`/store/${idx}`, { state: { store } })}
+                  onClick={() => navigate(`/store/${encodeURIComponent(store.id || store.name)}`, { state: { store } })}
                   style={{ cursor: 'pointer' }}
                 >
                   <StoreImage src={store.image} alt={store.name} offer={store.offer} />

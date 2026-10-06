@@ -6,6 +6,17 @@
   color: #333;
 }
 
+.store-detail-status {
+  display: flex;
+  min-height: 50vh;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  color: #666;
+  text-align: center;
+}
+
 .store-detail-header {
   display: flex;
   justify-content: space-between;

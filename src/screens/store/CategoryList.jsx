@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './CategoryList.css';
+import Filter, { useStoreFilters } from './Filter';
 
 const CategoryList = () => {
   const { name } = useParams();
   const navigate = useNavigate();
   const [stores, setStores] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { activeFilters, filteredStores, toggleFilter, clearFilters } = useStoreFilters(stores);
 
   useEffect(() => {
     fetch('/db.json')
@@ -50,32 +52,53 @@ const CategoryList = () => {
 
 
       <div className="category-results-header">
-        <h2>{stores.length} Stores to explore</h2>
+        <h2>{filteredStores.length} Stores to explore</h2>
       </div>
 
-      <div className="category-stores-grid">
-        {stores.map((store, idx) => (
-          <div 
-            key={idx} 
-            className="category-store-card"
-            onClick={() => navigate(`/store/${idx}`, { state: { store } })}
-          >
-            <div className="store-image-wrapper">
-              <img src={store.image} alt={store.name} className="store-img" />
-              {store.offer && <div className="store-offer-tag">{store.offer}</div>}
-            </div>
-            <div className="store-info">
-              <h3 className="store-name">{store.name}</h3>
-              <div className="store-meta">
-                <span className="store-rating">✪ {store.rating || '4.2'}</span>
-                <span className="dot">•</span>
-                <span className="store-distance">{store.location}</span>
+      <Filter
+        activeFilters={activeFilters}
+        toggleFilter={toggleFilter}
+        clearFilters={clearFilters}
+      />
+
+      {filteredStores.length === 0 ? (
+        <div className="category-no-stores">
+          <p>
+            {stores.length === 0
+              ? `No stores found in ${name}.`
+              : 'No stores match the selected filters.'}
+          </p>
+          {activeFilters.length > 0 && (
+            <button className="category-clear-filters" onClick={clearFilters}>
+              Clear filters
+            </button>
+          )}
+        </div>
+      ) : (
+        <div className="category-stores-grid">
+          {filteredStores.map((store, idx) => (
+            <div
+              key={idx}
+              className="category-store-card"
+              onClick={() => navigate(`/store/${encodeURIComponent(store.id || store.name)}`, { state: { store } })}
+            >
+              <div className="store-image-wrapper">
+                <img src={store.image} alt={store.name} className="store-img" />
+                {store.offer && <div className="store-offer-tag">{store.offer}</div>}
               </div>
-              <p className="store-categories">{store.category}</p>
+              <div className="store-info">
+                <h3 className="store-name">{store.name}</h3>
+                <div className="store-meta">
+                  <span className="store-rating">✪ {store.rating || '4.2'}</span>
+                  <span className="dot">•</span>
+                  <span className="store-distance">{store.location}</span>
+                </div>
+                <p className="store-categories">{store.category}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

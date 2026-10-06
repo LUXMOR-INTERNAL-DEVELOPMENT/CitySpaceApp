@@ -68,7 +68,7 @@ const SearchResults = () => {
                   {matchedStores.map((store, idx) => (
                     <div 
                       key={idx} 
-                      onClick={() => navigate(`/store/${idx}`, { state: { store } })}
+                      onClick={() => navigate(`/store/${encodeURIComponent(store.id || store.name)}`, { state: { store } })}
                       style={{ border: '1px solid #eee', borderRadius: '12px', overflow: 'hidden', cursor: 'pointer', transition: 'transform 0.2s', background: 'white' }}
                       onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-4px)'}
                       onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}

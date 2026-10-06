@@ -1,6 +1,4 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import db from '../../data/db.json';
 import './Home.css';
 import Footer from '../footer/Footer';
 
@@ -98,7 +96,7 @@ const fallbackHomepage = {
   ],
 };
 
-const homepageData = db?.homepage || fallbackHomepage;
+const homepageData = fallbackHomepage;
 
 const filterCategories = {
   Music: 'Events',

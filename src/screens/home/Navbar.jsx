@@ -4,6 +4,15 @@ import LocationModal from "./Navigation";
 import "./Navbar.css";
 
 const AUTH_KEY = "cityspace_user";
+const LOCATION_KEY = "cityspace_location";
+
+const getStoredLocation = () => {
+  try {
+    return localStorage.getItem(LOCATION_KEY) || "";
+  } catch {
+    return "";
+  }
+};
 
 const getStoredUser = () => {
   try {
@@ -16,8 +25,10 @@ const getStoredUser = () => {
 
 const Navbar = () => {
   const [currentUser, setCurrentUser] = useState(getStoredUser());
-  const [fetchedLocation, setFetchedLocation] = useState("Detecting location...");
-  const [manualLocation, setManualLocation] = useState("");
+  const [fetchedLocation, setFetchedLocation] = useState(
+    navigator.geolocation ? "Detecting location..." : "Location unavailable"
+  );
+  const [manualLocation, setManualLocation] = useState(getStoredLocation);
   const isLoggedIn = Boolean(currentUser);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isLocationOpen, setIsLocationOpen] = useState(false);
@@ -40,10 +51,21 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (!navigator.geolocation) {
-      setFetchedLocation("Location unavailable");
-      return;
+    const location = manualLocation || fetchedLocation;
+    if (!location || /detecting|unavailable|current location/i.test(location)) return;
+
+    try {
+      localStorage.setItem(LOCATION_KEY, location);
+    } catch {
+      // The in-memory event still updates the current page if storage is unavailable.
     }
+    window.dispatchEvent(
+      new CustomEvent("cityspace-location-change", { detail: location })
+    );
+  }, [manualLocation, fetchedLocation]);
+
+  useEffect(() => {
+    if (!navigator.geolocation) return;
 
     const handlePosition = async ({ coords }) => {
       try {

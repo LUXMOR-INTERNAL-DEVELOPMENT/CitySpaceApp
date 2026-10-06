@@ -11,9 +11,9 @@ import ResultsPage from "./screens/FilterScreen/ResultsPage";
 import ExperienceDetails from "./screens/exploreexperience/Experiencedetails";
 import Navbar from "./screens/home/Navbar";
 import Signin from "./screens/login/Signin";
-import Signup from "./screens/login/Signup";  
-import Diningexperience from "./screens/dinning/Diningexperience";
-import Diningdetail from "./screens/dinning/Diningdetail";
+import Signup from "./screens/login/Signup";
+import Diningexperience from "./screens/diningexperiences/Trendingdining/Trendingdining";
+import Diningdetail from "./screens/diningexperiences/Diningdetail/Diningdetail";
 import Eventscreen from "./screens/events/Eventscreen";
 import Eventdetails from "./screens/events/Eventdetail";
 function App() {
@@ -44,6 +44,7 @@ function App() {
         <Route path="/screen5" element={<ExperienceDetails />} />
         <Route path="*" element={<Navigate to="/home" replace />} />
         <Route path="/dining/:id" element={<Diningdetail />} />
+        <Route path="/dining/category/:category" element={<Diningexperience />} />
         <Route path="/diningmatches" element={<ResultsPage />} />
         <Route path="/dining/:id" element={<Diningdetail />} />
         <Route path="/dining" element={<Diningexperience />} />
@@ -63,7 +64,6 @@ function App() {
 }
 
 export default App;
-
 
 
 

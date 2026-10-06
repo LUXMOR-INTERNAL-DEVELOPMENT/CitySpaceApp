@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import initialDb from '../../data/db.json';
 import './Signup.css';
 
 const mainBanner = 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80';
@@ -21,7 +20,7 @@ const persistAuthUser = (user) => {
 };
 
 const saveToLocalDb = (userData) => {
-  let users = initialDb?.users || [];
+  let users = [];
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {

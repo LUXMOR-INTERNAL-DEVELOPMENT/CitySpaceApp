@@ -20,7 +20,6 @@ import Diningcard from "./screens/dinning/Diningcard";
 import Diningdetail from "./screens/dinning/Diningdetail";
 import Eventscreen from "./screens/events/Eventscreen";
 import Eventdetails from "./screens/events/Eventdetail";
-import SearchResults from "./screens/store/SearchResults";
 import Checkout from "./screens/store/checkout/Checkout";
 
 function App() {
@@ -33,7 +32,6 @@ function App() {
         <Route path="/stores" element={<Store />} />
         <Route path="/store/:id" element={<StoreDetail />} />
         <Route path="/store-category/:name" element={<CategoryList />} />
-        <Route path="/store-search" element={<SearchResults />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
@@ -75,7 +73,4 @@ function App() {
 }
 
 export default App;
-
-
-
 

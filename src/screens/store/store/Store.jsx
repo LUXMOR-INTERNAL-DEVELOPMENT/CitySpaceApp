@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Store.css';
 import Footer from '../../footer/Footer';
@@ -33,7 +33,7 @@ const Store = () => {
   return (
     <div className="store-page-container">
       <section className="store-categories-section">
-        <h2>Shop by Category</h2>
+        <h2>Explore by Category</h2>
         <div className="category-marquee" aria-label="Store categories">
           <div className="category-marquee-track">
             {[0, 1].map(copy => (
@@ -74,7 +74,6 @@ const Store = () => {
           toggleFilter={toggleFilter}
           clearFilters={clearFilters}
         />
-
         {filteredStores.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '80px 20px', background: '#fcfcfc', border: '1px dashed #e5e5e5', borderRadius: '16px' }}>
             <h3 style={{ margin: '0 0 10px 0', color: '#333' }}>No stores found</h3>
@@ -90,8 +89,8 @@ const Store = () => {
           <>
             <div className="stores-grid">
               {(showAllStores ? filteredStores : filteredStores.slice(0, 9)).map((store, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="store-card"
                   onClick={() => navigate(`/store/${encodeURIComponent(store.id || store.name)}`, { state: { store } })}
                   style={{ cursor: 'pointer' }}

@@ -545,6 +545,488 @@
       "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=150&q=80"
     }
   ],
+  "StoreCatalogues": {
+    "Apparel": [
+      {
+        "label": "NEW SEASON",
+        "title": "New season styles",
+        "description": "Fresh looks and seasonal favourites.",
+        "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "EVERYDAY",
+        "title": "Everyday essentials",
+        "description": "Easy-to-wear pieces for every day.",
+        "image": "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "COLLECTION",
+        "title": "Signature collection",
+        "description": "Discover the latest collection in store.",
+        "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=700&h=500&fit=crop"
+      }
+    ],
+    "Clothing": [
+      {
+        "label": "COLLECTION",
+        "title": "Latest arrivals",
+        "description": "New-season pieces for your wardrobe.",
+        "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "STYLE EDIT",
+        "title": "Everyday fashion",
+        "description": "Versatile looks for every occasion.",
+        "image": "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=700&h=500&fit=crop"
+      }
+    ],
+    "Western Casual": [
+      {
+        "label": "DENIM",
+        "title": "Denim essentials",
+        "description": "Find your next favourite fit.",
+        "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "CASUAL",
+        "title": "Off-duty classics",
+        "description": "Relaxed pieces made for everyday wear.",
+        "image": "https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=700&h=500&fit=crop"
+      }
+    ],
+    "Ethnic Wear": [
+      {
+        "label": "ETHNIC",
+        "title": "Festive occasionwear",
+        "description": "Traditional details for special moments.",
+        "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "COLLECTION",
+        "title": "Modern tradition",
+        "description": "Contemporary silhouettes with timeless craft.",
+        "image": "https://images.unsplash.com/photo-1583391733956-6c78276477e4?w=700&h=500&fit=crop"
+      }
+    ],
+    "Formal & Workwear": [
+      {
+        "label": "WORKWEAR",
+        "title": "The work edit",
+        "description": "Polished essentials for the working week.",
+        "image": "https://images.unsplash.com/photo-1593030761757-71fae46af504?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "FORMAL",
+        "title": "Tailored classics",
+        "description": "Smart styles for every occasion.",
+        "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=700&h=500&fit=crop"
+      }
+    ],
+    "Footwear": [
+      {
+        "label": "FOOTWEAR",
+        "title": "Find your fit",
+        "description": "Explore new footwear for every day.",
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "NEW ARRIVALS",
+        "title": "Latest kicks",
+        "description": "Fresh designs just landed in store.",
+        "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=700&h=500&fit=crop"
+      }
+    ],
+    "Nike": [
+      {
+        "label": "RUNNING",
+        "title": "Run your way",
+        "description": "Running footwear and performance styles.",
+        "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "SPORTSTYLE",
+        "title": "Nike classics",
+        "description": "Sport-inspired sneakers for every day.",
+        "image": "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "TRAINING",
+        "title": "Made to move",
+        "description": "Performance essentials for your next workout.",
+        "image": "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=700&h=500&fit=crop"
+      }
+    ],
+    "adidas": [
+      {
+        "label": "RUNNING",
+        "title": "Everyday performance",
+        "description": "Find the right footwear for your next run.",
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "ORIGINALS",
+        "title": "Sportstyle icons",
+        "description": "Classic sport-inspired looks for the city.",
+        "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "TRAINING",
+        "title": "Ready for training",
+        "description": "Gear up for workouts and active days.",
+        "image": "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=700&h=500&fit=crop"
+      }
+    ],
+    "Sneakers": [
+      {
+        "label": "SNEAKERS",
+        "title": "New sneaker drops",
+        "description": "Discover standout pairs and everyday icons.",
+        "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "SPORTSTYLE",
+        "title": "Street-ready classics",
+        "description": "Sport-inspired style made for the city.",
+        "image": "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=700&h=500&fit=crop"
+      }
+    ],
+    "Shoes": [
+      {
+        "label": "FOOTWEAR",
+        "title": "Shoes for every day",
+        "description": "Explore comfortable styles for every occasion.",
+        "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "COLLECTION",
+        "title": "Step into the season",
+        "description": "New shapes and colours for the season.",
+        "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=700&h=500&fit=crop"
+      }
+    ],
+    "Accessories": [
+      {
+        "label": "ACCESSORIES",
+        "title": "Finishing touches",
+        "description": "The details that make your look your own.",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "COLLECTION",
+        "title": "Everyday favourites",
+        "description": "Discover accessories for daily life.",
+        "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=700&h=500&fit=crop"
+      }
+    ],
+    "Bags & Luggage": [
+      {
+        "label": "TRAVEL",
+        "title": "Ready for the journey",
+        "description": "Travel bags and luggage for your next trip.",
+        "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "BAGS",
+        "title": "Carry your essentials",
+        "description": "Explore practical bags for every day.",
+        "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=700&h=500&fit=crop"
+      }
+    ],
+    "Sunglasses": [
+      {
+        "label": "EYEWEAR",
+        "title": "Find your frames",
+        "description": "Explore sunglasses in timeless and modern shapes.",
+        "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "STYLE",
+        "title": "Sun-ready looks",
+        "description": "A new perspective on everyday eyewear.",
+        "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=700&h=500&fit=crop"
+      }
+    ],
+    "Watches": [
+      {
+        "label": "TIMEPIECES",
+        "title": "Make time yours",
+        "description": "Discover watches for work, weekends and more.",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "COLLECTION",
+        "title": "Classic designs",
+        "description": "Everyday timepieces with enduring style.",
+        "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=700&h=500&fit=crop"
+      }
+    ],
+    "Jewellery": [
+      {
+        "label": "JEWELLERY",
+        "title": "Made to celebrate",
+        "description": "Discover pieces for life's special moments.",
+        "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "COLLECTION",
+        "title": "Everyday elegance",
+        "description": "Signature designs to treasure every day.",
+        "image": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=700&h=500&fit=crop"
+      }
+    ],
+    "Fine Jewellery": [
+      {
+        "label": "FINE JEWELLERY",
+        "title": "A timeless sparkle",
+        "description": "Explore fine pieces for life's milestones.",
+        "image": "https://images.unsplash.com/photo-1599643478514-4a820cbf311e?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "GOLD",
+        "title": "Golden traditions",
+        "description": "Classic craftsmanship with a modern touch.",
+        "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&h=500&fit=crop"
+      }
+    ],
+    "Gold & Diamonds": [
+      {
+        "label": "DIAMONDS",
+        "title": "A brilliant occasion",
+        "description": "Celebrate special moments with timeless designs.",
+        "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "GOLD",
+        "title": "Gold classics",
+        "description": "Discover enduring designs for every celebration.",
+        "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&h=500&fit=crop"
+      }
+    ],
+    "Personal": [
+      {
+        "label": "BEAUTY",
+        "title": "Your beauty edit",
+        "description": "Explore makeup, skincare and everyday favourites.",
+        "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "SKINCARE",
+        "title": "A little self-care",
+        "description": "Find essentials for your daily routine.",
+        "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=700&h=500&fit=crop"
+      }
+    ],
+    "Beauty": [
+      {
+        "label": "BEAUTY",
+        "title": "The beauty collection",
+        "description": "Discover makeup and beauty favourites.",
+        "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "SKINCARE",
+        "title": "Skincare essentials",
+        "description": "Build your everyday skincare routine.",
+        "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=700&h=500&fit=crop"
+      }
+    ],
+    "Beauty & Cosmetics": [
+      {
+        "label": "MAKEUP",
+        "title": "The makeup edit",
+        "description": "Explore colour, texture and beauty essentials.",
+        "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "FRAGRANCE",
+        "title": "Find your signature",
+        "description": "Discover scents and beauty favourites.",
+        "image": "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=700&h=500&fit=crop"
+      }
+    ],
+    "Skincare & Beauty": [
+      {
+        "label": "SKINCARE",
+        "title": "Everyday skin essentials",
+        "description": "Discover care for your daily routine.",
+        "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "BEAUTY",
+        "title": "Beauty favourites",
+        "description": "Explore selected skincare and beauty picks.",
+        "image": "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=700&h=500&fit=crop"
+      }
+    ],
+    "Retail": [
+      {
+        "label": "IN STORE",
+        "title": "Explore the collection",
+        "description": "Discover featured finds and store favourites.",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "NEW ARRIVALS",
+        "title": "Just arrived",
+        "description": "See what's new at your neighbourhood store.",
+        "image": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=700&h=500&fit=crop"
+      }
+    ],
+    "Supermarket": [
+      {
+        "label": "FRESH PICKS",
+        "title": "Fresh for every day",
+        "description": "Browse fresh food and everyday essentials.",
+        "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "PANTRY",
+        "title": "Stock up on staples",
+        "description": "Find the essentials for your kitchen.",
+        "image": "https://images.unsplash.com/photo-1604719312566-8912e9c8a213?w=700&h=500&fit=crop"
+      }
+    ],
+    "Electronics": [
+      {
+        "label": "TECH",
+        "title": "Upgrade your everyday",
+        "description": "Explore the latest in personal technology.",
+        "image": "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "HOME TECH",
+        "title": "Smart living",
+        "description": "Discover devices for work, home and play.",
+        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&h=500&fit=crop"
+      }
+    ],
+    "Home & Furniture": [
+      {
+        "label": "HOME",
+        "title": "Make room for living",
+        "description": "Explore furniture and ideas for your home.",
+        "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "LIVING",
+        "title": "Refresh your space",
+        "description": "Small details and furnishings for every room.",
+        "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=700&h=500&fit=crop"
+      }
+    ],
+    "Gifting": [
+      {
+        "label": "GIFTING",
+        "title": "A gift for every moment",
+        "description": "Find thoughtful gifts for someone special.",
+        "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "CELEBRATE",
+        "title": "Make it memorable",
+        "description": "Discover flowers and thoughtful surprises.",
+        "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700&h=500&fit=crop"
+      }
+    ],
+    "Daawat Restaurant": [
+      {
+        "label": "MENU HIGHLIGHT",
+        "title": "A table worth sharing",
+        "description": "Explore rich flavours and restaurant favourites.",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "SIGNATURE",
+        "title": "Fresh from the kitchen",
+        "description": "Discover delicious dishes made for gathering.",
+        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&h=500&fit=crop"
+      }
+    ],
+    "Haldiram's": [
+      {
+        "label": "FAVOURITES",
+        "title": "Snacks to share",
+        "description": "Explore savoury snacks and treats for every occasion.",
+        "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "SWEET TREATS",
+        "title": "Something sweet",
+        "description": "Find a treat to enjoy or share with friends.",
+        "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700&h=500&fit=crop"
+      }
+    ],
+    "Decathlon": [
+      {
+        "label": "SPORTS",
+        "title": "Get ready to play",
+        "description": "Discover gear for sport, training and outdoor adventures.",
+        "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "OUTDOORS",
+        "title": "Adventure starts here",
+        "description": "Explore essentials for your next outdoor escape.",
+        "image": "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=700&h=500&fit=crop"
+      }
+    ],
+    "Sports Wear": [
+      {
+        "label": "TRAINING",
+        "title": "Made to move",
+        "description": "Performance essentials for your next workout.",
+        "image": "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "SPORTSTYLE",
+        "title": "Ready for anything",
+        "description": "Sport-inspired apparel for active days.",
+        "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=700&h=500&fit=crop"
+      }
+    ],
+    "Salon & Spa": [
+      {
+        "label": "SALON",
+        "title": "Your salon refresh",
+        "description": "Discover haircare and salon services.",
+        "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "HAIRCARE",
+        "title": "Care for your hair",
+        "description": "Find inspiration for your next look.",
+        "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&h=500&fit=crop"
+      }
+    ],
+    "Spa & Massage": [
+      {
+        "label": "SPA",
+        "title": "Find your calm",
+        "description": "Explore relaxing spa and massage experiences.",
+        "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "WELLNESS",
+        "title": "A moment to unwind",
+        "description": "Make time for rest and rejuvenation.",
+        "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=700&h=500&fit=crop"
+      }
+    ],
+    "Yoga & Meditation": [
+      {
+        "label": "YOGA",
+        "title": "Move with intention",
+        "description": "Explore mindful movement and yoga sessions.",
+        "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=700&h=500&fit=crop"
+      },
+      {
+        "label": "MINDFULNESS",
+        "title": "Make space to breathe",
+        "description": "Find balance through meditation and wellness.",
+        "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&h=500&fit=crop"
+      }
+    ]
+  },
   "Stores": [
     {
       "id": "s1",
@@ -559,8 +1041,7 @@
       "distance": 5,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Groceries", "Daily Needs"],
-      "products": []
+      "tags": ["Groceries", "Daily Needs"]
     },
     {
       "name": "Apollo Pharmacy",
@@ -570,7 +1051,46 @@
       "image": "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=300&q=80",
       "payViaDistrict": false,
       "distance": 12,
-      "audience": ["Men", "Women", "Kids"]
+      "audience": ["Men", "Women", "Kids"],
+      "phone": "+914424441234",
+      "detail": {
+        "address": "No. 12, LB Road, Adyar, Chennai, Tamil Nadu 600020",
+        "openingHours": "Open today · 8:00 AM – 10:00 PM",
+        "gallery": [
+          "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1576602976047-174e57a47881?w=900&h=700&fit=crop",
+          "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&h=700&fit=crop",
+          "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=900&h=700&fit=crop"
+        ],
+        "offers": [
+          {
+            "title": "₹50 OFF on purchases above ₹2,000",
+            "description": "Save on your next visit. Terms and exclusions may apply.",
+            "validUntil": "31 Dec 2026"
+          },
+          {
+            "title": "Free pharmacist consultation",
+            "description": "Speak with our in-store pharmacist for help with everyday wellness."
+          }
+        ],
+        "catalogue": [
+          {
+            "label": "WELLNESS",
+            "title": "Everyday wellness",
+            "description": "Explore health and personal-care essentials.",
+            "image": "https://images.unsplash.com/photo-1550572017-edd951b55104?w=700&h=500&fit=crop"
+          },
+          {
+            "label": "PERSONAL CARE",
+            "title": "Self-care essentials",
+            "description": "A curated range for your daily routine.",
+            "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=700&h=500&fit=crop"
+          }
+        ],
+        "description": "Apollo Pharmacy brings trusted medicines, healthcare essentials and everyday wellness services to the Adyar neighbourhood. Visit the store for friendly assistance and a convenient shopping experience.",
+        "highlights": ["Medicines", "Health essentials", "Personal care", "Pharmacist assistance"],
+        "aboutImage": "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=900&h=650&fit=crop"
+      }
     },
     {
       "name": "Daawat Restaurant",
@@ -725,8 +1245,7 @@
       "distance": 5,
       "audience": ["Kids"],
       "gender": ["Kids"],
-      "tags": ["Kids", "Fashion"],
-      "products": []
+      "tags": ["Kids", "Fashion"]
     },
     {
       "id": "s18",
@@ -741,8 +1260,7 @@
       "distance": 6,
       "audience": ["Women", "Men"],
       "gender": ["Women", "Men"],
-      "tags": ["Gold", "Diamond", "Wedding"],
-      "products": []
+      "tags": ["Gold", "Diamond", "Wedding"]
     },
     {
       "id": "s19",
@@ -757,8 +1275,7 @@
       "distance": 8,
       "audience": ["Women"],
       "gender": ["Women"],
-      "tags": ["Gold", "Silver", "Necklace"],
-      "products": []
+      "tags": ["Gold", "Silver", "Necklace"]
     },
     {
       "id": "s20",
@@ -773,8 +1290,7 @@
       "distance": 10,
       "audience": ["Women", "Men"],
       "gender": ["Women", "Men"],
-      "tags": ["Rings", "Earrings", "Gold"],
-      "products": []
+      "tags": ["Rings", "Earrings", "Gold"]
     },
     {
       "id": "s21",
@@ -790,7 +1306,57 @@
       "audience": ["Men", "Women", "Kids"],
       "gender": ["Men", "Women", "Kids"],
       "tags": ["Sneakers", "Sports"],
-      "products": []
+      "phone": "+914428445500",
+      "detail": {
+        "address": "VR Mall, No. 1A, Jawaharlal Nehru Road, Anna Nagar, Chennai, Tamil Nadu 600040",
+        "openingHours": "Open today · 10:00 AM – 10:00 PM",
+        "gallery": [
+          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&h=800&fit=crop",
+          "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=900&h=700&fit=crop",
+          "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=900&h=700&fit=crop",
+          "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=900&h=700&fit=crop"
+        ],
+        "offers": [
+          {
+            "title": "Flat 30% OFF",
+            "description": "Enjoy up to 30% off selected styles in-store.",
+            "validUntil": "31 Dec 2026"
+          },
+          {
+            "title": "Extra 10% OFF on selected footwear",
+            "description": "Ask the store team for eligible styles and terms."
+          }
+        ],
+        "catalogue": [
+          {
+            "label": "RUNNING",
+            "title": "Run the city",
+            "description": "Lightweight styles made for everyday miles.",
+            "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=700&h=500&fit=crop"
+          },
+          {
+            "label": "TRAINING",
+            "title": "Built to move",
+            "description": "Performance wear for your next workout.",
+            "image": "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=700&h=500&fit=crop"
+          },
+          {
+            "label": "CLASSICS",
+            "title": "Everyday classics",
+            "description": "Sport-inspired favourites for any day.",
+            "image": "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=700&h=500&fit=crop"
+          },
+          {
+            "label": "SPORTSTYLE",
+            "title": "Street style",
+            "description": "Fresh looks inspired by sport and culture.",
+            "image": "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=700&h=500&fit=crop"
+          }
+        ],
+        "description": "PUMA brings together sport performance and streetwear at its VR Mall store. Explore footwear, apparel and accessories for running, training and everyday style.",
+        "highlights": ["Running", "Training", "Sportstyle", "Footwear and apparel"],
+        "aboutImage": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=900&h=650&fit=crop"
+      }
     },
     {
       "id": "s22",
@@ -805,8 +1371,7 @@
       "distance": 6,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Jeans", "Western Casual", "Denim"],
-      "products": []
+      "tags": ["Jeans", "Western Casual", "Denim"]
     },
     {
       "id": "s23",
@@ -821,8 +1386,7 @@
       "distance": 3,
       "audience": ["Men", "Women", "Kids"],
       "gender": ["Men", "Women", "Kids"],
-      "tags": ["Ethnic Wear", "Traditional"],
-      "products": []
+      "tags": ["Ethnic Wear", "Traditional"]
     },
     {
       "id": "s24",
@@ -837,8 +1401,7 @@
       "distance": 9,
       "audience": ["Men"],
       "gender": ["Men"],
-      "tags": ["Formal", "Workwear", "Suits"],
-      "products": []
+      "tags": ["Formal", "Workwear", "Suits"]
     },
     {
       "id": "s25",
@@ -853,8 +1416,7 @@
       "distance": 5,
       "audience": ["Men", "Women", "Kids"],
       "gender": ["Men", "Women", "Kids"],
-      "tags": ["Footwear", "Leather"],
-      "products": []
+      "tags": ["Footwear", "Leather"]
     },
     {
       "id": "s26",
@@ -869,8 +1431,7 @@
       "distance": 12,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Bags", "Luggage", "Travel"],
-      "products": []
+      "tags": ["Bags", "Luggage", "Travel"]
     },
     {
       "id": "s27",
@@ -885,8 +1446,7 @@
       "distance": 4,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Sunglasses", "Eyewear"],
-      "products": []
+      "tags": ["Sunglasses", "Eyewear"]
     },
     {
       "id": "s28",
@@ -901,8 +1461,7 @@
       "distance": 6,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Watches", "Timepieces"],
-      "products": []
+      "tags": ["Watches", "Timepieces"]
     },
     {
       "id": "s29",
@@ -917,8 +1476,7 @@
       "distance": 7,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Gifting", "Flowers", "Gifts"],
-      "products": []
+      "tags": ["Gifting", "Flowers", "Gifts"]
     },
     {
       "id": "s30",
@@ -933,8 +1491,7 @@
       "distance": 10,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Electronics", "Gadgets", "Home Appliances"],
-      "products": []
+      "tags": ["Electronics", "Gadgets", "Home Appliances"]
     },
     {
       "id": "s31",
@@ -949,8 +1506,7 @@
       "distance": 8,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Salon", "Spa", "Haircut", "Wellness", "Beauty & Wellness"],
-      "products": []
+      "tags": ["Salon", "Spa", "Haircut", "Wellness", "Beauty & Wellness"]
     },
     {
       "id": "s32",
@@ -965,8 +1521,7 @@
       "distance": 18,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Home", "Furniture", "Decor"],
-      "products": []
+      "tags": ["Home", "Furniture", "Decor"]
     },
     {
       "id": "s33",
@@ -981,8 +1536,7 @@
       "distance": 6,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Sneakers", "Streetwear"],
-      "products": []
+      "tags": ["Sneakers", "Streetwear"]
     },
     {
       "id": "s34",
@@ -997,8 +1551,7 @@
       "distance": 8,
       "audience": ["Men", "Women", "Kids"],
       "gender": ["Men", "Women", "Kids"],
-      "tags": ["Western Casual", "Hoodies", "Jeans"],
-      "products": []
+      "tags": ["Western Casual", "Hoodies", "Jeans"]
     },
     {
       "id": "s35",
@@ -1013,8 +1566,7 @@
       "distance": 5,
       "audience": ["Men"],
       "gender": ["Men"],
-      "tags": ["Ethnic Wear", "Wedding", "Kurta"],
-      "products": []
+      "tags": ["Ethnic Wear", "Wedding", "Kurta"]
     },
     {
       "id": "s36",
@@ -1029,8 +1581,7 @@
       "distance": 7,
       "audience": ["Women", "Kids"],
       "gender": ["Women", "Kids"],
-      "tags": ["Ethnic Wear", "Kurtis", "Women"],
-      "products": []
+      "tags": ["Ethnic Wear", "Kurtis", "Women"]
     },
     {
       "id": "s37",
@@ -1045,8 +1596,7 @@
       "distance": 11,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Formal", "Workwear", "Shirts"],
-      "products": []
+      "tags": ["Formal", "Workwear", "Shirts"]
     },
     {
       "id": "s38",
@@ -1061,8 +1611,7 @@
       "distance": 9,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Footwear", "Leather", "Heels"],
-      "products": []
+      "tags": ["Footwear", "Leather", "Heels"]
     },
     {
       "id": "s39",
@@ -1077,8 +1626,7 @@
       "distance": 8,
       "audience": ["Men"],
       "gender": ["Men"],
-      "tags": ["Footwear", "Boots", "Outdoor"],
-      "products": []
+      "tags": ["Footwear", "Boots", "Outdoor"]
     },
     {
       "id": "s40",
@@ -1093,8 +1641,7 @@
       "distance": 12,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Sports Wear", "Athleisure", "Activewear"],
-      "products": []
+      "tags": ["Sports Wear", "Athleisure", "Activewear"]
     },
     {
       "id": "s41",
@@ -1109,8 +1656,7 @@
       "distance": 4,
       "audience": ["Men", "Women", "Kids"],
       "gender": ["Men", "Women", "Kids"],
-      "tags": ["Bags", "Luggage", "Backpacks"],
-      "products": []
+      "tags": ["Bags", "Luggage", "Backpacks"]
     },
     {
       "id": "s42",
@@ -1125,8 +1671,7 @@
       "distance": 5,
       "audience": ["Men", "Women", "Kids"],
       "gender": ["Men", "Women", "Kids"],
-      "tags": ["Sunglasses", "Eyewear", "Glasses"],
-      "products": []
+      "tags": ["Sunglasses", "Eyewear", "Glasses"]
     },
     {
       "id": "s43",
@@ -1141,8 +1686,7 @@
       "distance": 3,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Watches", "Accessories"],
-      "products": []
+      "tags": ["Watches", "Accessories"]
     },
     {
       "id": "s44",
@@ -1157,8 +1701,7 @@
       "distance": 7,
       "audience": ["Men", "Women", "Kids"],
       "gender": ["Men", "Women", "Kids"],
-      "tags": ["Gifting", "Toys", "Accessories"],
-      "products": []
+      "tags": ["Gifting", "Toys", "Accessories"]
     },
     {
       "id": "s45",
@@ -1173,8 +1716,7 @@
       "distance": 15,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Electronics", "Mobiles", "Appliances"],
-      "products": []
+      "tags": ["Electronics", "Mobiles", "Appliances"]
     },
     {
       "id": "s46",
@@ -1189,8 +1731,7 @@
       "distance": 6,
       "audience": ["Women"],
       "gender": ["Women"],
-      "tags": ["Salon", "Beauty", "Makeup", "Beauty & Wellness"],
-      "products": []
+      "tags": ["Salon", "Beauty", "Makeup", "Beauty & Wellness"]
     },
     {
       "id": "s47",
@@ -1205,8 +1746,7 @@
       "distance": 11,
       "audience": ["Men", "Women"],
       "gender": ["Men", "Women"],
-      "tags": ["Home", "Furniture", "Decor", "Gifting"],
-      "products": []
+      "tags": ["Home", "Furniture", "Decor", "Gifting"]
     },
     {
       "id": "s48",
@@ -1221,8 +1761,7 @@
       "distance": 7,
       "audience": ["Women", "Men"],
       "gender": ["Women", "Men"],
-      "tags": ["Beauty & Wellness", "Makeup", "Skincare", "Fragrance"],
-      "products": []
+      "tags": ["Beauty & Wellness", "Makeup", "Skincare", "Fragrance"]
     },
     {
       "id": "s49",
@@ -1237,8 +1776,7 @@
       "distance": 5,
       "audience": ["Women", "Men"],
       "gender": ["Women", "Men"],
-      "tags": ["Beauty & Wellness", "Skincare", "Haircare", "Personal Care"],
-      "products": []
+      "tags": ["Beauty & Wellness", "Skincare", "Haircare", "Personal Care"]
     },
     {
       "id": "s50",
@@ -1253,8 +1791,7 @@
       "distance": 9,
       "audience": ["Women", "Men"],
       "gender": ["Women", "Men"],
-      "tags": ["Beauty & Wellness", "Spa", "Massage", "Relaxation"],
-      "products": []
+      "tags": ["Beauty & Wellness", "Spa", "Massage", "Relaxation"]
     },
     {
       "id": "s51",
@@ -1269,216 +1806,9 @@
       "distance": 4,
       "audience": ["Women", "Men", "Kids"],
       "gender": ["Women", "Men", "Kids"],
-      "tags": ["Beauty & Wellness", "Yoga", "Meditation", "Fitness"],
-      "products": []
+      "tags": ["Beauty & Wellness", "Yoga", "Meditation", "Fitness"]
     }
   ],
-  "StoreProducts": {
-    "Paul's City": [
-      { "name": "Fresh Produce Basket", "price": "₹499", "rating": "4.6 (84)", "desc": "A seasonal selection of fresh fruits and vegetables.", "img": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=300&q=80" },
-      { "name": "Daily Essentials Pack", "price": "₹699", "rating": "4.5 (62)", "desc": "Everyday pantry and household essentials in one pack.", "img": "https://images.unsplash.com/photo-1604719312566-8912e9c8a213?w=300&q=80" }
-    ],
-    "Apollo Pharmacy": [
-      { "name": "Daily Multivitamin", "price": "₹599", "rating": "4.8 (120)", "desc": "A daily multivitamin supplement for general wellness.", "img": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&q=80" },
-      { "name": "Aloe Hydrating Lotion", "price": "₹299", "rating": "4.5 (85)", "desc": "A soothing body lotion with aloe vera.", "img": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300&q=80" }
-    ],
-    "Daawat Restaurant": [
-      { "name": "Chicken Dum Biryani", "price": "₹349", "rating": "4.7 (214)", "desc": "Aromatic basmati rice layered with spiced chicken.", "img": "https://images.unsplash.com/photo-1563379091339-03246963d96c?w=300&q=80", "isFood": true },
-      { "name": "Paneer Tikka", "price": "₹279", "rating": "4.5 (96)", "desc": "Chargrilled paneer marinated with house spices.", "img": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=300&q=80", "isFood": true }
-    ],
-    "adidas": [
-      { "name": "Runfalcon Running Shoes", "price": "₹4,999", "rating": "4.7 (318)", "desc": "Lightweight everyday running shoes with a cushioned sole.", "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80" },
-      { "name": "Essentials Training Tee", "price": "₹1,499", "rating": "4.5 (142)", "desc": "Breathable training tee designed for everyday workouts.", "img": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&q=80" }
-    ],
-    "Zudio": [
-      { "name": "Everyday Cotton T-Shirt", "price": "₹399", "rating": "4.4 (203)", "desc": "A soft cotton crew-neck tee for casual wear.", "img": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&q=80" },
-      { "name": "Relaxed Fit Denim Jeans", "price": "₹999", "rating": "4.3 (117)", "desc": "Comfortable denim jeans with a relaxed everyday fit.", "img": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=80" }
-    ],
-    "Shoppers Stop": [
-      { "name": "Classic Oxford Shirt", "price": "₹1,499", "rating": "4.5 (176)", "desc": "A versatile cotton Oxford shirt for work or weekends.", "img": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&q=80" },
-      { "name": "Slim Fit Chinos", "price": "₹1,999", "rating": "4.4 (93)", "desc": "Stretch cotton chinos with a clean slim fit.", "img": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=300&q=80" }
-    ],
-    "Lifestyle": [
-      { "name": "Printed Summer Dress", "price": "₹1,799", "rating": "4.6 (129)", "desc": "A lightweight printed dress for warm-weather days.", "img": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300&q=80" },
-      { "name": "Everyday Shoulder Bag", "price": "₹1,299", "rating": "4.5 (88)", "desc": "A practical shoulder bag with room for daily essentials.", "img": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300&q=80" }
-    ],
-    "Nykaa": [
-      { "name": "Matte Finish Lipstick", "price": "₹499", "rating": "4.5 (210)", "desc": "A long-wearing lipstick with a smooth matte finish.", "img": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=300&q=80" },
-      { "name": "Skin Dew Foundation Serum", "price": "₹899", "rating": "4.7 (305)", "desc": "A lightweight foundation serum for natural-looking coverage.", "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&q=80" }
-    ],
-    "Haldiram's": [
-      { "name": "Classic Samosa (2 pcs)", "price": "₹99", "rating": "4.6 (188)", "desc": "Crisp pastry filled with seasoned potatoes and peas.", "img": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=300&q=80", "isFood": true },
-      { "name": "Raj Kachori", "price": "₹189", "rating": "4.7 (142)", "desc": "A crunchy kachori served with chutneys and fresh toppings.", "img": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=300&q=80", "isFood": true }
-    ],
-    "The Body Shop": [
-      { "name": "Shea Body Butter", "price": "₹1,295", "rating": "4.8 (246)", "desc": "Rich body butter formulated to moisturize dry skin.", "img": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80" },
-      { "name": "Tea Tree Facial Wash", "price": "₹895", "rating": "4.6 (173)", "desc": "A refreshing daily facial wash with tea tree oil.", "img": "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=300&q=80" }
-    ],
-    "Nike": [
-      { "name": "Air Max Running Shoes", "price": "₹8,995", "rating": "4.8 (412)", "desc": "Responsive cushioning and a breathable upper for daily runs.", "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80" },
-      { "name": "Dri-FIT Training T-Shirt", "price": "₹2,295", "rating": "4.6 (187)", "desc": "Sweat-wicking training fabric keeps you comfortable in motion.", "img": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&q=80" }
-    ],
-    "Zara": [
-      { "name": "Tailored Blazer", "price": "₹5,990", "rating": "4.5 (116)", "desc": "A versatile tailored blazer with a clean modern silhouette.", "img": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&q=80" },
-      { "name": "Straight Fit Jeans", "price": "₹3,290", "rating": "4.4 (154)", "desc": "Classic straight-leg denim for everyday styling.", "img": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=80" }
-    ],
-    "H&M": [
-      { "name": "Relaxed Cotton Shirt", "price": "₹1,499", "rating": "4.5 (205)", "desc": "A relaxed cotton shirt that layers easily through the week.", "img": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&q=80" },
-      { "name": "Regular Fit Hoodie", "price": "₹1,999", "rating": "4.6 (138)", "desc": "A soft hooded sweatshirt with a comfortable regular fit.", "img": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=300&q=80" }
-    ],
-    "Titan Eye+": [
-      { "name": "Blue Light Filter Eyeglasses", "price": "₹2,499", "rating": "4.5 (92)", "desc": "Lightweight everyday frames with blue light filter lenses.", "img": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&q=80" },
-      { "name": "UV Protection Sunglasses", "price": "₹1,999", "rating": "4.4 (77)", "desc": "Classic sunglasses with UV-protective lenses.", "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80" }
-    ],
-    "MAC Cosmetics": [
-      { "name": "Ruby Woo Matte Lipstick", "price": "₹2,300", "rating": "4.8 (332)", "desc": "A vivid red lipstick with MAC's iconic matte finish.", "img": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=300&q=80" },
-      { "name": "Studio Fix Fluid Foundation", "price": "₹3,450", "rating": "4.7 (284)", "desc": "Buildable foundation with a natural matte finish.", "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&q=80" }
-    ],
-    "Decathlon": [
-      { "name": "Quechua Hiking Backpack", "price": "₹1,999", "rating": "4.7 (221)", "desc": "A lightweight backpack with practical storage for day hikes.", "img": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&q=80" },
-      { "name": "Yoga Mat 5 mm", "price": "₹899", "rating": "4.6 (145)", "desc": "A cushioned, non-slip mat for yoga and floor workouts.", "img": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=300&q=80" }
-    ],
-    "Max Fashion": [
-      { "name": "Kids Printed T-Shirt", "price": "₹399", "rating": "4.5 (93)", "desc": "A soft printed tee made for everyday play.", "img": "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=300&q=80" },
-      { "name": "Kids Denim Joggers", "price": "₹799", "rating": "4.4 (68)", "desc": "Easy-to-wear denim joggers with a flexible waistband.", "img": "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=300&q=80" }
-    ],
-    "Tanishq": [
-      { "name": "Mia Gold Pendant", "price": "₹18,500", "rating": "4.8 (74)", "desc": "A delicate gold pendant designed for everyday wear.", "img": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=300&q=80" },
-      { "name": "Diamond Stud Earrings", "price": "₹32,000", "rating": "4.7 (51)", "desc": "Timeless diamond studs set in polished gold.", "img": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=300&q=80" }
-    ],
-    "Kalyan Jewellers": [
-      { "name": "Traditional Gold Necklace", "price": "₹85,000", "rating": "4.7 (63)", "desc": "A traditional gold necklace for celebrations and occasions.", "img": "https://images.unsplash.com/photo-1599643478514-4a820cbf311e?w=300&q=80" },
-      { "name": "Silver Bracelet", "price": "₹6,500", "rating": "4.5 (42)", "desc": "A polished silver bracelet with a versatile design.", "img": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=300&q=80" }
-    ],
-    "Malabar Gold & Diamonds": [
-      { "name": "Gold Hoop Earrings", "price": "₹24,900", "rating": "4.7 (58)", "desc": "Lightweight gold hoops with a refined polished finish.", "img": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=300&q=80" },
-      { "name": "Diamond Pendant", "price": "₹39,500", "rating": "4.8 (47)", "desc": "A sparkling diamond pendant on a fine gold chain.", "img": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=300&q=80" }
-    ],
-    "Puma": [
-      { "name": "Velocity Running Shoes", "price": "₹4,999", "rating": "4.8 (500)", "desc": "Lightweight running shoes with breathable mesh and cushioning.", "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80" },
-      { "name": "Essentials Logo Hoodie", "price": "₹3,499", "rating": "4.6 (174)", "desc": "A comfortable fleece hoodie with a classic logo detail.", "img": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=300&q=80" }
-    ],
-    "Levi's": [
-      { "name": "511 Slim Fit Jeans", "price": "₹3,299", "rating": "4.7 (318)", "desc": "A modern slim fit with comfortable stretch denim.", "img": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=80" },
-      { "name": "Housemark Graphic Tee", "price": "₹1,299", "rating": "4.5 (159)", "desc": "A soft cotton tee with a classic Levi's graphic.", "img": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&q=80" }
-    ],
-    "FabIndia": [
-      { "name": "Cotton Printed Kurta", "price": "₹2,490", "rating": "4.6 (121)", "desc": "A breathable cotton kurta with a handcrafted print.", "img": "https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=300&q=80" },
-      { "name": "Handwoven Stole", "price": "₹1,890", "rating": "4.5 (86)", "desc": "A lightweight handwoven stole in a versatile design.", "img": "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=300&q=80" }
-    ],
-    "Louis Philippe": [
-      { "name": "Slim Fit Formal Shirt", "price": "₹2,499", "rating": "4.6 (142)", "desc": "A crisp formal shirt with a clean slim fit.", "img": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&q=80" },
-      { "name": "Textured Formal Blazer", "price": "₹7,999", "rating": "4.7 (79)", "desc": "A tailored blazer designed for office and formal occasions.", "img": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&q=80" }
-    ],
-    "Bata": [
-      { "name": "Men's Leather Formal Shoes", "price": "₹2,499", "rating": "4.5 (231)", "desc": "Classic leather-look formal shoes with a comfortable sole.", "img": "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=300&q=80" },
-      { "name": "Women's Everyday Flats", "price": "₹1,299", "rating": "4.4 (164)", "desc": "Versatile flats designed for comfortable daily wear.", "img": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=300&q=80" }
-    ],
-    "Samsonite": [
-      { "name": "Cabin Spinner Suitcase", "price": "₹12,999", "rating": "4.7 (188)", "desc": "A compact hard-shell cabin case with smooth spinner wheels.", "img": "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=300&q=80" },
-      { "name": "Everyday Laptop Backpack", "price": "₹4,499", "rating": "4.6 (112)", "desc": "A padded laptop backpack with organized storage pockets.", "img": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&q=80" }
-    ],
-    "Ray-Ban": [
-      { "name": "Wayfarer Classic Sunglasses", "price": "₹8,490", "rating": "4.8 (274)", "desc": "Iconic wayfarer frames with UV-protective lenses.", "img": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&q=80" },
-      { "name": "Aviator Metal Sunglasses", "price": "₹9,190", "rating": "4.7 (196)", "desc": "Lightweight metal aviator frames with sun protection.", "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80" }
-    ],
-    "Casio": [
-      { "name": "Vintage Digital Watch", "price": "₹3,995", "rating": "4.7 (221)", "desc": "A classic digital watch with an everyday retro design.", "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&q=80" },
-      { "name": "G-Shock Digital Watch", "price": "₹8,495", "rating": "4.8 (307)", "desc": "A durable shock-resistant watch built for active days.", "img": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=300&q=80" }
-    ],
-    "Ferns N Petals": [
-      { "name": "Red Roses Bouquet", "price": "₹999", "rating": "4.8 (143)", "desc": "A hand-tied bouquet of fresh red roses for special moments.", "img": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=300&q=80" },
-      { "name": "Celebration Chocolate Box", "price": "₹799", "rating": "4.6 (98)", "desc": "A curated box of chocolates, ready for gifting.", "img": "https://images.unsplash.com/photo-1548907040-4d42e3f8d02b?w=300&q=80" }
-    ],
-    "Reliance Digital": [
-      { "name": "Wireless Bluetooth Headphones", "price": "₹2,499", "rating": "4.5 (286)", "desc": "Wireless over-ear headphones with cushioned ear pads.", "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80" },
-      { "name": "Smart Fitness Band", "price": "₹3,499", "rating": "4.4 (173)", "desc": "Track daily activity, heart rate and workout sessions.", "img": "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=300&q=80" }
-    ],
-    "Toni & Guy": [
-      { "name": "Signature Haircut", "price": "₹1,200", "rating": "4.7 (91)", "desc": "A consultation-led haircut and professional styling service.", "img": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&q=80" },
-      { "name": "Hair Spa Treatment", "price": "₹2,500", "rating": "4.8 (67)", "desc": "A nourishing salon hair spa with relaxing scalp massage.", "img": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&q=80" }
-    ],
-    "IKEA": [
-      { "name": "LACK Side Table", "price": "₹1,290", "rating": "4.6 (315)", "desc": "A lightweight side table with a clean, versatile design.", "img": "https://images.unsplash.com/photo-1499933374294-4584851497cc?w=300&q=80" },
-      { "name": "FÄRLÖV Cushion Cover", "price": "₹799", "rating": "4.5 (104)", "desc": "A soft textured cushion cover to refresh your living space.", "img": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=300&q=80" }
-    ],
-    "Superkicks": [
-      { "name": "Air Classic Sneakers", "price": "₹7,495", "rating": "4.8 (196)", "desc": "Street-ready sneakers with a cushioned sole and classic profile.", "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80" },
-      { "name": "Canvas High-Top Sneakers", "price": "₹4,999", "rating": "4.6 (118)", "desc": "A versatile high-top sneaker for everyday streetwear.", "img": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300&q=80" }
-    ],
-    "GAP": [
-      { "name": "Logo Fleece Hoodie", "price": "₹3,999", "rating": "4.6 (156)", "desc": "A soft fleece hoodie with the iconic GAP logo.", "img": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=300&q=80" },
-      { "name": "Classic Straight Jeans", "price": "₹4,499", "rating": "4.5 (109)", "desc": "Classic straight-leg jeans in comfortable everyday denim.", "img": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=80" }
-    ],
-    "Manyavar": [
-      { "name": "Embroidered Silk Kurta", "price": "₹5,999", "rating": "4.7 (83)", "desc": "A festive silk kurta with detailed traditional embroidery.", "img": "https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=300&q=80" },
-      { "name": "Festive Nehru Jacket", "price": "₹4,499", "rating": "4.6 (61)", "desc": "A tailored Nehru jacket for celebrations and weddings.", "img": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&q=80" }
-    ],
-    "Biba": [
-      { "name": "Printed Anarkali Suit", "price": "₹3,999", "rating": "4.6 (142)", "desc": "A flowing printed Anarkali suit for festive occasions.", "img": "https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=300&q=80" },
-      { "name": "Embroidered Cotton Kurta", "price": "₹1,799", "rating": "4.5 (115)", "desc": "A comfortable cotton kurta finished with subtle embroidery.", "img": "https://images.unsplash.com/photo-1583391733958-d25e07fac04f?w=300&q=80" }
-    ],
-    "Allen Solly": [
-      { "name": "Men's Formal Oxford Shirt", "price": "₹2,199", "rating": "4.5 (98)", "desc": "A smart Oxford shirt suited to office and occasion wear.", "img": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&q=80" },
-      { "name": "Women's Tailored Trousers", "price": "₹2,499", "rating": "4.4 (72)", "desc": "Tailored trousers designed for a polished workwear look.", "img": "https://images.unsplash.com/photo-1506629905607-d9b1cc3b55dc?w=300&q=80" }
-    ],
-    "Metro Shoes": [
-      { "name": "Women's Block Heel Sandals", "price": "₹2,490", "rating": "4.5 (87)", "desc": "Comfortable block heels for day-to-evening occasions.", "img": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=300&q=80" },
-      { "name": "Men's Leather Loafers", "price": "₹3,490", "rating": "4.6 (94)", "desc": "Polished leather-look loafers with a cushioned footbed.", "img": "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=300&q=80" }
-    ],
-    "Woodland": [
-      { "name": "Outdoor Hiking Boots", "price": "₹5,995", "rating": "4.7 (164)", "desc": "Rugged outdoor boots with a supportive grip sole.", "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80" },
-      { "name": "Canvas Trail Backpack", "price": "₹2,995", "rating": "4.6 (103)", "desc": "A durable backpack for weekend trails and everyday use.", "img": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&q=80" }
-    ],
-    "Under Armour": [
-      { "name": "UA Tech Training T-Shirt", "price": "₹2,299", "rating": "4.6 (133)", "desc": "Quick-drying training fabric for comfortable workouts.", "img": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&q=80" },
-      { "name": "Charged Running Shoes", "price": "₹6,499", "rating": "4.7 (187)", "desc": "Cushioned running shoes with a lightweight breathable upper.", "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80" }
-    ],
-    "American Tourister": [
-      { "name": "Skyline Cabin Trolley", "price": "₹5,499", "rating": "4.6 (214)", "desc": "A lightweight cabin trolley with smooth rolling wheels.", "img": "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=300&q=80" },
-      { "name": "Workday Laptop Backpack", "price": "₹2,499", "rating": "4.5 (162)", "desc": "A padded backpack with a dedicated laptop compartment.", "img": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&q=80" }
-    ],
-    "Lenskart": [
-      { "name": "Air Flex Eyeglasses", "price": "₹1,999", "rating": "4.6 (231)", "desc": "Flexible lightweight frames for comfortable everyday wear.", "img": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&q=80" },
-      { "name": "Polarized Wayfarer Sunglasses", "price": "₹2,499", "rating": "4.5 (119)", "desc": "Classic frames with polarized lenses for outdoor wear.", "img": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80" }
-    ],
-    "Titan": [
-      { "name": "Stellar Analog Watch", "price": "₹5,995", "rating": "4.7 (175)", "desc": "A refined analog watch for daily and occasion wear.", "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&q=80" },
-      { "name": "Raga Women's Watch", "price": "₹7,495", "rating": "4.8 (128)", "desc": "An elegant watch with a distinctive, contemporary design.", "img": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=300&q=80" }
-    ],
-    "Miniso": [
-      { "name": "Plush Character Cushion", "price": "₹799", "rating": "4.7 (203)", "desc": "A soft plush cushion for bedrooms and cozy corners.", "img": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=300&q=80" },
-      { "name": "Insulated Travel Tumbler", "price": "₹599", "rating": "4.5 (146)", "desc": "A reusable tumbler for hot or cold drinks on the go.", "img": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=300&q=80" }
-    ],
-    "Croma": [
-      { "name": "Noise-Cancelling Headphones", "price": "₹4,999", "rating": "4.6 (241)", "desc": "Wireless headphones with immersive sound and noise reduction.", "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80" },
-      { "name": "Smart Fitness Watch", "price": "₹3,999", "rating": "4.5 (198)", "desc": "A smart watch with activity tracking and phone notifications.", "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&q=80" }
-    ],
-    "Lakme Salon": [
-      { "name": "Signature Haircut & Styling", "price": "₹1,499", "rating": "4.7 (102)", "desc": "A personalized haircut with a professional blow-dry finish.", "img": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&q=80" },
-      { "name": "Radiance Facial", "price": "₹2,999", "rating": "4.8 (76)", "desc": "A salon facial treatment focused on cleansing and hydration.", "img": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&q=80" }
-    ],
-    "Home Centre": [
-      { "name": "Textured Accent Cushion", "price": "₹899", "rating": "4.6 (108)", "desc": "A decorative cushion to add a soft accent to your living room.", "img": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=300&q=80" },
-      { "name": "Modern Table Lamp", "price": "₹2,499", "rating": "4.5 (91)", "desc": "A warm ambient table lamp with a contemporary silhouette.", "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=300&q=80" }
-    ],
-    "Sephora": [
-      { "name": "Everyday Glow Makeup Set", "price": "₹2,499", "rating": "4.7 (138)", "desc": "A curated set of everyday makeup essentials for a fresh, natural look.", "img": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&q=80" },
-      { "name": "Hydrating Face Serum", "price": "₹1,899", "rating": "4.6 (104)", "desc": "A lightweight hydrating serum for a smooth, radiant-feeling complexion.", "img": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80" }
-    ],
-    "Health & Glow": [
-      { "name": "Vitamin C Brightening Serum", "price": "₹999", "rating": "4.6 (116)", "desc": "A daily facial serum formulated for a bright, refreshed appearance.", "img": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80" },
-      { "name": "Nourishing Hair Mask", "price": "₹749", "rating": "4.5 (82)", "desc": "A weekly conditioning treatment for soft, manageable hair.", "img": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&q=80" }
-    ],
-    "O2 Spa": [
-      { "name": "Aromatherapy Massage", "price": "₹2,499", "rating": "4.8 (95)", "desc": "A relaxing massage experience using aromatic oils and calming techniques.", "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=300&q=80" },
-      { "name": "Express Refresh Facial", "price": "₹1,499", "rating": "4.6 (71)", "desc": "A refreshing facial service focused on cleansing and hydration.", "img": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&q=80" }
-    ],
-    "Sattva Yoga & Wellness": [
-      { "name": "Beginner Yoga Class", "price": "₹499", "rating": "4.8 (64)", "desc": "A guided beginner-friendly yoga session focused on movement and breath.", "img": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=80" },
-      { "name": "Guided Meditation Session", "price": "₹399", "rating": "4.7 (52)", "desc": "A calming guided meditation session for focus and relaxation.", "img": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=300&q=80" }
-    ]
-  },
   "Locations": ["Chennai", "Gurgaon", "Mumbai", "Bangalore", "Delhi", "Pune", "Hyderabad"],
   "DistrictOffers": [
     {

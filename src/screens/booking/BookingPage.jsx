@@ -6,9 +6,10 @@ import TimeSlots from "./TimeSlots";
 import "./BookingDate&Time.css";
 
 function BookingPage() {
-  const [selectedDate, setSelectedDate] = useState(null);
+  const today = new Date();
+  const [selectedDate, setSelectedDate] = useState(new Date(today));
   const [calendarMonth, setCalendarMonth] = useState(
-    new Date(new Date().getFullYear(), 8, 1)
+    new Date(today.getFullYear(), today.getMonth(), 1)
   );
   const [selectedTime, setSelectedTime] = useState(null);
   const location = useLocation();
@@ -19,7 +20,6 @@ function BookingPage() {
   return (
     <div className="page">
       <main>
-        {/* <div className="step-title">02 Date &amp; Time</div> */}
         <h1>Choose date and time</h1>
         <p className="subtitle">
           {experience?.title || experience?.name || "Choose your experience"}

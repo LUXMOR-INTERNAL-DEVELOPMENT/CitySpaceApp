@@ -165,12 +165,12 @@ body {
 
   grid-template-columns:
     250px
-    minmax(400px, 1fr)
-    325px;
+    minmax(0, 1fr)
+    340px;
 
   gap: 28px;
 
-  align-items: stretch;
+  align-items: start;
 }
 
 
@@ -185,6 +185,7 @@ body {
   padding: 28px 22px;
 
   min-height: 600px;
+  grid-column: 1;
 }
 
 
@@ -291,7 +292,8 @@ body {
 
   min-height: 600px;
 
-  grid-column: 3;
+  grid-column: 2;
+  width: 100%;
 }
 
 
@@ -409,7 +411,8 @@ body {
 
   flex-direction: column;
 
-  grid-column: 2;
+  grid-column: 3;
+  width: 100%;
 }
 
 

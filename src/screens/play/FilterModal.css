@@ -1,0 +1,259 @@
+/* ==============================================
+   Filter Modal Styles - Matching Reference Image
+   ============================================== */
+
+.filter-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  animation: modalFadeIn 0.18s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.filter-modal-card {
+  background: #ffffff;
+  width: min(620px, 94vw);
+  border-radius: 26px;
+  padding: 28px 28px 22px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(18px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Header */
+.filter-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-modal-title {
+  font-size: 21px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.filter-modal-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #6b7280;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.filter-modal-close:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* Body Two Columns */
+.filter-modal-body {
+  display: grid;
+  grid-template-columns: 145px 1fr;
+  gap: 16px;
+  min-height: 290px;
+  margin-bottom: 24px;
+}
+
+/* Left Column Navigation */
+.filter-tabs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 4px;
+}
+
+.filter-tab-btn {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.filter-tab-btn:hover {
+  background: #f3f4f6;
+}
+
+/* Active Tab - Soft lavender gradient matching the screenshot */
+.filter-tab-btn.active {
+  background: linear-gradient(90deg, #ede9fe 0%, #f3e8ff 100%);
+  color: #5b21b6;
+}
+
+/* Right Options Pane */
+.filter-options-col {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 320px;
+}
+
+.filter-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.filter-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hidden-radio-input {
+  display: none;
+}
+
+/* Circular Radio Indicator matching screenshot */
+.custom-radio-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease;
+  background: #ffffff;
+}
+
+.filter-radio-label:hover .custom-radio-circle {
+  border-color: #111827;
+}
+
+.custom-radio-circle.checked {
+  border-color: #111827;
+}
+
+.custom-radio-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #111827;
+  display: block;
+}
+
+.filter-option-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.2px;
+}
+
+/* Footer Actions */
+.filter-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.filter-clear-btn {
+  background: none;
+  border: none;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #111827;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+  padding: 6px 0;
+  transition: opacity 0.15s ease;
+}
+
+.filter-clear-btn:hover {
+  opacity: 0.75;
+}
+
+.filter-apply-btn {
+  background: #111827;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 40px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.filter-apply-btn:hover {
+  background: #000000;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 540px) {
+  .filter-modal-card {
+    padding: 20px 16px 16px;
+    border-radius: 20px;
+  }
+
+  .filter-modal-body {
+    grid-template-columns: 110px 1fr;
+    gap: 10px;
+  }
+
+  .filter-options-col {
+    padding: 16px;
+  }
+
+  .filter-option-text {
+    font-size: 13.5px;
+  }
+
+  .filter-tab-btn {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+}

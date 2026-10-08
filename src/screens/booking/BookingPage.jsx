@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import BookingSteps from "./BookingSteps";
+import PlayBookingSteps from "../play/Booking/PlayBookingSteps";
 import MyCalendar from "./Calendar";
 import TimeSlots from "./TimeSlots";
 import "./BookingDate&Time.css";
@@ -15,17 +16,18 @@ function BookingPage() {
   const experience = location.state?.experience;
   const navigate = useNavigate();
   const canContinue = Boolean(selectedDate && selectedTime);
+  const StepsComponent = experience?.isPlayGame ? PlayBookingSteps : BookingSteps;
 
   return (
     <div className="page">
       <main>
-        {/* <div className="step-title">02 Date &amp; Time</div> */}
+        <div className="step-title">02 Date &amp; Time</div>
         <h1>Choose date and time</h1>
         <p className="subtitle">
           {experience?.title || experience?.name || "Choose your experience"}
         </p>
         <div className="booking-card">
-          <BookingSteps />
+          <StepsComponent currentStep={2} />
           <div className="date-section">
             <h2>
               {calendarMonth.toLocaleDateString("en-US", { month: "long", year: "numeric" })}

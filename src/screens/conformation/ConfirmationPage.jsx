@@ -11,13 +11,10 @@ function ConfirmationPage() {
   const guestSummary = booking?.guestSummary || "2 Adults";
   const total = booking?.priceDetails?.total ?? 3270;
   const bookingLocation = booking?.experience?.location || "Nungambakkam";
-  const experience = booking?.experience || {};
   const [locationName, setLocationName] = useState(bookingLocation);
   const formatPrice = (amount) => `₹${amount.toLocaleString("en-IN")}`;
 
   useEffect(() => {
-    if (experience.viewingArea) return;
-
     let isMounted = true;
 
     async function loadLocation() {
@@ -29,7 +26,7 @@ function ConfirmationPage() {
     return () => {
       isMounted = false;
     };
-  }, [bookingLocation, experience.viewingArea]);
+  }, [bookingLocation]);
 
   return (
     <main
@@ -85,14 +82,14 @@ function ConfirmationPage() {
               display: "inline-flex",
               padding: "9px 16px",
               borderRadius: "999px",
-              background: "#dffb6d",
-              color: "#1d4d3d",
+              background: "#dcfce7",
+              color: "#166534",
               fontWeight: 700,
               fontSize: "13px",
               marginBottom: "18px",
             }}
           >
-            06 Confirmation
+            05 Confirmation
           </div>
 
           <h1 style={{ margin: "0 0 12px", fontSize: "2.6rem" }}>Booking confirmed</h1>
@@ -115,11 +112,10 @@ function ConfirmationPage() {
             }}
           >
             {[
-              ["Experience", experience.title || experience.name || "Chef's Table Dinner"],
+              ["Experience", booking?.experience?.title || booking?.experience?.name || "Chennai Sports & Experience"],
               ["Confirmation number", confirmationNumber],
-              ["Date", experience.date || "Sat, 12 Sep"],
-              ["Time", experience.time || "7:30 PM"],
-              ...(experience.viewingArea ? [["Viewing area", experience.viewingArea]] : []),
+              ["Date", booking?.experience?.date || booking?.bookingDate || "Sat, 12 Sep"],
+              ["Time", booking?.experience?.time || booking?.bookingTime || "7:30 PM"],
               ["Guests", guestSummary],
               ["Location", locationName],
               ["Payment", paymentMethod],
@@ -146,9 +142,7 @@ function ConfirmationPage() {
               textAlign: "left",
             }}
           >
-            {experience.viewingArea
-              ? "Keep your confirmation number available when you arrive. Your selected viewing area is included above."
-              : "Please arrive 15 minutes before your selected time. Keep your confirmation number available when you arrive."}
+            Please arrive 15 minutes before your selected time. Keep your confirmation number available when you arrive.
           </div>
 
           <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap" }}>

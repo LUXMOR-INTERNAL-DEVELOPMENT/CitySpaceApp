@@ -1,15 +1,16 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import "./PlayBookingSteps.css";
 
-export const BOOKING_STEPS = [
+export const PLAY_BOOKING_STEPS = [
   { number: 1, title: "Details", path: "/experience" },
   { number: 2, title: "Date & time", path: "/date-time" },
-  { number: 3, title: "Tickets / guests", path: "/guestcount" },
+  { number: 3, title: "Persons / players", path: "/guestcount" },
   { number: 4, title: "Payment", path: "/payment" },
   { number: 5, title: "Confirmation", path: "/confirmation" },
 ];
 
-export default function BookingSteps({ currentStep }) {
+export default function PlayBookingSteps({ currentStep }) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,31 +29,31 @@ export default function BookingSteps({ currentStep }) {
   const activeStepNumber = detectStep();
 
   const handleStepClick = (step) => {
-    // Only allow navigating to current or previously completed steps to prevent skipping
+    // Only allow navigating to current or previously completed steps
     if (step.number <= activeStepNumber) {
       navigate(step.path, { state: location.state });
     }
   };
 
   return (
-    <aside className="booking-steps" aria-label="Booking steps progress">
-      <h3>Booking steps</h3>
-      <nav className="steps-list">
-        {BOOKING_STEPS.map((step) => {
+    <aside className="play-booking-steps" aria-label="Booking steps progress">
+      <h3 className="play-steps-heading">Booking steps</h3>
+      <nav className="play-steps-list">
+        {PLAY_BOOKING_STEPS.map((step) => {
           const isCurrent = step.number === activeStepNumber;
           const isCompleted = step.number < activeStepNumber;
 
           return (
             <div
               key={step.number}
-              className={`step ${isCurrent ? "current active" : ""} ${isCompleted ? "completed" : ""}`}
+              className={`play-step ${isCurrent ? "current" : ""} ${isCompleted ? "completed" : ""}`}
               onClick={() => handleStepClick(step)}
               style={{ cursor: step.number <= activeStepNumber ? "pointer" : "default" }}
             >
-              <div className="step-number">
+              <div className="play-step-number">
                 {isCompleted ? "✓" : step.number}
               </div>
-              <span className="step-label-text">{step.title}</span>
+              <span className="play-step-label">{step.title}</span>
             </div>
           );
         })}

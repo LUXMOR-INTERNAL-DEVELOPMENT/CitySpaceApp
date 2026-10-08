@@ -1,0 +1,865 @@
+/* ===================================================
+   Play Screen Styles – CitySpace
+   =================================================== */
+
+.playscreen-root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7f9fc;
+}
+
+.play-page-container {
+  width: 100%;
+  max-width: 100%;
+  flex: 1;
+  margin: 0;
+  padding: clamp(24px, 4vw, 44px) clamp(20px, 4vw, 64px) clamp(40px, 6vw, 64px);
+  background: #f7f9fc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.play-header {
+  width: 100%;
+  margin: 0 0 clamp(20px, 3vw, 32px);
+}
+
+.play-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 7px 16px 7px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+  line-height: 1;
+}
+
+.play-back-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.play-back-btn svg {
+  flex-shrink: 0;
+}
+
+.play-header h1 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  margin: 0 0 6px;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.play-header p {
+  color: #6b7280;
+  font-size: clamp(14px, 2vw, 15px);
+  margin: 0;
+}
+
+/* ============================================
+   Sports Banner — Split Panel (text | image)
+   ============================================ */
+.play-split-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 24px;
+  overflow: hidden;
+  height: clamp(220px, 24vw, 320px);
+  margin: 0 0 clamp(28px, 4vw, 44px);
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.14);
+}
+
+/* LEFT: dark gradient text panel */
+.play-split-text {
+  background: linear-gradient(135deg, #0a2740 0%, #0d4a3a 55%, #0f5c48 100%);
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 3.5vw, 44px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle decorative circle behind text */
+.play-split-text::before {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -40px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.08);
+  pointer-events: none;
+}
+
+.play-split-title {
+  font-size: clamp(22px, 2.6vw, 36px);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 10px;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
+}
+
+.play-split-subtitle {
+  font-size: clamp(13px, 1.3vw, 15px);
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 20px;
+  line-height: 1.5;
+  max-width: 380px;
+}
+
+.play-split-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.play-split-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+
+/* Badge shared */
+.play-banner-badge {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #6ee7b7;
+  background: rgba(110, 231, 183, 0.12);
+  border: 1px solid rgba(110, 231, 183, 0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+
+/* RIGHT: image panel */
+.play-split-image-wrap {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  height: clamp(220px, 24vw, 320px);
+}
+
+.play-split-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.play-split-banner:hover .play-split-image {
+  transform: scale(1.04);
+}
+
+/* Subtle left-edge fade to blend into text panel */
+.play-split-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10, 39, 64, 0.35) 0%, transparent 35%);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .play-split-banner {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .play-split-image-wrap {
+    height: 220px;
+  }
+
+  .play-split-text {
+    padding: 28px 22px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .play-split-banner {
+    height: auto;
+  }
+
+  .play-split-image-wrap {
+    height: 180px;
+  }
+}
+
+/* Sporting Events Section (Directly below Explore Sports) */
+.sporting-events-section {
+  width: 100%;
+  margin: 0 0 clamp(36px, 4vw, 50px);
+}
+
+.section-main-title {
+  font-size: clamp(20px, 2.3vw, 24px);
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.3px;
+  margin: 0 0 18px;
+}
+
+.sporting-events-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.sporting-event-card {
+  width: 290px;
+  flex: 0 0 290px;
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sporting-event-card:hover {
+  transform: translateY(-4px);
+}
+
+.sporting-event-poster-wrapper {
+  width: 100%;
+  height: 310px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f1f5f9;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+  margin-bottom: 12px;
+}
+
+.sporting-event-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.sporting-event-card:hover .sporting-event-poster {
+  transform: scale(1.03);
+}
+
+.sporting-event-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.sporting-event-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+.location-compass-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.sporting-event-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.sporting-event-date {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Venues Section */
+.venues-section {
+  width: 100%;
+  margin-bottom: clamp(40px, 5vw, 60px);
+}
+
+/* Header row: title left, search right */
+.venues-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.venues-section-header .section-main-title {
+  margin: 0;
+}
+
+/* Title row: back button + heading side by side */
+.venues-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.venues-title-row .section-main-title {
+  margin: 0;
+}
+
+/* See All Venues Pill Button */
+.venues-see-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  color: #15803d;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.venues-see-all-btn:hover {
+  background: #059669;
+  border-color: #059669;
+  color: #ffffff;
+  transform: translateX(2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+}
+
+/* Back button inside All Sports Venues */
+.venues-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  color: #15803d;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px 6px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.venues-back-btn:hover {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+  box-shadow: 0 2px 8px rgba(21, 128, 61, 0.15);
+}
+
+.venues-back-btn svg {
+  flex-shrink: 0;
+}
+
+/* Search wrap */
+.venues-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: clamp(220px, 30vw, 340px);
+}
+
+.venues-search-icon {
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  color: #9ca3af;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.venues-search-input {
+  width: 100%;
+  padding: 9px 36px 9px 36px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 24px;
+  font-size: 13.5px;
+  color: #111827;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.venues-search-input::placeholder {
+  color: #9ca3af;
+}
+
+.venues-search-input:focus {
+  border-color: #1a7a4c;
+  box-shadow: 0 0 0 3px rgba(26, 122, 76, 0.1);
+}
+
+.venues-search-clear {
+  position: absolute;
+  right: 10px;
+  background: #e5e7eb;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: background 0.15s ease;
+}
+
+.venues-search-clear:hover {
+  background: #d1d5db;
+  color: #111827;
+}
+
+@media (max-width: 600px) {
+  .venues-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .venues-search-wrap {
+    width: 100%;
+  }
+}
+
+/* Filter Bar directly under All Sports Venues */
+.venues-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.filter-dropdown-wrapper {
+  position: relative;
+}
+
+.filter-btn-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.filter-btn-main:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.filter-btn-main.active {
+  border-color: #1a7a4c;
+  color: #1a7a4c;
+}
+
+.dropdown-caret {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.filters-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  z-index: 50;
+  min-width: 160px;
+}
+
+.dropdown-filter-action {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ef4444;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.dropdown-filter-action:hover {
+  background: #fee2e2;
+}
+
+.filter-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.filter-pill-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.filter-pill-btn.active {
+  background: #1a7a4c;
+  color: #ffffff;
+  border-color: #1a7a4c;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(26, 122, 76, 0.2);
+}
+
+.no-venues-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+}
+
+.reset-filter-btn {
+  margin-top: 14px;
+  background: #1a7a4c;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.venues-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  gap: 22px;
+  width: 100%;
+}
+
+.venue-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.venue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+}
+
+.venue-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.venue-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.venue-card:hover .venue-img {
+  transform: scale(1.04);
+}
+
+.venue-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(17, 24, 39, 0.8);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.venue-content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.venue-top-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.venue-rating {
+  font-size: 13px;
+  font-weight: 700;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.reviews-count {
+  font-weight: 400;
+  color: #4b5563;
+}
+
+.venue-courts-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.venue-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.venue-location {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 14px;
+}
+
+.venue-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.feature-pill {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #374151;
+  background: #f3f4f6;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+.venue-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.venue-price-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 11px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.price-val {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a7a4c;
+}
+
+.book-venue-btn {
+  background: #1a7a4c;
+  color: #ffffff;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.book-venue-btn:hover {
+  background: #145e3a;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 480px) {
+  .play-page-container {
+    padding: 16px 14px 0;
+  }
+
+  .play-main-banner {
+    padding: 20px;
+  }
+
+  .play-banner-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .venues-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------- Load More Button & Loaded Indicator ---------------- */
+.venues-load-more-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 36px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.load-more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9999px;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.load-more-btn:hover {
+  background: #059669;
+  border-color: #059669;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.25);
+}
+
+.load-more-btn:active {
+  transform: translateY(0);
+}
+
+.load-more-chevron {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  transition: transform 0.2s ease;
+}
+
+.load-more-btn:hover .load-more-chevron {
+  transform: translateY(2px);
+}
+
+.venues-all-loaded-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  margin-bottom: 20px;
+  padding: 12px 20px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 30px;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.all-loaded-text {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #166534;
+}
+
+.show-less-btn {
+  background: #ffffff;
+  border: 1px solid #86efac;
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.show-less-btn:hover {
+  background: #15803d;
+  color: #ffffff;
+  border-color: #15803d;
+}

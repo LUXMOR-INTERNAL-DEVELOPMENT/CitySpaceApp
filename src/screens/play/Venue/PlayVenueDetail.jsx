@@ -175,6 +175,10 @@ export default function PlayVenueDetail() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [showMapPreview, setShowMapPreview] = useState(false);
   const [aboutExpanded, setAboutExpanded] = useState(false);
+  const [expandedPolicy, setExpandedPolicy] = useState(null); // 'cancellation' | 'reschedule' | 'faq' | null
+  const [activePolicyModal, setActivePolicyModal] = useState(null); // 'cancellation' | 'reschedule' | 'faq' | null
+  const [isSaved, setIsSaved] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
   const [reviewExpanded, setReviewExpanded] = useState(false);
   const [showAllReviews, setShowAllReviews] = useState(false);
 
@@ -374,7 +378,7 @@ export default function PlayVenueDetail() {
           <span>Back to Venues</span>
         </button>
 
-        {/* Subnav links matching Image 1 */}
+        {/* Subnav links */}
         <div className="venue-subnav-links">
           <button
             type="button"
@@ -408,7 +412,27 @@ export default function PlayVenueDetail() {
           </button>
           <button
             type="button"
-            className="venue-subnav-btn active"
+            className="venue-subnav-btn"
+            onClick={() => {
+              const el = document.getElementById("venue-about-section");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            About
+          </button>
+          <button
+            type="button"
+            className="venue-subnav-btn"
+            onClick={() => {
+              const el = document.getElementById("venue-more-section");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Policies
+          </button>
+          <button
+            type="button"
+            className="venue-subnav-btn"
             onClick={() => {
               const el = document.getElementById("venue-reviews-section");
               if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -418,17 +442,81 @@ export default function PlayVenueDetail() {
           </button>
         </div>
 
-        <button
-          type="button"
-          className="venue-subnav-book-btn"
-          onClick={() => {
-            const el = document.querySelector(".venue-booking-slot-card");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Book a game
-        </button>
+        <div className="venue-topbar-right-group">
+          {/* Bookmark Button */}
+          <button
+            type="button"
+            className={`venue-topbar-action-icon-btn ${isSaved ? "saved" : ""}`}
+            onClick={() => {
+              setIsSaved((prev) => !prev);
+              setToastMessage(isSaved ? "Removed from saved venues" : "Venue saved to your bookmarks!");
+              setTimeout(() => setToastMessage(""), 3000);
+            }}
+            title={isSaved ? "Saved" : "Save venue"}
+            aria-label="Save venue"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill={isSaved ? "#2563eb" : "none"}
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+            </svg>
+          </button>
+
+          {/* Share Button */}
+          <button
+            type="button"
+            className="venue-topbar-action-icon-btn"
+            onClick={() => {
+              if (navigator?.clipboard) {
+                navigator.clipboard.writeText(window.location.href);
+              }
+              setToastMessage("Link copied to clipboard!");
+              setTimeout(() => setToastMessage(""), 3000);
+            }}
+            title="Share venue"
+            aria-label="Share venue"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+              <polyline points="16 6 12 2 8 6" />
+              <line x1="12" y1="2" x2="12" y2="15" />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            className="venue-subnav-book-btn"
+            onClick={() => {
+              const el = document.querySelector(".venue-booking-slot-card");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Book a game
+          </button>
+        </div>
       </div>
+
+      {toastMessage && (
+        <div className="venue-toast-banner">
+          <span>{toastMessage}</span>
+        </div>
+      )}
 
       {/* Main Container */}
       <div className="venue-detail-container">
@@ -462,6 +550,10 @@ export default function PlayVenueDetail() {
 
           {/* Image Gallery */}
           <div className="venue-gallery-wrapper">
+            <div className="venue-gallery-label-row">
+              <span className="venue-gallery-label">GALLERY</span>
+            </div>
+
             <div className="venue-main-image-box">
               <img
                 src={images[activeImageIndex] || venue.image}
@@ -479,24 +571,33 @@ export default function PlayVenueDetail() {
 
             {/* Thumbnail Row */}
             <div className="venue-thumbs-row">
-              {images.map((imgUrl, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  className={`venue-thumb-btn ${idx === activeImageIndex ? "active" : ""}`}
-                  onClick={() => setActiveImageIndex(idx)}
-                >
-                  <img
-                    src={imgUrl}
-                    alt={`Thumbnail ${idx + 1}`}
-                    className="venue-thumb-img"
-                    onError={(e) => {
-                      e.target.src =
-                        "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=300&q=80";
-                    }}
-                  />
-                </button>
-              ))}
+              {images.map((imgUrl, idx) => {
+                const isLastWithMore = idx === 3;
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    className={`venue-thumb-btn ${idx === activeImageIndex ? "active" : ""}`}
+                    onClick={() => setActiveImageIndex(idx)}
+                  >
+                    <img
+                      src={imgUrl}
+                      alt={`Thumbnail ${idx + 1}`}
+                      className="venue-thumb-img"
+                      onError={(e) => {
+                        e.target.src =
+                          "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=300&q=80";
+                      }}
+                    />
+                    {isLastWithMore && (
+                      <div className="venue-thumb-more-overlay">
+                        <span className="venue-thumb-more-plus">+1</span>
+                        <span className="venue-thumb-more-text">more</span>
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -662,7 +763,219 @@ export default function PlayVenueDetail() {
               </button>
             </div>
 
-            {/* 5. Reviews Section (Image 1 added down below Image 2 About) */}
+            {/* 5. MORE Section (Image 1: Added down below About section) */}
+            <div className="venue-dark-section venue-dark-more-section" id="venue-more-section">
+              <h3 className="venue-more-heading">MORE</h3>
+              <div className="venue-more-card">
+                {/* 1. Cancellation policy */}
+                <div className="venue-more-item-wrapper">
+                  <div
+                    className={`venue-more-item-row ${expandedPolicy === "cancellation" ? "active" : ""}`}
+                    onClick={() =>
+                      setExpandedPolicy((prev) => (prev === "cancellation" ? null : "cancellation"))
+                    }
+                    role="button"
+                    tabIndex={0}
+                    aria-expanded={expandedPolicy === "cancellation"}
+                  >
+                    <div className="venue-more-item-icon">
+                      {/* Rupee icon inside circle outline */}
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M8.5 7.5h7" />
+                        <path d="M8.5 10.5h6" />
+                        <path d="M8.5 10.5c1.8 0 3.2.9 3.2 2.2 0 1.4-1.4 2.3-3.2 2.3" />
+                        <path d="M12 15l-3.5 4" />
+                      </svg>
+                    </div>
+
+                    <div className="venue-more-item-content">
+                      <span className="venue-more-item-title">Cancellation policy</span>
+                    </div>
+
+                    <div className={`venue-more-item-chevron ${expandedPolicy === "cancellation" ? "rotated" : ""}`}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {expandedPolicy === "cancellation" && (
+                    <div className="venue-more-expanded-body">
+                      <div className="venue-policy-timeline">
+                        <div className="venue-policy-rule">
+                          <span className="policy-badge green">100% Refund</span>
+                          <span className="policy-desc">Cancelled up to 4 hours before the slot start time.</span>
+                        </div>
+                        <div className="venue-policy-rule">
+                          <span className="policy-badge yellow">50% Refund</span>
+                          <span className="policy-desc">Cancelled between 2 to 4 hours before the slot start time.</span>
+                        </div>
+                        <div className="venue-policy-rule">
+                          <span className="policy-badge red">No Refund</span>
+                          <span className="policy-desc">Cancelled less than 2 hours before the slot start time.</span>
+                        </div>
+                      </div>
+                      <p className="venue-policy-note">
+                        Refunds are processed back to your original payment method in 3–5 working days or instantly to CitySpace wallet.
+                      </p>
+                      <button
+                        type="button"
+                        className="venue-policy-view-details-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActivePolicyModal("cancellation");
+                        }}
+                      >
+                        View Full Cancellation Terms ↗
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                {/* 2. Reschedule policy */}
+                <div className="venue-more-item-wrapper">
+                  <div
+                    className={`venue-more-item-row ${expandedPolicy === "reschedule" ? "active" : ""}`}
+                    onClick={() =>
+                      setExpandedPolicy((prev) => (prev === "reschedule" ? null : "reschedule"))
+                    }
+                    role="button"
+                    tabIndex={0}
+                    aria-expanded={expandedPolicy === "reschedule"}
+                  >
+                    <div className="venue-more-item-icon">
+                      {/* Calendar outline icon */}
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="3" ry="3" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                        <circle cx="8" cy="15" r="1" fill="currentColor" />
+                        <circle cx="12" cy="15" r="1" fill="currentColor" />
+                        <circle cx="16" cy="15" r="1" fill="currentColor" />
+                      </svg>
+                    </div>
+
+                    <div className="venue-more-item-content">
+                      <span className="venue-more-item-title">Reschedule policy</span>
+                      <span className="venue-more-item-subtitle">
+                        You can reschedule your booking up to 2 hours before the slot start time.
+                      </span>
+                    </div>
+
+                    <div className={`venue-more-item-chevron ${expandedPolicy === "reschedule" ? "rotated" : ""}`}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {expandedPolicy === "reschedule" && (
+                    <div className="venue-more-expanded-body">
+                      <div className="venue-policy-timeline">
+                        <div className="venue-policy-rule">
+                          <span className="policy-badge blue">Free Reschedule</span>
+                          <span className="policy-desc">Allowed up to 2 hours before the booked slot time.</span>
+                        </div>
+                        <div className="venue-policy-rule">
+                          <span className="policy-badge purple">1 Time Modification</span>
+                          <span className="policy-desc">Can be rescheduled once per booking with no penalty fees.</span>
+                        </div>
+                        <div className="venue-policy-rule">
+                          <span className="policy-badge cyan">Any Available Date</span>
+                          <span className="policy-desc">Pick any open slot within the next 30 calendar days.</span>
+                        </div>
+                      </div>
+                      <p className="venue-policy-note">
+                        Price adjustment: If new slot has higher pricing, pay the difference; if lower, difference is credited.
+                      </p>
+                      <button
+                        type="button"
+                        className="venue-policy-view-details-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActivePolicyModal("reschedule");
+                        }}
+                      >
+                        View Full Reschedule Terms ↗
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                {/* 3. Frequently asked questions */}
+                <div className="venue-more-item-wrapper">
+                  <div
+                    className={`venue-more-item-row ${expandedPolicy === "faq" ? "active" : ""}`}
+                    onClick={() =>
+                      setExpandedPolicy((prev) => (prev === "faq" ? null : "faq"))
+                    }
+                    role="button"
+                    tabIndex={0}
+                    aria-expanded={expandedPolicy === "faq"}
+                  >
+                    <div className="venue-more-item-icon">
+                      {/* Question mark circle icon */}
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" strokeWidth="2.5" />
+                      </svg>
+                    </div>
+
+                    <div className="venue-more-item-content">
+                      <span className="venue-more-item-title">Frequently asked questions</span>
+                    </div>
+
+                    <div className={`venue-more-item-chevron ${expandedPolicy === "faq" ? "rotated" : ""}`}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {expandedPolicy === "faq" && (
+                    <div className="venue-more-expanded-body">
+                      <div className="venue-faqs-list">
+                        <div className="venue-faq-item">
+                          <h4 className="venue-faq-q">Q: What sports equipment is available at the venue?</h4>
+                          <p className="venue-faq-a">Bats, balls, and basic equipment are provided free of charge. You may also bring your personal gear.</p>
+                        </div>
+                        <div className="venue-faq-item">
+                          <h4 className="venue-faq-q">Q: What footwear is allowed on the turf?</h4>
+                          <p className="venue-faq-a">Rubber turf studs or standard running sneakers are permitted. Metal studs and formal shoes are prohibited.</p>
+                        </div>
+                        <div className="venue-faq-item">
+                          <h4 className="venue-faq-q">Q: Is parking and drinking water available?</h4>
+                          <p className="venue-faq-a">Yes, free parking for 2-wheelers and 4-wheelers as well as filtered drinking water are available.</p>
+                        </div>
+                        <div className="venue-faq-item">
+                          <h4 className="venue-faq-q">Q: What happens if it rains during outdoor play?</h4>
+                          <p className="venue-faq-a">If heavy rain renders the arena unplayable, you get an automatic free reschedule or 100% refund.</p>
+                        </div>
+                        <div className="venue-faq-item">
+                          <h4 className="venue-faq-q">Q: Can we extend our slot duration?</h4>
+                          <p className="venue-faq-a">Yes, subject to subsequent slot availability, you can extend your slot directly with venue staff or in-app.</p>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        className="venue-policy-view-details-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActivePolicyModal("faq");
+                        }}
+                      >
+                        Open All FAQs Modal ↗
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* 6. Reviews Section */}
             <div className="venue-dark-section venue-dark-reviews-section" id="venue-reviews-section">
               <div className="venue-reviews-section-top">
                 <div>
@@ -1072,6 +1385,211 @@ export default function PlayVenueDetail() {
           </div>
         </div>
       )}
+
+      {/* Policy Details Modal Dialog */}
+      {activePolicyModal && (
+        <div
+          className="venue-reviews-modal-overlay"
+          onClick={() => setActivePolicyModal(null)}
+        >
+          <div
+            className="venue-reviews-modal-card venue-policy-modal-card"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="venue-reviews-modal-header">
+              <div>
+                <h2 className="venue-reviews-modal-title">
+                  {activePolicyModal === "cancellation"
+                    ? "Cancellation Policy"
+                    : activePolicyModal === "reschedule"
+                    ? "Reschedule Policy"
+                    : "Frequently Asked Questions"}
+                </h2>
+                <div className="venue-reviews-modal-subtitle">
+                  {venue.title} · Official Arena Policies
+                </div>
+              </div>
+              <button
+                type="button"
+                className="venue-reviews-modal-close-btn"
+                onClick={() => setActivePolicyModal(null)}
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Policy Modal Tabs */}
+            <div className="venue-policy-modal-tabs">
+              <button
+                type="button"
+                className={`policy-tab-btn ${activePolicyModal === "cancellation" ? "active" : ""}`}
+                onClick={() => setActivePolicyModal("cancellation")}
+              >
+                ₹ Cancellation
+              </button>
+              <button
+                type="button"
+                className={`policy-tab-btn ${activePolicyModal === "reschedule" ? "active" : ""}`}
+                onClick={() => setActivePolicyModal("reschedule")}
+              >
+                📅 Reschedule
+              </button>
+              <button
+                type="button"
+                className={`policy-tab-btn ${activePolicyModal === "faq" ? "active" : ""}`}
+                onClick={() => setActivePolicyModal("faq")}
+              >
+                ❔ FAQs
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="venue-policy-modal-body">
+              {activePolicyModal === "cancellation" && (
+                <div className="policy-modal-panel">
+                  <h3 className="policy-modal-panel-title">Cancellation &amp; Refund Rules</h3>
+                  <div className="policy-cards-stack">
+                    <div className="policy-rule-card green-border">
+                      <div className="policy-rule-badge green-badge">100% Refund</div>
+                      <div className="policy-rule-content">
+                        <strong>Before 4 Hours of Slot Start:</strong>
+                        <p>Cancel at least 4 hours before your booking time to receive a full 100% refund without any cancellation fee.</p>
+                      </div>
+                    </div>
+
+                    <div className="policy-rule-card yellow-border">
+                      <div className="policy-rule-badge yellow-badge">50% Refund</div>
+                      <div className="policy-rule-content">
+                        <strong>Between 2 to 4 Hours of Slot:</strong>
+                        <p>A 50% refund will be issued if cancelled between 2 and 4 hours before the booked start time.</p>
+                      </div>
+                    </div>
+
+                    <div className="policy-rule-card red-border">
+                      <div className="policy-rule-badge red-badge">Non-Refundable</div>
+                      <div className="policy-rule-content">
+                        <strong>Within 2 Hours of Slot:</strong>
+                        <p>No refund is permitted for cancellations requested less than 2 hours prior to the slot or in case of a no-show.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="policy-extra-info">
+                    <h4>Refund Crediting:</h4>
+                    <p>• <strong>Wallet Refund:</strong> Instant credit to your CitySpace Wallet.</p>
+                    <p>• <strong>Original Mode:</strong> Credited within 3–5 working days to your original UPI / Net Banking / Card.</p>
+                    <p>• <strong>Bad Weather Guarantee:</strong> In case of heavy rain or unforeseen facility maintenance, a 100% refund or free slot swap is provided automatically.</p>
+                  </div>
+                </div>
+              )}
+
+              {activePolicyModal === "reschedule" && (
+                <div className="policy-modal-panel">
+                  <h3 className="policy-modal-panel-title">Rescheduling Guidelines</h3>
+                  <div className="policy-cards-stack">
+                    <div className="policy-rule-card blue-border">
+                      <div className="policy-rule-badge blue-badge">Free Reschedule</div>
+                      <div className="policy-rule-content">
+                        <strong>Up to 2 Hours Before Start:</strong>
+                        <p>You can reschedule your booking up to 2 hours before the slot start time directly from your booking summary.</p>
+                      </div>
+                    </div>
+
+                    <div className="policy-rule-card purple-border">
+                      <div className="policy-rule-badge purple-badge">1 Reschedule Allowed</div>
+                      <div className="policy-rule-content">
+                        <strong>Single Change Limit:</strong>
+                        <p>Each reservation can be rescheduled one time at zero convenience fee.</p>
+                      </div>
+                    </div>
+
+                    <div className="policy-rule-card cyan-border">
+                      <div className="policy-rule-badge cyan-badge">30-Day Window</div>
+                      <div className="policy-rule-content">
+                        <strong>Pick Any Open Date / Time:</strong>
+                        <p>Choose any alternative open slot available within the next 30 calendar days at this venue.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="policy-extra-info">
+                    <h4>Slot Price Differences:</h4>
+                    <p>• If the new slot has a <strong>higher tariff</strong> (e.g. prime evening slot or weekend), you only pay the incremental price difference.</p>
+                    <p>• If the new slot is <strong>lower priced</strong>, the remaining balance will be credited to your CitySpace wallet.</p>
+                  </div>
+                </div>
+              )}
+
+              {activePolicyModal === "faq" && (
+                <div className="policy-modal-panel">
+                  <h3 className="policy-modal-panel-title">Frequently Asked Questions</h3>
+                  <div className="policy-faq-accordion">
+                    <div className="policy-faq-entry">
+                      <h4>🏏 What sports equipment is available at the venue?</h4>
+                      <p>Cricket bats, tennis balls, badminton racquets, shuttlecocks, and footballs are provided complimentary by the venue. You are welcome to carry your personal match gear.</p>
+                    </div>
+                    <div className="policy-faq-entry">
+                      <h4>👟 What footwear is allowed on the turf / court?</h4>
+                      <p>Turf shoes with rubber studs or flat-sole trainers are mandatory. Metal studs and formal footwear are strictly forbidden to ensure player safety and court upkeep.</p>
+                    </div>
+                    <div className="policy-faq-entry">
+                      <h4>🚗 Is vehicle parking and drinking water available?</h4>
+                      <p>Yes, complimentary two-wheeler and four-wheeler parking spaces are available on premises. Filtered drinking water is provided free of charge.</p>
+                    </div>
+                    <div className="policy-faq-entry">
+                      <h4>🌧️ What happens if it rains during outdoor play?</h4>
+                      <p>If outdoor ground conditions are rendered unplayable due to rain, you can immediately reschedule your slot for another day or opt for a full refund.</p>
+                    </div>
+                    <div className="policy-faq-entry">
+                      <h4>⏰ Can we extend our play session?</h4>
+                      <p>Yes, if the immediately subsequent slot is unreserved, you can easily extend your slot duration directly via the app or with the ground manager.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="venue-policy-modal-footer">
+              <button
+                type="button"
+                className="venue-policy-modal-close-btn-bottom"
+                onClick={() => setActivePolicyModal(null)}
+              >
+                Close Policies
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Floating Bottom Action Bar matching Image 1 */}
+      <div className="venue-mobile-bottom-bar">
+        <div className="venue-mobile-bottom-info">
+          <span className="venue-mobile-sport-title">
+            {venue.sportName || "Box Cricket"}
+          </span>
+          <span className="venue-mobile-sport-sub">
+            {venue.price || "₹800 / hr"}
+          </span>
+        </div>
+        <button
+          type="button"
+          className="venue-mobile-book-slots-btn"
+          onClick={() => {
+            const el = document.querySelector(".venue-booking-slot-card");
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth" });
+            } else {
+              handleProceedBooking();
+            }
+          }}
+        >
+          Book slots
+        </button>
+      </div>
     </div>
   );
 }

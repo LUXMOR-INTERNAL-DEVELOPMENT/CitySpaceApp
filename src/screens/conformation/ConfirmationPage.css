@@ -1,0 +1,493 @@
+/* ===================================================
+   Confirmation Page & Cancel Booking Modal Styles
+   Matching Design Mockup (media_1791454503709_dc34382c.png)
+   =================================================== */
+
+.confirmation-page-main {
+  min-height: 100vh;
+  background: #f1f5f3;
+  padding: 36px 20px 60px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1f2a1f;
+  box-sizing: border-box;
+}
+
+.confirmation-page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 28px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  padding: 40px 48px 44px;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Badge pill */
+.confirmation-step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.2px;
+  margin-bottom: 16px;
+}
+
+.confirmation-step-pill.cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Heading & Subtitle */
+.confirmation-title {
+  font-size: clamp(26px, 3.2vw, 32px);
+  font-weight: 800;
+  color: #0f3d2e;
+  margin: 0 0 10px;
+  letter-spacing: -0.4px;
+}
+
+.confirmation-subtitle {
+  max-width: 520px;
+  margin: 0 auto 28px;
+  color: #4b5563;
+  line-height: 1.5;
+  font-size: 14.5px;
+}
+
+/* Cancelled Alert Banner */
+.confirmation-cancelled-banner {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: #fef2f2;
+  border: 1px solid #fecdd3;
+  color: #991b1b;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.cancelled-banner-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Booking Details Grid */
+.confirmation-details-grid {
+  margin: 0 auto 22px;
+  max-width: 680px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: #e5e7eb;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.confirmation-grid-cell {
+  background: #ffffff;
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.confirmation-cell-label {
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.confirmation-cell-value {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+/* Notice / Info box */
+.confirmation-info-box {
+  max-width: 680px;
+  margin: 0 auto 28px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #eef7ed;
+  border: none;
+  color: #2b563b;
+  line-height: 1.45;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.confirmation-info-icon-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2b563b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: serif;
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+/* Actions Row */
+.confirmation-actions-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* 1. Cancel Booking Button (Matching exact pale mint/green style in image) */
+.btn-cancel-booking {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid #0d5a49;
+  background: #edf7ee;
+  color: #0d5a49;
+  padding: 11px 22px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  line-height: 1;
+}
+
+.btn-cancel-booking:hover {
+  background: #e1f3e3;
+  border-color: #084c3d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 90, 73, 0.15);
+}
+
+.btn-cancel-booking-icon {
+  color: #0d5a49;
+  display: flex;
+  align-items: center;
+}
+
+/* 2. Book another experience Button (Matching solid dark green in image) */
+.btn-book-another {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: #0d5a49;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  line-height: 1;
+  box-shadow: 0 4px 14px rgba(13, 90, 73, 0.2);
+}
+
+.btn-book-another:hover {
+  background: #09483a;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(13, 90, 73, 0.3);
+}
+
+/* 3. Print confirmation Button (Matching solid dark green in image) */
+.btn-print-confirmation {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: #0d5a49;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  line-height: 1;
+  box-shadow: 0 4px 14px rgba(13, 90, 73, 0.25);
+}
+
+.btn-print-confirmation:hover {
+  background: #09483a;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(13, 90, 73, 0.3);
+}
+
+/* ===================================================
+   Cancel Confirmation Modal (Right side of screenshot)
+   =================================================== */
+.cancel-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cancel-modal-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 28px 32px;
+  max-width: 490px;
+  width: 100%;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
+  text-align: left;
+  position: relative;
+  animation: modalSlideUp 0.22s ease-out;
+  box-sizing: border-box;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cancel-modal-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cancel-modal-trash-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fee2e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+}
+
+.cancel-modal-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.cancel-modal-close-btn:hover {
+  color: #0f172a;
+  background: #f1f5f9;
+}
+
+.cancel-modal-title {
+  font-size: 23px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 6px;
+  letter-spacing: -0.3px;
+}
+
+.cancel-modal-question {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 8px;
+}
+
+.cancel-modal-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+/* Alert Note Box */
+.cancel-modal-alert-box {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 24px;
+}
+
+.cancel-modal-alert-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e11d48;
+  font-weight: 700;
+  font-size: 13.5px;
+  margin-bottom: 8px;
+}
+
+.cancel-modal-alert-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.cancel-modal-alert-list li {
+  margin-bottom: 3px;
+}
+
+.cancel-modal-alert-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Modal Actions */
+.cancel-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-keep-booking {
+  flex: 1;
+  background: #ffffff;
+  border: 1.5px solid #0d5a49;
+  color: #0d5a49;
+  padding: 11px 20px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+}
+
+.btn-keep-booking:hover {
+  background: #f0fdf4;
+  border-color: #0f766e;
+}
+
+.btn-confirm-cancel {
+  flex: 1;
+  background: #0d5a49;
+  border: none;
+  color: #ffffff;
+  padding: 11px 20px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(13, 90, 73, 0.25);
+}
+
+.btn-confirm-cancel:hover {
+  background: #09483a;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(13, 90, 73, 0.35);
+}
+
+/* Print styles */
+@media print {
+  .confirmation-page-main {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .confirmation-actions-row,
+  .cancel-modal-overlay {
+    display: none !important;
+  }
+
+  .confirmation-card {
+    box-shadow: none;
+    border: none;
+    padding: 20px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .confirmation-card {
+    padding: 30px 20px;
+  }
+
+  .confirmation-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .confirmation-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-cancel-booking,
+  .btn-book-another,
+  .btn-print-confirmation {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cancel-modal-actions {
+    flex-direction: column;
+  }
+
+  .btn-keep-booking,
+  .btn-confirm-cancel {
+    width: 100%;
+  }
+}

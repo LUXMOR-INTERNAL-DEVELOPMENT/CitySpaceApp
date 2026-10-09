@@ -1565,3 +1565,665 @@
     transform: rotate(360deg);
   }
 }
+
+/* ===================================================
+   Gallery Header & "+1 more" Thumbnail Overlay (Image 1)
+   =================================================== */
+.venue-gallery-label-row {
+  margin-bottom: 2px;
+}
+
+.venue-gallery-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #64748b;
+}
+
+.venue-thumb-more-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  pointer-events: none;
+  transition: background 0.18s ease;
+}
+
+.venue-thumb-btn:hover .venue-thumb-more-overlay {
+  background: rgba(15, 23, 42, 0.65);
+}
+
+.venue-thumb-more-plus {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.venue-thumb-more-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-transform: lowercase;
+}
+
+/* ===================================================
+   Topbar Right Group & Action Buttons
+   =================================================== */
+.venue-topbar-right-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.venue-topbar-action-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 50%;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.venue-topbar-action-icon-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.venue-topbar-action-icon-btn.saved {
+  color: #2563eb;
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.venue-toast-banner {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  z-index: 9999;
+  animation: fadeInToast 0.22s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeInToast {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ===================================================
+   MORE Section (Image 1 Added Down Below About Section)
+   =================================================== */
+.venue-dark-more-section {
+  padding-top: 10px;
+  scroll-margin-top: 80px;
+}
+
+.venue-more-heading {
+  font-size: 13.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: #888892;
+  margin: 0 0 14px 2px;
+}
+
+.venue-more-card {
+  background: #17181d;
+  border: 1px solid #242630;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+.venue-more-item-wrapper {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.venue-more-item-wrapper:last-child {
+  border-bottom: none;
+}
+
+.venue-more-item-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.18s ease;
+  user-select: none;
+}
+
+.venue-more-item-row:hover {
+  background-color: rgba(255, 255, 255, 0.035);
+}
+
+.venue-more-item-row.active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.venue-more-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a1a1aa;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+}
+
+.venue-more-item-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.venue-more-item-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.15px;
+  line-height: 1.3;
+}
+
+.venue-more-item-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: #94a3b8;
+  line-height: 1.45;
+  margin-top: 2px;
+}
+
+.venue-more-item-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  flex-shrink: 0;
+  transition: transform 0.22s ease, color 0.18s ease;
+}
+
+.venue-more-item-chevron.rotated {
+  transform: rotate(90deg);
+  color: #38bdf8;
+}
+
+.venue-more-item-row:hover .venue-more-item-chevron {
+  color: #cbd5e1;
+}
+
+/* Expanded body inside the MORE card */
+.venue-more-expanded-body {
+  background: #111216;
+  padding: 20px 22px 22px 58px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  animation: slideDownPolicy 0.2s ease-out;
+}
+
+@keyframes slideDownPolicy {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.venue-policy-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.venue-policy-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+}
+
+.policy-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.policy-badge.green {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.policy-badge.yellow {
+  background: rgba(234, 179, 8, 0.15);
+  color: #fde047;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.policy-badge.red {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.policy-badge.blue {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.policy-badge.purple {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.policy-badge.cyan {
+  background: rgba(6, 182, 212, 0.15);
+  color: #22d3ee;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.policy-desc {
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+.venue-policy-note {
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.venue-policy-view-details-btn {
+  background: transparent;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.venue-policy-view-details-btn:hover {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+/* FAQs list inside accordion */
+.venue-faqs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.venue-faq-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.venue-faq-q {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.venue-faq-a {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ===================================================
+   Policy Modal Card & Tabs
+   =================================================== */
+.venue-policy-modal-card {
+  max-width: 620px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.venue-policy-modal-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: #141720;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-x: auto;
+}
+
+.policy-tab-btn {
+  background: #1e2330;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.policy-tab-btn:hover {
+  color: #ffffff;
+  background: #252c3c;
+}
+
+.policy-tab-btn.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.venue-policy-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.policy-modal-panel-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+.policy-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.policy-rule-card {
+  background: #161922;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.policy-rule-card.green-border {
+  border-left: 3px solid #22c55e;
+}
+
+.policy-rule-card.yellow-border {
+  border-left: 3px solid #eab308;
+}
+
+.policy-rule-card.red-border {
+  border-left: 3px solid #ef4444;
+}
+
+.policy-rule-card.blue-border {
+  border-left: 3px solid #3b82f6;
+}
+
+.policy-rule-card.purple-border {
+  border-left: 3px solid #a855f7;
+}
+
+.policy-rule-card.cyan-border {
+  border-left: 3px solid #06b6d4;
+}
+
+.policy-rule-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.policy-rule-badge.green-badge {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.policy-rule-badge.yellow-badge {
+  background: rgba(234, 179, 8, 0.2);
+  color: #fde047;
+}
+
+.policy-rule-badge.red-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.policy-rule-badge.blue-badge {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.policy-rule-badge.purple-badge {
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+}
+
+.policy-rule-badge.cyan-badge {
+  background: rgba(6, 182, 212, 0.2);
+  color: #22d3ee;
+}
+
+.policy-rule-content {
+  flex: 1;
+}
+
+.policy-rule-content strong {
+  display: block;
+  font-size: 13.5px;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.policy-rule-content p {
+  margin: 0;
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+.policy-extra-info {
+  background: #11141c;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.policy-extra-info h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #cbd5e1;
+  margin: 0 0 8px;
+}
+
+.policy-extra-info p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0 0 6px;
+  line-height: 1.5;
+}
+
+.policy-extra-info p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-extra-info strong {
+  color: #e2e8f0;
+}
+
+.policy-faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.policy-faq-entry {
+  background: #161922;
+  border-radius: 12px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.policy-faq-entry h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+.policy-faq-entry p {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.venue-policy-modal-footer {
+  padding: 16px 24px;
+  background: #141720;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.venue-policy-modal-close-btn-bottom {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.venue-policy-modal-close-btn-bottom:hover {
+  background: #1d4ed8;
+}
+
+/* ===================================================
+   Mobile Floating Bottom Bar (Matching Image 1)
+   =================================================== */
+.venue-mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111215;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 20px 16px;
+  z-index: 990;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.45);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.venue-mobile-bottom-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.venue-mobile-sport-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.venue-mobile-sport-sub {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.venue-mobile-book-slots-btn {
+  background: #ffffff;
+  color: #0f172a;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+  transition: all 0.18s ease;
+}
+
+.venue-mobile-book-slots-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .venue-mobile-bottom-bar {
+    display: flex;
+  }
+
+  .venue-detail-page {
+    padding-bottom: 90px;
+  }
+
+  .venue-more-expanded-body {
+    padding-left: 20px;
+  }
+}

@@ -1,221 +1,220 @@
 {
-"Filter": [
-  {
-    "id": 1,
-    "name": "The Green Leaf Restaurant",
-    "category": "Dining",
-    "date": "2026-09-12",
-    "price": 800,
-    "location": "Chennai",
-    "distance": 3,
-    "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
-    "icon": "🍽️"
-  },
-  {
-    "id": 2,
-    "name": "Weekend Music Festival",
-    "category": "Events",
-    "date": "2026-09-13",
-    "price": 1500,
-    "location": "Chennai",
-    "distance": 7,
-    "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a",
-    "icon": "🎵"
-  },
-  {
-    "id": 3,
-    "name": "Adventure Park",
-    "category": "Activities",
-    "date": "2026-09-14",
-    "price": 600,
-    "location": "Chennai",
-    "distance": 9,
-    "rating": 4.2,
-    "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077",
-    "icon": "🎯"
-  },
-  {
-    "id": 4,
-    "name": "Spice Garden",
-    "category": "Dining",
-    "date": "2026-09-20",
-    "price": 1200,
-    "location": "Chennai",
-    "distance": 5,
-    "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f",
-    "icon": "🍽️"
-  },
-  {
-    "id": 5,
-    "name": "Live Jazz Night",
-    "category": "Events",
-    "date": "2026-09-20",
-    "price": 2000,
-    "location": "Chennai",
-    "distance": 12,
-    "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629",
-    "icon": "🎵"
-  },
-  {
-    "id": 6,
-    "name": "Bowling Arena",
-    "category": "Activities",
-    "date": "2026-09-21",
-    "price": 500,
-    "location": "Chennai",
-    "distance": 4,
-    "rating": 4.1,
-    "image":"https://www.tenpin.co.uk/media/5357/cambrige-bowling-lane-pink-hue-front-on.jpg",
-    "icon": "🎳"
-  },
-  {
-    "id": 7,
-    "name": "Ocean View Restaurant",
-    "category": "Dining",
-    "date": "2026-09-27",
-    "price": 1800,
-    "location": "Chennai",
-    "distance": 8,
-    "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b",
-    "icon": "🍽️"
-  },
-  {
-    "id": 8,
-    "name": "Food Carnival",
-    "category": "Events",
-    "date": "2026-09-27",
-    "price": 1000,
-    "location": "Chennai",
-    "distance": 6,
-    "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
-    "icon": "🎵"
-  },
-  {
-    "id": 9,
-    "name": "Go Karting",
-    "category": "Activities",
-    "date": "2026-09-28",
-    "price": 1400,
-    "location": "Chennai",
-    "distance": 15,
-    "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39",
-    "icon": "🏎️"
-  },
-  {
-    "id": 10,
-    "name": "Royal Biryani House",
-    "category": "Dining",
-    "date": "2026-10-03",
-    "price": 700,
-    "location": "Chennai",
-    "distance": 2,
-    "rating": 3.9,
-    "image":"https://images.unsplash.com/photo-1633945274405-b6c8069047b0",
-    "icon": "🍽️"
-  },
-  {
-    "id": 11,
-    "name": "Stand Up Comedy",
-    "category": "Events",
-    "date": "2026-10-04",
-    "price": 900,
-    "location": "Chennai",
-    "distance": 10,
-    "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1585699324551-f6c309eedeca",
-    "icon": "🎤"
-  },
-  {
-    "id": 12,
-    "name": "Swimming Club",
-    "category": "Activities",
-    "date": "2026-10-05",
-    "price": 400,
-    "location": "Chennai",
-    "distance": 6,
-    "rating": 3.8,
-    "image": "https://images.unsplash.com/photo-1600965962361-9035dbfd1c50",
-    "icon": "🏊"
-  },
-  {
-    "id": 13,
-    "name": "Premium Steak House",
-    "category": "Dining",
-    "date": "2026-10-10",
-    "price": 2000,
-    "location": "Chennai",
-    "distance": 11,
-    "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947",
-    "icon": "🍽️"
-  },
-  {
-    "id": 14,
-    "name": "Art Exhibition",
-    "category": "Events",
-    "date": "2026-10-11",
-    "price": 500,
-    "location": "Chennai",
-    "distance": 3,
-    "rating": 4.0,
-    "image": "https://images.unsplash.com/photo-1561214115-f2f134cc4912",
-    "icon": "🎨"
-  },
-  {
-    "id": 15,
-    "name": "Cycling Tour",
-    "category": "Activities",
-    "date": "2026-10-12",
-    "price": 800,
-    "location": "Chennai",
-    "distance": 18,
-    "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1541625602330-2277a4c46182",
-    "icon": "🚴"
-  }
-],
- "Events":[
-  {
-    "id": 1,
-    "title": "Chef's Table",
-    "location": "Alwarpet",
-    "price": "₹1,999",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 2,
-    "title": "Sunday Brunch",
-    "location": "Guindy",
-    "price": "₹1,499",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 3,
-    "title": "Coastal Feast",
-    "location": "ECR",
-    "price": "₹1,299",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 4,
-    "title": "Garden Café",
-    "location": "Adyar",
-    "price": "₹799",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop"
-  }
-],
-
+  "Filter": [
+    {
+      "id": 1,
+      "name": "The Green Leaf Restaurant",
+      "category": "Dining",
+      "date": "2026-09-12",
+      "price": 800,
+      "location": "Chennai",
+      "distance": 3,
+      "rating": 4.6,
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+      "icon": "🍽️"
+    },
+    {
+      "id": 2,
+      "name": "Weekend Music Festival",
+      "category": "Events",
+      "date": "2026-09-13",
+      "price": 1500,
+      "location": "Chennai",
+      "distance": 7,
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a",
+      "icon": "🎵"
+    },
+    {
+      "id": 3,
+      "name": "Adventure Park",
+      "category": "Activities",
+      "date": "2026-09-14",
+      "price": 600,
+      "location": "Chennai",
+      "distance": 9,
+      "rating": 4.2,
+      "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077",
+      "icon": "🎯"
+    },
+    {
+      "id": 4,
+      "name": "Spice Garden",
+      "category": "Dining",
+      "date": "2026-09-20",
+      "price": 1200,
+      "location": "Chennai",
+      "distance": 5,
+      "rating": 4.4,
+      "image": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f",
+      "icon": "🍽️"
+    },
+    {
+      "id": 5,
+      "name": "Live Jazz Night",
+      "category": "Events",
+      "date": "2026-09-20",
+      "price": 2000,
+      "location": "Chennai",
+      "distance": 12,
+      "rating": 4.9,
+      "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629",
+      "icon": "🎵"
+    },
+    {
+      "id": 6,
+      "name": "Bowling Arena",
+      "category": "Activities",
+      "date": "2026-09-21",
+      "price": 500,
+      "location": "Chennai",
+      "distance": 4,
+      "rating": 4.1,
+      "image": "https://www.tenpin.co.uk/media/5357/cambrige-bowling-lane-pink-hue-front-on.jpg",
+      "icon": "🎳"
+    },
+    {
+      "id": 7,
+      "name": "Ocean View Restaurant",
+      "category": "Dining",
+      "date": "2026-09-27",
+      "price": 1800,
+      "location": "Chennai",
+      "distance": 8,
+      "rating": 4.7,
+      "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b",
+      "icon": "🍽️"
+    },
+    {
+      "id": 8,
+      "name": "Food Carnival",
+      "category": "Events",
+      "date": "2026-09-27",
+      "price": 1000,
+      "location": "Chennai",
+      "distance": 6,
+      "rating": 4.5,
+      "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+      "icon": "🎵"
+    },
+    {
+      "id": 9,
+      "name": "Go Karting",
+      "category": "Activities",
+      "date": "2026-09-28",
+      "price": 1400,
+      "location": "Chennai",
+      "distance": 15,
+      "rating": 4.6,
+      "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39",
+      "icon": "🏎️"
+    },
+    {
+      "id": 10,
+      "name": "Royal Biryani House",
+      "category": "Dining",
+      "date": "2026-10-03",
+      "price": 700,
+      "location": "Chennai",
+      "distance": 2,
+      "rating": 3.9,
+      "image": "https://images.unsplash.com/photo-1633945274405-b6c8069047b0",
+      "icon": "🍽️"
+    },
+    {
+      "id": 11,
+      "name": "Stand Up Comedy",
+      "category": "Events",
+      "date": "2026-10-04",
+      "price": 900,
+      "location": "Chennai",
+      "distance": 10,
+      "rating": 4.3,
+      "image": "https://images.unsplash.com/photo-1585699324551-f6c309eedeca",
+      "icon": "🎤"
+    },
+    {
+      "id": 12,
+      "name": "Swimming Club",
+      "category": "Activities",
+      "date": "2026-10-05",
+      "price": 400,
+      "location": "Chennai",
+      "distance": 6,
+      "rating": 3.8,
+      "image": "https://images.unsplash.com/photo-1600965962361-9035dbfd1c50",
+      "icon": "🏊"
+    },
+    {
+      "id": 13,
+      "name": "Premium Steak House",
+      "category": "Dining",
+      "date": "2026-10-10",
+      "price": 2000,
+      "location": "Chennai",
+      "distance": 11,
+      "rating": 4.9,
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947",
+      "icon": "🍽️"
+    },
+    {
+      "id": 14,
+      "name": "Art Exhibition",
+      "category": "Events",
+      "date": "2026-10-11",
+      "price": 500,
+      "location": "Chennai",
+      "distance": 3,
+      "rating": 4,
+      "image": "https://images.unsplash.com/photo-1561214115-f2f134cc4912",
+      "icon": "🎨"
+    },
+    {
+      "id": 15,
+      "name": "Cycling Tour",
+      "category": "Activities",
+      "date": "2026-10-12",
+      "price": 800,
+      "location": "Chennai",
+      "distance": 18,
+      "rating": 4.7,
+      "image": "https://images.unsplash.com/photo-1541625602330-2277a4c46182",
+      "icon": "🚴"
+    }
+  ],
+  "Events": [
+    {
+      "id": 1,
+      "title": "Chef's Table",
+      "location": "Alwarpet",
+      "price": "₹1,999",
+      "rating": "4.8",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 2,
+      "title": "Sunday Brunch",
+      "location": "Guindy",
+      "price": "₹1,499",
+      "rating": "4.8",
+      "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 3,
+      "title": "Coastal Feast",
+      "location": "ECR",
+      "price": "₹1,299",
+      "rating": "4.8",
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
+    },
+    {
+      "id": 4,
+      "title": "Garden Café",
+      "location": "Adyar",
+      "price": "₹799",
+      "rating": "4.8",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop"
+    }
+  ],
   "homepage": {
     "home": {
       "title": "Your city, beautifully planned.",
@@ -281,40 +280,40 @@
         "image": "https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=800&q=80"
       }
     ],
-   "Dining": [ 
-  {
-    "id": 1,
-    "title": "Chef's Table",
-    "location": "Alwarpet",
-    "price": "₹1,999",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 2,
-    "title": "Sunday Brunch",
-    "location": "Guindy",
-    "price": "₹1,499",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 3,
-    "title": "Coastal Feast",
-    "location": "ECR",
-    "price": "₹1,299",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-  },
-  {
-    "id": 4,
-    "title": "Garden Café",
-    "location": "Adyar",
-    "price": "₹799",
-    "rating": "4.8",
-    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop"
-  }
-]
+    "Dining": [
+      {
+        "id": 1,
+        "title": "Chef's Table",
+        "location": "Alwarpet",
+        "price": "₹1,999",
+        "rating": "4.8",
+        "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 2,
+        "title": "Sunday Brunch",
+        "location": "Guindy",
+        "price": "₹1,499",
+        "rating": "4.8",
+        "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 3,
+        "title": "Coastal Feast",
+        "location": "ECR",
+        "price": "₹1,299",
+        "rating": "4.8",
+        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
+      },
+      {
+        "id": 4,
+        "title": "Garden Café",
+        "location": "Adyar",
+        "price": "₹799",
+        "rating": "4.8",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop"
+      }
+    ]
   },
   "Homepages": [
     {
@@ -366,8 +365,18 @@
       "details": "Sun, 19 Oct · 9:30 AM · Guindy National Park",
       "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
     }
-  ], 
-    "categories": ["All", "Music", "Food & Drink", "Workshops", "Art & Culture", "Sports", "Community", "Outdoor", "Kids"],
+  ],
+  "categories": [
+    "All",
+    "Music",
+    "Food & Drink",
+    "Workshops",
+    "Art & Culture",
+    "Sports",
+    "Community",
+    "Outdoor",
+    "Kids"
+  ],
   "featuredBanner": {
     "badge": "MUSIC · LIVE CONCERT",
     "title": "Yuvan Shankar Raja Live in Chennai",
@@ -454,9 +463,21 @@
     }
   ],
   "offers": [
-    { "id": 1, "title": "Early Bird Offers", "image": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80" },
-    { "id": 2, "title": "Member Deals", "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80" },
-    { "id": 3, "title": "Weekend Bundles", "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" }
+    {
+      "id": 1,
+      "title": "Early Bird Offers",
+      "image": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": 2,
+      "title": "Member Deals",
+      "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": 3,
+      "title": "Weekend Bundles",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+    }
   ],
   "PlayBanner": {
     "title": "Game on. Find your court.",
@@ -465,22 +486,70 @@
     "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=85"
   },
   "ExploreSports": [
-    { "id": "badminton", "name": "Badminton" },
-    { "id": "swimming", "name": "Swimming" },
-    { "id": "pickleball", "name": "Pickleball" },
-    { "id": "turf-football", "name": "Turf Football" },
-    { "id": "table-tennis", "name": "Table Tennis" },
-    { "id": "box-cricket", "name": "Box Cricket" },
-    { "id": "padel", "name": "Padel" },
-    { "id": "cricket-nets", "name": "Cricket Nets" },
-    { "id": "tennis", "name": "Tennis" },
-    { "id": "basketball", "name": "Basketball" },
-    { "id": "snooker", "name": "Snooker" },
-    { "id": "pool", "name": "Pool" },
-    { "id": "volleyball", "name": "Volleyball" },
-    { "id": "football", "name": "Football" },
-    { "id": "squash", "name": "Squash" },
-    { "id": "cricket", "name": "Cricket" }
+    {
+      "id": "badminton",
+      "name": "Badminton"
+    },
+    {
+      "id": "swimming",
+      "name": "Swimming"
+    },
+    {
+      "id": "pickleball",
+      "name": "Pickleball"
+    },
+    {
+      "id": "turf-football",
+      "name": "Turf Football"
+    },
+    {
+      "id": "table-tennis",
+      "name": "Table Tennis"
+    },
+    {
+      "id": "box-cricket",
+      "name": "Box Cricket"
+    },
+    {
+      "id": "padel",
+      "name": "Padel"
+    },
+    {
+      "id": "cricket-nets",
+      "name": "Cricket Nets"
+    },
+    {
+      "id": "tennis",
+      "name": "Tennis"
+    },
+    {
+      "id": "basketball",
+      "name": "Basketball"
+    },
+    {
+      "id": "snooker",
+      "name": "Snooker"
+    },
+    {
+      "id": "pool",
+      "name": "Pool"
+    },
+    {
+      "id": "volleyball",
+      "name": "Volleyball"
+    },
+    {
+      "id": "football",
+      "name": "Football"
+    },
+    {
+      "id": "squash",
+      "name": "Squash"
+    },
+    {
+      "id": "cricket",
+      "name": "Cricket"
+    }
   ],
   "SportingEvents": [
     {
@@ -489,9 +558,9 @@
       "category": "Sporting Event",
       "location": "Besant Nagar, Chennai",
       "date": "Sun, 15 Nov, 5:00 AM",
-      "price": "₹499",
-      "priceNum": 499,
-      "image": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=600&q=80"
+      "price": "₹399",
+      "priceNum": 399,
+      "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "id": "se2",
@@ -532,8 +601,18 @@
       "badge": "POPULAR",
       "badgeColor": "#10b981",
       "image": "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=800&q=80",
-      "features": ["Air Conditioned", "Shower", "Parking", "Coaching", "Pro Shop"],
-      "tags": ["Badminton", "BWF Certified", "AC Indoor"],
+      "features": [
+        "Air Conditioned",
+        "Shower",
+        "Parking",
+        "Coaching",
+        "Pro Shop"
+      ],
+      "tags": [
+        "Badminton",
+        "BWF Certified",
+        "AC Indoor"
+      ],
       "nextSlot": "Today, 5:00 PM",
       "timing": "05:00 AM - 11:00 PM",
       "address": "12, 100 Feet Bypass Road, Velachery, Chennai - 600042",
@@ -556,8 +635,17 @@
       "badge": "TOP RATED",
       "badgeColor": "#f59e0b",
       "image": "https://images.unsplash.com/photo-1599472434775-92e5571e9929?auto=format&fit=crop&w=800&q=80",
-      "features": ["Air Conditioned", "Locker Room", "Coaching", "Parking"],
-      "tags": ["Badminton", "Li-Ning Grade", "Tournaments"],
+      "features": [
+        "Air Conditioned",
+        "Locker Room",
+        "Coaching",
+        "Parking"
+      ],
+      "tags": [
+        "Badminton",
+        "Li-Ning Grade",
+        "Tournaments"
+      ],
       "nextSlot": "Today, 6:00 PM",
       "timing": "05:00 AM - 11:30 PM",
       "address": "2nd Avenue, Anna Nagar East, Chennai - 600102",
@@ -580,8 +668,18 @@
       "badge": "TOP RATED",
       "badgeColor": "#f59e0b",
       "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80",
-      "features": ["Floodlights", "Shower", "Parking", "Cafe", "Bibs & Balls"],
-      "tags": ["Turf Football", "FIFA Grade", "Night Floodlights"],
+      "features": [
+        "Floodlights",
+        "Shower",
+        "Parking",
+        "Cafe",
+        "Bibs & Balls"
+      ],
+      "tags": [
+        "Turf Football",
+        "FIFA Grade",
+        "Night Floodlights"
+      ],
       "nextSlot": "Today, 6:30 PM",
       "timing": "24 Hours Open",
       "address": "Plot 45, 2nd Avenue, Anna Nagar West, Chennai - 600040",
@@ -604,8 +702,17 @@
       "badge": "POPULAR",
       "badgeColor": "#10b981",
       "image": "https://images.unsplash.com/photo-1529900241451-b0e6e4093cb4?auto=format&fit=crop&w=800&q=80",
-      "features": ["Floodlights", "Changing Rooms", "Cafeteria", "Parking"],
-      "tags": ["Turf Football", "5v5 Turf", "Central Chennai"],
+      "features": [
+        "Floodlights",
+        "Changing Rooms",
+        "Cafeteria",
+        "Parking"
+      ],
+      "tags": [
+        "Turf Football",
+        "5v5 Turf",
+        "Central Chennai"
+      ],
       "nextSlot": "Today, 7:30 PM",
       "timing": "05:00 AM - 01:00 AM",
       "address": "Sterling Road, Nungambakkam, Chennai - 600034",
@@ -628,8 +735,17 @@
       "badge": "TRENDING",
       "badgeColor": "#8b5cf6",
       "image": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80",
-      "features": ["Bowling Machine", "Floodlights", "Equipment Included", "Parking"],
-      "tags": ["Box Cricket", "Night Box", "Bowling Machine"],
+      "features": [
+        "Bowling Machine",
+        "Floodlights",
+        "Equipment Included",
+        "Parking"
+      ],
+      "tags": [
+        "Box Cricket",
+        "Night Box",
+        "Bowling Machine"
+      ],
       "nextSlot": "Today, 7:00 PM",
       "timing": "06:00 AM - 12:00 AM",
       "address": "8, College Road, Nungambakkam, Chennai - 600034",
@@ -652,8 +768,17 @@
       "badge": "POPULAR",
       "badgeColor": "#10b981",
       "image": "https://images.unsplash.com/photo-1531415074868-036b1c57e329?auto=format&fit=crop&w=800&q=80",
-      "features": ["AstroTurf Floor", "LED Stumps", "Night Lights", "Parking"],
-      "tags": ["Box Cricket", "LED Stumps", "High Roof"],
+      "features": [
+        "AstroTurf Floor",
+        "LED Stumps",
+        "Night Lights",
+        "Parking"
+      ],
+      "tags": [
+        "Box Cricket",
+        "LED Stumps",
+        "High Roof"
+      ],
       "nextSlot": "Today, 6:00 PM",
       "timing": "24 Hours Open",
       "address": "Taramani Link Road, Velachery, Chennai - 600042",
@@ -676,8 +801,17 @@
       "badge": "TRENDING",
       "badgeColor": "#ec4899",
       "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
-      "features": ["Plexipave Cushion", "Floodlights", "Paddle Rental", "Cafe"],
-      "tags": ["Pickleball", "Pro Courts", "Trending"],
+      "features": [
+        "Plexipave Cushion",
+        "Floodlights",
+        "Paddle Rental",
+        "Cafe"
+      ],
+      "tags": [
+        "Pickleball",
+        "Pro Courts",
+        "Trending"
+      ],
       "nextSlot": "Today, 5:30 PM",
       "timing": "06:00 AM - 10:30 PM",
       "address": "24, Canal Bank Road, Gandhi Nagar, Adyar, Chennai - 600020",
@@ -700,8 +834,17 @@
       "badge": "COVERED COURTS",
       "badgeColor": "#3b82f6",
       "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-      "features": ["Covered Roof", "Paddle Rental", "Shower", "Parking"],
-      "tags": ["Pickleball", "All Weather", "OMR Hub"],
+      "features": [
+        "Covered Roof",
+        "Paddle Rental",
+        "Shower",
+        "Parking"
+      ],
+      "tags": [
+        "Pickleball",
+        "All Weather",
+        "OMR Hub"
+      ],
       "nextSlot": "Today, 6:00 PM",
       "timing": "06:00 AM - 11:00 PM",
       "address": "OMR Road, Thoraipakkam, Chennai - 600097",
@@ -724,8 +867,17 @@
       "badge": "VERIFIED",
       "badgeColor": "#0ea5e9",
       "image": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80",
-      "features": ["Ozonated Water", "Certified Lifeguards", "Shower", "Lockers"],
-      "tags": ["Swimming", "Olympic Size", "Ozonated Clean"],
+      "features": [
+        "Ozonated Water",
+        "Certified Lifeguards",
+        "Shower",
+        "Lockers"
+      ],
+      "tags": [
+        "Swimming",
+        "Olympic Size",
+        "Ozonated Clean"
+      ],
       "nextSlot": "Tomorrow, 6:00 AM",
       "timing": "05:30 AM - 09:30 PM",
       "address": "Beach Road near Elliot's Beach, Besant Nagar, Chennai - 600090",
@@ -748,518 +900,21 @@
       "badge": "TEMPERATURE CONTROLLED",
       "badgeColor": "#06b6d4",
       "image": "https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?auto=format&fit=crop&w=800&q=80",
-      "features": ["Heated Water", "Indoor Covered", "Lockers & Steam", "Shower"],
-      "tags": ["Swimming", "Indoor Pool", "Heated"],
+      "features": [
+        "Heated Water",
+        "Indoor Covered",
+        "Lockers & Steam",
+        "Shower"
+      ],
+      "tags": [
+        "Swimming",
+        "Indoor Pool",
+        "Heated"
+      ],
       "nextSlot": "Today, 4:00 PM",
       "timing": "06:00 AM - 10:00 PM",
       "address": "1st Main Road, Anna Nagar, Chennai - 600040",
       "description": "Year-round indoor temperature-controlled swimming pool with steam room and professional swimming trainers."
-    },
-    {
-      "id": "v6",
-      "title": "Marina Smash Padel Club",
-      "sport": "padel",
-      "sportName": "Padel",
-      "sportIcon": "🎾",
-      "courts": "2 Panoramic Glass Padel Courts",
-      "location": "ECR",
-      "landmark": "Near Palavakkam Beach",
-      "distance": 8.2,
-      "price": "₹1,000 / hr",
-      "priceNum": 1000,
-      "rating": "4.9",
-      "reviewsCount": 78,
-      "badge": "PREMIUM",
-      "badgeColor": "#8b5cf6",
-      "image": "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80",
-      "features": ["Italian Turf", "Panoramic Glass", "Lounge", "Floodlights", "Parking"],
-      "tags": ["Padel", "Panoramic Glass", "ECR Club"],
-      "nextSlot": "Today, 8:00 PM",
-      "timing": "06:00 AM - 11:30 PM",
-      "address": "14/2, East Coast Road, Palavakkam, Chennai - 600041",
-      "description": "State-of-the-art Spanish padel tennis courts featuring frameless panoramic glass, super-court textured monofilament turf, and a beachfront club lounge."
-    },
-    {
-      "id": "v6-b",
-      "title": "Urban Padel Arena Chennai",
-      "sport": "padel",
-      "sportName": "Padel",
-      "sportIcon": "🎾",
-      "courts": "3 WPT Standard Padel Courts",
-      "location": "OMR",
-      "landmark": "Near Perungudi",
-      "distance": 6.9,
-      "price": "₹950 / hr",
-      "priceNum": 950,
-      "rating": "4.8",
-      "reviewsCount": 65,
-      "badge": "WPT GRADE",
-      "badgeColor": "#10b981",
-      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
-      "features": ["World Padel Tour Specs", "Pro Rackets", "Floodlights", "Cafe"],
-      "tags": ["Padel", "WPT Standard", "Pro Tourney"],
-      "nextSlot": "Today, 7:00 PM",
-      "timing": "06:00 AM - 11:00 PM",
-      "address": "Perungudi Industrial Estate, OMR, Chennai - 600096",
-      "description": "Championship padel arena with tournament textured blue turf, LED lighting, and pro carbon racket rentals."
-    },
-    {
-      "id": "v7",
-      "title": "PowerPlay Cricket Practice Nets",
-      "sport": "cricket-nets",
-      "sportName": "Cricket Nets",
-      "sportIcon": "🏏",
-      "courts": "4 AstroTurf + 2 Turf Cricket Nets",
-      "location": "OMR",
-      "landmark": "Near Perungudi Toll",
-      "distance": 7.5,
-      "price": "₹400 / hr",
-      "priceNum": 400,
-      "rating": "4.6",
-      "reviewsCount": 92,
-      "badge": "PRO TECH",
-      "badgeColor": "#10b981",
-      "image": "https://images.unsplash.com/photo-1531415074868-036b1c57e329?auto=format&fit=crop&w=800&q=80",
-      "features": ["Bowling Machine", "Floodlights", "Speed Gun", "Leather & Tennis Balls"],
-      "tags": ["Cricket Nets", "Bowling Simulator", "Night Practice"],
-      "nextSlot": "Today, 6:00 PM",
-      "timing": "05:00 AM - 11:00 PM",
-      "address": "OMR IT Corridor, Near Perungudi Toll, Chennai - 600096",
-      "description": "Professional practice cricket nets with varying pitch bounces, programmable electronic bowling machines up to 145 km/h, and speed gun telemetry."
-    },
-    {
-      "id": "v8",
-      "title": "Ace Point Tennis Academy",
-      "sport": "tennis",
-      "sportName": "Tennis",
-      "sportIcon": "🎾",
-      "courts": "3 ITF Red Clay & Acrylic Hard Courts",
-      "location": "Kilpauk",
-      "landmark": "Opposite Kilpauk Medical College",
-      "distance": 5.2,
-      "price": "₹600 / hr",
-      "priceNum": 600,
-      "rating": "4.7",
-      "reviewsCount": 118,
-      "badge": "ITF GRADE",
-      "badgeColor": "#f59e0b",
-      "image": "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=800&q=80",
-      "features": ["Clay & Hard Courts", "Floodlights", "Pro Ball Boy", "Coaching"],
-      "tags": ["Tennis", "Clay Court", "ITF Standard"],
-      "nextSlot": "Tomorrow, 6:30 AM",
-      "timing": "06:00 AM - 10:00 PM",
-      "address": "Poonamallee High Road, Kilpauk, Chennai - 600010",
-      "description": "Championship tennis complex offering well-maintained clay courts and tournament-grade acrylic hard courts under 1000-lux shadowless LED lighting."
-    },
-    {
-      "id": "v8-b",
-      "title": "Chennai Grand Slam Tennis Club",
-      "sport": "tennis",
-      "sportName": "Tennis",
-      "sportIcon": "🎾",
-      "courts": "4 Floodlit Plexicushion Hard Courts",
-      "location": "Nungambakkam",
-      "landmark": "Near SDAT Tennis Stadium",
-      "distance": 2.5,
-      "price": "₹650 / hr",
-      "priceNum": 650,
-      "rating": "4.9",
-      "reviewsCount": 154,
-      "badge": "ATP STANDARD",
-      "badgeColor": "#2563eb",
-      "image": "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80",
-      "features": ["ATP Cushion Courts", "Ball Machine", "Coaching", "Showers"],
-      "tags": ["Tennis", "ATP Grade", "Nungambakkam"],
-      "nextSlot": "Today, 5:00 PM",
-      "timing": "06:00 AM - 10:30 PM",
-      "address": "Lake Area, Nungambakkam, Chennai - 600034",
-      "description": "Famous tennis venue with Australian Open style Plexicushion tournament courts and ball-feed practice machines."
-    },
-    {
-      "id": "v9",
-      "title": "SpinMaster Table Tennis Arena",
-      "sport": "table-tennis",
-      "sportName": "Table Tennis",
-      "sportIcon": "🏓",
-      "courts": "6 ITTF-Approved Stag Tables",
-      "location": "T. Nagar",
-      "landmark": "Near Panagal Park",
-      "distance": 3.8,
-      "price": "₹250 / hr",
-      "priceNum": 250,
-      "rating": "4.8",
-      "reviewsCount": 71,
-      "badge": "AC INDOOR",
-      "badgeColor": "#3b82f6",
-      "image": "https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=800&q=80",
-      "features": ["Air Conditioned", "ITTF Flooring", "Robotic Ball Feeder", "Lockers"],
-      "tags": ["Table Tennis", "Stag Americas", "AC Hall"],
-      "nextSlot": "Today, 4:00 PM",
-      "timing": "07:00 AM - 10:00 PM",
-      "address": "Venkatnarayana Road, T. Nagar, Chennai - 600017",
-      "description": "Fully air-conditioned table tennis hall equipped with Olympic Stag tournament tables, Taraflex sports vinyl flooring, and practice robot feeders."
-    },
-    {
-      "id": "v9-b",
-      "title": "TopSpin Table Tennis Academy",
-      "sport": "table-tennis",
-      "sportName": "Table Tennis",
-      "sportIcon": "🏓",
-      "courts": "8 Butterfly Centrefold 25 Tables",
-      "location": "Velachery",
-      "landmark": "Near 100 Feet Road",
-      "distance": 2.8,
-      "price": "₹280 / hr",
-      "priceNum": 280,
-      "rating": "4.9",
-      "reviewsCount": 95,
-      "badge": "BUTTERFLY PRO",
-      "badgeColor": "#e11d48",
-      "image": "https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=800&q=80",
-      "features": ["Butterfly Tables", "Air Conditioned", "Multi-Ball Training", "Parking"],
-      "tags": ["Table Tennis", "Butterfly Tables", "AC Arena"],
-      "nextSlot": "Today, 5:30 PM",
-      "timing": "06:30 AM - 10:30 PM",
-      "address": "Velachery Main Road, Chennai - 600042",
-      "description": "Premier table tennis center with Japanese Butterfly Centrefold tables, tournament lighting, and state coaches."
-    },
-    {
-      "id": "v10",
-      "title": "HoopCity Basketball Arena",
-      "sport": "basketball",
-      "sportName": "Basketball",
-      "sportIcon": "🏀",
-      "courts": "Full FIBA Maple Hardwood Court",
-      "location": "Alwarpet",
-      "landmark": "Off TTK Road",
-      "distance": 3.1,
-      "price": "₹850 / hr",
-      "priceNum": 850,
-      "rating": "4.9",
-      "reviewsCount": 94,
-      "badge": "FIBA GRADE",
-      "badgeColor": "#f97316",
-      "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80",
-      "features": ["Maple Hardwood", "Glass Backboards", "Scoreboard", "Air Conditioned"],
-      "tags": ["Basketball", "FIBA Court", "Indoor Wooden"],
-      "nextSlot": "Today, 6:00 PM",
-      "timing": "06:00 AM - 10:30 PM",
-      "address": "TTK Road, Alwarpet, Chennai - 600018",
-      "description": "FIBA certified indoor maple wood court with tempered glass backboards, electronic shot clocks, spring break-away rims, and air conditioning."
-    },
-    {
-      "id": "v10-b",
-      "title": "SkyHook 3x3 & 5v5 Basketball Court",
-      "sport": "basketball",
-      "sportName": "Basketball",
-      "sportIcon": "🏀",
-      "courts": "Two 3x3 Half Courts + Full Court",
-      "location": "Adyar",
-      "landmark": "Near Kasturba Nagar",
-      "distance": 4.5,
-      "price": "₹700 / hr",
-      "priceNum": 700,
-      "rating": "4.8",
-      "reviewsCount": 82,
-      "badge": "FLOODLIT OUTDOOR",
-      "badgeColor": "#059669",
-      "image": "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=800&q=80",
-      "features": ["Acrylic Court", "Pro Hoops", "LED Floodlights", "Sound System"],
-      "tags": ["Basketball", "3x3 Court", "Night Hoops"],
-      "nextSlot": "Today, 7:00 PM",
-      "timing": "06:00 AM - 11:00 PM",
-      "address": "Kasturba Nagar 3rd Cross Street, Adyar, Chennai - 600020",
-      "description": "Cushioned acrylic outdoor court featuring professional spring hoops, bright stadium lights, and 3x3 pickup games."
-    },
-    {
-      "id": "v11",
-      "title": "The Cue Club & Snooker Lounge",
-      "sport": "snooker",
-      "sportName": "Snooker",
-      "sportIcon": "🎱",
-      "courts": "4 Riley Championship Snooker Tables",
-      "location": "Nungambakkam",
-      "landmark": "Kader Nawaz Khan Road",
-      "distance": 2.8,
-      "price": "₹350 / hr",
-      "priceNum": 350,
-      "rating": "4.8",
-      "reviewsCount": 82,
-      "badge": "LUXURY",
-      "badgeColor": "#6366f1",
-      "image": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80",
-      "features": ["Riley Tables", "Strachan 6811 Cloth", "Aramith Balls", "Lounge Cafe"],
-      "tags": ["Snooker", "Riley Championship", "AC Lounge"],
-      "nextSlot": "Today, 3:30 PM",
-      "timing": "10:00 AM - 01:00 AM",
-      "address": "Khader Nawaz Khan Road, Nungambakkam, Chennai - 600006",
-      "description": "Luxury cue sports lounge with authentic English Riley slate snooker tables, tournament Strachan cloth, Aramith tournament balls, and gourmet dining."
-    },
-    {
-      "id": "v11-b",
-      "title": "Royal Snooker & Billiards Club",
-      "sport": "snooker",
-      "sportName": "Snooker",
-      "sportIcon": "🎱",
-      "courts": "6 Tournament Slate Tables",
-      "location": "Anna Nagar",
-      "landmark": "Near Shanthi Colony",
-      "distance": 4.6,
-      "price": "₹300 / hr",
-      "priceNum": 300,
-      "rating": "4.7",
-      "reviewsCount": 68,
-      "badge": "TOURNAMENT SLATE",
-      "badgeColor": "#4f46e5",
-      "image": "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=800&q=80",
-      "features": ["Tournament Slates", "AC Lounge", "Snacks Bar", "Ashwood Cues"],
-      "tags": ["Snooker", "Slate Tables", "AC Club"],
-      "nextSlot": "Today, 4:00 PM",
-      "timing": "11:00 AM - 02:00 AM",
-      "address": "Shanthi Colony, Anna Nagar, Chennai - 600040",
-      "description": "Premium snooker hub with imported Italian slate tables, balanced ash cues, and ambient acoustic setting."
-    },
-    {
-      "id": "v15",
-      "title": "BreakPoint American Pool Parlor",
-      "sport": "pool",
-      "sportName": "Pool & Billiards",
-      "sportIcon": "🎱",
-      "courts": "6 Brunswick Gold Crown Pool Tables",
-      "location": "Anna Nagar",
-      "landmark": "Near 3rd Avenue Metro",
-      "distance": 4.3,
-      "price": "₹300 / hr",
-      "priceNum": 300,
-      "rating": "4.7",
-      "reviewsCount": 88,
-      "badge": "CHILL ZONE",
-      "badgeColor": "#6b21a8",
-      "image": "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=800&q=80",
-      "features": ["Brunswick Tables", "Simonist 860 Cloth", "Neon Lounge", "Snack Bar"],
-      "tags": ["Pool", "American 9-Ball", "AC Parlor"],
-      "nextSlot": "Today, 4:00 PM",
-      "timing": "11:00 AM - 01:00 AM",
-      "address": "3rd Avenue, Anna Nagar East, Chennai - 600102",
-      "description": "Vibrant American pool lounge featuring championship 9ft Brunswick tables, Simonis speed cloth, Predator cues, and upbeat arcade vibes."
-    },
-    {
-      "id": "v15-b",
-      "title": "The Rack 9-Ball Pool Club",
-      "sport": "pool",
-      "sportName": "Pool & Billiards",
-      "sportIcon": "🎱",
-      "courts": "4 Rasson Pro Pool Tables",
-      "location": "Besant Nagar",
-      "landmark": "Near 2nd Avenue",
-      "distance": 4.9,
-      "price": "₹350 / hr",
-      "priceNum": 350,
-      "rating": "4.8",
-      "reviewsCount": 76,
-      "badge": "PRO 9-BALL",
-      "badgeColor": "#7c3aed",
-      "image": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80",
-      "features": ["Rasson Tables", "Aramith Pro Balls", "Cafe Lounge", "Air Conditioned"],
-      "tags": ["Pool", "Rasson Tables", "Beachside Lounge"],
-      "nextSlot": "Today, 5:00 PM",
-      "timing": "10:00 AM - 12:00 AM",
-      "address": "2nd Avenue, Besant Nagar, Chennai - 600090",
-      "description": "Beachside pool parlor with professional Rasson tournament tables and cozy gourmet snack bar."
-    },
-    {
-      "id": "v12",
-      "title": "Beachside Volleyball Arena",
-      "sport": "volleyball",
-      "sportName": "Volleyball",
-      "sportIcon": "🏐",
-      "courts": "2 FIVB Sand Beach Volleyball Courts",
-      "location": "ECR",
-      "landmark": "Uthandi Coastal Point",
-      "distance": 9.0,
-      "price": "₹600 / hr",
-      "priceNum": 600,
-      "rating": "4.7",
-      "reviewsCount": 56,
-      "badge": "BEACHFRONT",
-      "badgeColor": "#14b8a6",
-      "image": "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=800&q=80",
-      "features": ["Fine Beach Sand", "Floodlights", "Showers", "Refreshments"],
-      "tags": ["Volleyball", "Beach Sand", "ECR Coast"],
-      "nextSlot": "Today, 5:00 PM",
-      "timing": "06:00 AM - 10:00 PM",
-      "address": "ECR Beachfront, Uthandi, Chennai - 600119",
-      "description": "Coastal beach volleyball arena with washed silica sand, regulation height nets with antennas, and coastal breeze setting for recreational and league play."
-    },
-    {
-      "id": "v12-b",
-      "title": "SpikeHub Indoor Volleyball Court",
-      "sport": "volleyball",
-      "sportName": "Volleyball",
-      "sportIcon": "🏐",
-      "courts": "Taraflex Hardwood Volleyball Court",
-      "location": "Velachery",
-      "landmark": "Near Bypass Road",
-      "distance": 2.7,
-      "price": "₹700 / hr",
-      "priceNum": 700,
-      "rating": "4.8",
-      "reviewsCount": 64,
-      "badge": "INDOOR TARAFLEX",
-      "badgeColor": "#059669",
-      "image": "https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&w=800&q=80",
-      "features": ["Taraflex Floor", "Pro Net System", "Showers", "Parking"],
-      "tags": ["Volleyball", "Indoor Court", "Taraflex"],
-      "nextSlot": "Today, 6:00 PM",
-      "timing": "06:00 AM - 10:30 PM",
-      "address": "Bypass Road, Velachery, Chennai - 600042",
-      "description": "Indoor professional volleyball court with Olympic Taraflex shock absorption flooring and Senoh net systems."
-    },
-    {
-      "id": "v14",
-      "title": "Striker 9s Football Stadium",
-      "sport": "football",
-      "sportName": "Football Ground",
-      "sportIcon": "⚽",
-      "courts": "Full 9-a-side & 11-a-side Natural Grass Pitch",
-      "location": "Porur",
-      "landmark": "Near Ramachandra Hospital",
-      "distance": 6.8,
-      "price": "₹1,800 / hr",
-      "priceNum": 1800,
-      "rating": "4.9",
-      "reviewsCount": 145,
-      "badge": "FULL STADIUM",
-      "badgeColor": "#059669",
-      "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80",
-      "features": ["Natural Bermuda Grass", "Stadium Floodlights", "Dressing Rooms", "Grandstand"],
-      "tags": ["Football", "Natural Grass", "Stadium Pitch"],
-      "nextSlot": "Tomorrow, 7:00 AM",
-      "timing": "05:30 AM - 11:00 PM",
-      "address": "Mount-Poonamallee Road, Porur, Chennai - 600116",
-      "description": "Full-sized natural Bermuda grass football stadium with FIFA regulation goals, electronic scoreboard, spectator grandstand, and pro locker rooms."
-    },
-    {
-      "id": "v14-b",
-      "title": "Marina Football Ground",
-      "sport": "football",
-      "sportName": "Football Ground",
-      "sportIcon": "⚽",
-      "courts": "11-a-side Tournament Pitch",
-      "location": "Santhome",
-      "landmark": "Near Santhome High Road",
-      "distance": 3.4,
-      "price": "₹1,500 / hr",
-      "priceNum": 1500,
-      "rating": "4.8",
-      "reviewsCount": 112,
-      "badge": "COASTAL FIELD",
-      "badgeColor": "#0284c7",
-      "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80",
-      "features": ["Full Regulation Goals", "Floodlights", "Spectator Seating", "Parking"],
-      "tags": ["Football", "11-a-side", "Sea Breeze"],
-      "nextSlot": "Today, 5:30 PM",
-      "timing": "06:00 AM - 10:00 PM",
-      "address": "Santhome High Road, Chennai - 600004",
-      "description": "Full-size football ground near the coastline with sea breeze, floodlights, and player dugouts."
-    },
-    {
-      "id": "v13",
-      "title": "ProGlass Squash & Racket Club",
-      "sport": "squash",
-      "sportName": "Squash",
-      "sportIcon": "🎾",
-      "courts": "3 Junckers Hardwood Glass Courts",
-      "location": "Chetpet",
-      "landmark": "Near Chetpet Eco Park",
-      "distance": 3.4,
-      "price": "₹550 / hr",
-      "priceNum": 550,
-      "rating": "4.8",
-      "reviewsCount": 64,
-      "badge": "WSF SPEC",
-      "badgeColor": "#e11d48",
-      "image": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=800&q=80",
-      "features": ["Junckers Beechwood", "Glass Back Wall", "Air Conditioned", "Shower"],
-      "tags": ["Squash", "WSF Approved", "AC Glass Court"],
-      "nextSlot": "Today, 6:00 PM",
-      "timing": "06:00 AM - 10:00 PM",
-      "address": "Harrington Road, Chetpet, Chennai - 600031",
-      "description": "World Squash Federation compliant glass-backed squash arena with shock-absorbing Danish Junckers sprung hardwood floors and high-velocity HVAC."
-    },
-    {
-      "id": "v13-b",
-      "title": "Elite Squash Center Chennai",
-      "sport": "squash",
-      "sportName": "Squash",
-      "sportIcon": "🎾",
-      "courts": "4 All-Glass Championship Squash Courts",
-      "location": "Adyar",
-      "landmark": "Near Gandhi Nagar",
-      "distance": 4.4,
-      "price": "₹600 / hr",
-      "priceNum": 600,
-      "rating": "4.9",
-      "reviewsCount": 78,
-      "badge": "ALL-GLASS COURT",
-      "badgeColor": "#7c3aed",
-      "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-      "features": ["ASB Squash Courts", "Air Conditioned", "Pro Coaching", "Steam & Shower"],
-      "tags": ["Squash", "ASB Glass", "AC Pro Arena"],
-      "nextSlot": "Today, 7:00 PM",
-      "timing": "06:00 AM - 10:30 PM",
-      "address": "Gandhi Nagar, Adyar, Chennai - 600020",
-      "description": "ASB German-engineered all-glass squash arena with LED boundary lines, climate control, and elite coaching staff."
-    },
-    {
-      "id": "v17",
-      "title": "Chepauk Super Turf Cricket Ground",
-      "sport": "cricket",
-      "sportName": "Cricket",
-      "sportIcon": "🏏",
-      "courts": "70-Yard Turf Cricket Stadium",
-      "location": "Chepauk",
-      "landmark": "Near Chepauk MRTS",
-      "distance": 3.1,
-      "price": "₹3,500 / match",
-      "priceNum": 3500,
-      "rating": "4.9",
-      "reviewsCount": 240,
-      "badge": "STADIUM PITCH",
-      "badgeColor": "#f59e0b",
-      "image": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80",
-      "features": ["Curated Turf Pitch", "Sight Screens", "Pavilion & Dressing Rooms", "Floodlights"],
-      "tags": ["Cricket", "Turf Pitch", "Full 70-Yard"],
-      "nextSlot": "Tomorrow, 7:00 AM",
-      "timing": "06:00 AM - 08:00 PM",
-      "address": "Bells Road, Chepauk, Chennai - 600005",
-      "description": "Full-sized 70-yard curated turf cricket ground featuring international standard pitch, sight screens, electronic scoreboard, and pro dressing rooms."
-    },
-    {
-      "id": "v17-b",
-      "title": "Marina Green Cricket Oval",
-      "sport": "cricket",
-      "sportName": "Cricket",
-      "sportIcon": "🏏",
-      "courts": "Full 65-Yard Cricket Ground",
-      "location": "ECR",
-      "landmark": "Near Neelankarai",
-      "distance": 8.5,
-      "price": "₹2,800 / match",
-      "priceNum": 2800,
-      "rating": "4.8",
-      "reviewsCount": 185,
-      "badge": "COASTAL CRICKET",
-      "badgeColor": "#059669",
-      "image": "https://images.unsplash.com/photo-1531415074868-036b1c57e329?auto=format&fit=crop&w=800&q=80",
-      "features": ["Natural Turf", "Floodlit Night Matches", "Pavilion", "Parking"],
-      "tags": ["Cricket", "Oval Ground", "ECR Coastal"],
-      "nextSlot": "Today, 6:00 PM",
-      "timing": "05:30 AM - 11:00 PM",
-      "address": "East Coast Road, Neelankarai, Chennai - 600041",
-      "description": "Lush green cricket ground equipped with 1000-lux stadium floodlights for night leather and tennis ball corporate matches."
     }
   ]
 }
-
-

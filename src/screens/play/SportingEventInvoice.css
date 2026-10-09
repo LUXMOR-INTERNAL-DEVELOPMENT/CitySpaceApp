@@ -1,0 +1,283 @@
+/* SportingEventInvoice.css — Dark Theme District by Zomato Invoice Screen matching Image 3 */
+.invoice-root {
+  min-height: 100vh;
+  background-color: #121214;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.invoice-header {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #121214;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.invoice-back-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.15s ease;
+}
+
+.invoice-back-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.invoice-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.invoice-event-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.invoice-event-subtitle {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Main Container */
+.invoice-main {
+  flex: 1;
+  padding: 24px 20px 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.invoice-form-card {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Timer Pill */
+.invoice-timer-pill {
+  background-color: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 10px;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 13.5px;
+  color: #e2e8f0;
+}
+
+.timer-digits {
+  color: #4ade80;
+  font-weight: 700;
+}
+
+/* Section Divider */
+.invoice-divider-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 6px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.divider-text {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+/* Form */
+.invoice-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.invoice-field-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.invoice-input {
+  width: 100%;
+  background-color: #1e1e24;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 14.5px;
+  color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.18s ease;
+}
+
+.invoice-input:focus {
+  border-color: #64748b;
+  background-color: #222228;
+}
+
+.invoice-input.has-error {
+  border-color: #ef4444;
+}
+
+/* Phone combo */
+.phone-input-combo {
+  display: flex;
+  gap: 10px;
+}
+
+.country-code-box {
+  background-color: #1e1e24;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.country-prefix-text {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.country-code-digits {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.phone-number-field {
+  flex: 1;
+}
+
+/* State Dropdown */
+.state-select-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.invoice-select {
+  width: 100%;
+  background-color: #1e1e24;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 14px 44px 14px 18px;
+  font-size: 14.5px;
+  color: #ffffff;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.18s ease;
+}
+
+.invoice-select:focus {
+  border-color: #64748b;
+  background-color: #222228;
+}
+
+.invoice-select.has-error {
+  border-color: #ef4444;
+}
+
+.invoice-select option {
+  background-color: #1e1e24;
+  color: #ffffff;
+}
+
+.state-select-arrow {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+/* Helper text with info icon */
+.field-helper-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: #94a3b8;
+  padding-left: 4px;
+}
+
+.field-helper-info svg {
+  flex-shrink: 0;
+  color: #64748b;
+}
+
+.field-error-msg {
+  font-size: 11.5px;
+  color: #ef4444;
+  padding-left: 4px;
+  font-weight: 500;
+}
+
+/* Bottom Action Bar */
+.invoice-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 20px 24px;
+  background-color: #121214;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  z-index: 40;
+}
+
+.invoice-confirm-btn {
+  width: 100%;
+  max-width: 520px;
+  background-color: #4b5563;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.invoice-confirm-btn:hover {
+  background-color: #6b7280;
+}

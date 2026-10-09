@@ -78,10 +78,6 @@ export const GRAPHICS_MAP = {
 export default function ExploreSports({ sports, selectedSport, onSelectSport }) {
   const sportsList = sports && sports.length > 0 ? sports : SPORTS_DATA;
 
-  // Split into 2 rows of 8 sports each matching the reference 2-row layout
-  const row1 = sportsList.slice(0, 8);
-  const row2 = sportsList.slice(8, 16);
-
   const renderCard = (item, uniqueKey) => {
     const id = item.id;
     const name = item.name;
@@ -142,21 +138,11 @@ export default function ExploreSports({ sports, selectedSport, onSelectSport }) 
         )}
       </div>
 
-      <div className="sports-marquee-container">
-        {/* Row 1 - Moving Towards Left */}
-        <div className="sports-marquee-row row-1">
+      <div className="sports-marquee-container single-line">
+        <div className="sports-marquee-row row-single">
           <div className="sports-marquee-track">
-            {[...row1, ...row1, ...row1, ...row1].map((item, idx) =>
-              renderCard(item, `r1-${item.id}-${idx}`)
-            )}
-          </div>
-        </div>
-
-        {/* Row 2 - Moving Towards Left */}
-        <div className="sports-marquee-row row-2">
-          <div className="sports-marquee-track">
-            {[...row2, ...row2, ...row2, ...row2].map((item, idx) =>
-              renderCard(item, `r2-${item.id}-${idx}`)
+            {[...sportsList, ...sportsList, ...sportsList].map((item, idx) =>
+              renderCard(item, `sport-${item.id}-${idx}`)
             )}
           </div>
         </div>

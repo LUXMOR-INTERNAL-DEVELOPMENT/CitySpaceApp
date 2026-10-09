@@ -190,15 +190,20 @@ export default function Playscreen() {
   };
 
   const handleEventClick = (event) => {
-    navigate("/booking", {
+    navigate(`/sporting-events/${event.id || "se1"}`, {
       state: {
-        experience: {
-          id: event.id,
+        event: {
+          ...event,
+          id: event.id || "se1",
           title: event.title,
           name: event.title,
           category: event.category || "Sporting Event",
-          price: event.priceNum || 499,
+          startingPrice: event.priceNum || 399,
+          price: event.price || "₹399",
           location: event.location,
+          venueName: event.location || "Chennai",
+          date: event.date,
+          bannerImage: event.image,
           image: event.image,
         },
       },

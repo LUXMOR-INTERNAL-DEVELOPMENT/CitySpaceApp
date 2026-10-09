@@ -1,0 +1,302 @@
+/* SportingEventDetail.css — Matching Image 1 District Aesthetic */
+.sporting-detail-root {
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+}
+
+.sporting-detail-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header */
+.sporting-detail-header {
+  margin-bottom: 20px;
+}
+
+.sporting-detail-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+}
+
+.sporting-detail-date {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6366f1;
+  margin: 0;
+}
+
+/* Banner */
+.sporting-banner-wrapper {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  background: #0f172a;
+}
+
+.sporting-banner-img {
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Two Column Layout */
+.sporting-content-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .sporting-content-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* Left Column */
+.sporting-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sporting-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sporting-section-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.sporting-about-desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #4b5563;
+  margin: 0;
+}
+
+.sporting-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sporting-bullet-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.sporting-bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #6b7280;
+}
+
+.sporting-toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #1f2937;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 4px;
+  text-decoration: underline;
+}
+
+.sporting-toggle-btn:hover {
+  color: #111827;
+}
+
+/* Organizer Card */
+.sporting-organizer-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+}
+
+.organizer-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #6366f1;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.organizer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.organizer-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.organizer-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #6b7280;
+}
+
+.stat-dot {
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+/* Right Column */
+.sporting-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 24px;
+}
+
+/* Price & Booking Card */
+.sporting-price-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+.sporting-price-col {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.sporting-price-val {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.sporting-price-suffix {
+  font-size: 13.5px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.sporting-book-btn {
+  background: #111827;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14.5px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.sporting-book-btn:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Location & Timeline cards */
+.sporting-info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.sporting-info-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.info-card-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #f3f4f6;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-card-text {
+  flex: 1;
+}
+
+.info-card-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 3px 0;
+  line-height: 1.35;
+}
+
+.info-card-subtitle {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.info-card-arrow {
+  font-size: 20px;
+  color: #9ca3af;
+  line-height: 1;
+}

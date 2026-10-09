@@ -20,6 +20,9 @@ import Playscreen from "./screens/play/Playscreen";
 import PlayVenuesPage from "./screens/play/Venue/PlayVenuesPage";
 import PlayVenueDetail from "./screens/play/Venue/PlayVenueDetail";
 import PlayVenueReviewsPage from "./screens/play/Venue/PlayVenueReviewsPage";
+import SportingEventDetail from "./screens/play/SportingEventDetail";
+import SportingEventTicketSelect from "./screens/play/SportingEventTicketSelect";
+import SportingEventInvoice from "./screens/play/SportingEventInvoice";
 
 function App() {
   return (
@@ -58,6 +61,9 @@ function App() {
         <Route path="/play/venues" element={<PlayVenuesPage />} />
         <Route path="/play/venue/:id" element={<PlayVenueDetail />} />
         <Route path="/play/venue/:id/reviews" element={<PlayVenueReviewsPage />} />
+        <Route path="/sporting-events/:id" element={<SportingEventDetail />} />
+        <Route path="/sporting-events/:id/tickets" element={<SportingEventTicketSelect />} />
+        <Route path="/sporting-events/:id/invoice" element={<SportingEventInvoice />} />
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </BrowserRouter>

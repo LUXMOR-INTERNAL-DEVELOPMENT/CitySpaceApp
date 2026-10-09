@@ -67,12 +67,7 @@
   gap: 14px;
   width: max-content;
   will-change: transform;
-  animation: scrollLeftMarquee 26s linear infinite;
-}
-
-/* Slightly different pace for row 2 to give an organic dynamic flow */
-.sports-marquee-row.row-2 .sports-marquee-track {
-  animation: scrollLeftMarquee 30s linear infinite;
+  animation: scrollLeftMarquee 42s linear infinite;
 }
 
 /* Pause marquee when user hovers to allow easy selection */

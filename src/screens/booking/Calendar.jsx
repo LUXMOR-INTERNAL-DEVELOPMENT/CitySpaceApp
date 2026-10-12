@@ -82,8 +82,11 @@ function MyCalendar({ selectedDate, setSelectedDate, calendarMonth, onMonthChang
 
   return (
     <Calendar
-      onChange={setSelectedDate}
-      value={selectedDate}
+      onChange={(date) => {
+        setSelectedDate(date);
+        onMonthChange?.(new Date(date.getFullYear(), date.getMonth(), 1));
+      }}
+      value={selectedDate ?? new Date()}
       activeStartDate={calendarMonth}
       calendarType="iso8601"
       showNeighboringMonth={false}

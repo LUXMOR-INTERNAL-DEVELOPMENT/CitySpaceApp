@@ -544,7 +544,7 @@ const Signup = ({ onSuccess }) => {
 
             <p className="signin-footer">
               Already have an account?{' '}
-              <Link to="/" className="signin-link">
+              <Link to="/signin" className="signin-link">
                 Sign in
               </Link>
             </p>

@@ -1,9 +1,34 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { FiBell, FiCheck, FiHeart, FiTrash2, FiX } from "react-icons/fi";
 import LocationModal from "./Navigation";
+import { getFavorites, setFavorites } from "../../utils/favorites";
 import "./Navbar.css";
 
 const AUTH_KEY = "cityspace_user";
+const NOTIFICATIONS_KEY = "cityspace_notifications";
+
+const getStoredNotifications = () => {
+  try {
+    const stored = localStorage.getItem(NOTIFICATIONS_KEY);
+    if (stored !== null) {
+      const notifications = JSON.parse(stored);
+      return Array.isArray(notifications) ? notifications : [];
+    }
+  } catch {
+    return [];
+  }
+
+  return [
+    {
+      id: "cityspace-welcome",
+      title: "Welcome to CitySpace",
+      message: "Your next city experience is waiting to be discovered.",
+      createdAt: new Date().toISOString(),
+      read: false,
+    },
+  ];
+};
 
 const getStoredUser = () => {
   try {
@@ -16,10 +41,14 @@ const getStoredUser = () => {
 
 const Navbar = () => {
   const [currentUser, setCurrentUser] = useState(getStoredUser());
-  const [fetchedLocation, setFetchedLocation] = useState("Detecting location...");
+  const [fetchedLocation, setFetchedLocation] = useState(
+    navigator.geolocation ? "Detecting location..." : "Location unavailable"
+  );
   const [manualLocation, setManualLocation] = useState("");
   const isLoggedIn = Boolean(currentUser);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activePanel, setActivePanel] = useState(null);
+  const [favorites, setCurrentFavorites] = useState(getFavorites);
+  const [notifications, setNotifications] = useState(getStoredNotifications);
   const [isLocationOpen, setIsLocationOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
@@ -41,7 +70,6 @@ const Navbar = () => {
 
   useEffect(() => {
     if (!navigator.geolocation) {
-      setFetchedLocation("Location unavailable");
       return;
     }
 
@@ -81,9 +109,26 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    const syncFavorites = () => setCurrentFavorites(getFavorites());
+    const syncNotifications = () => setNotifications(getStoredNotifications());
+    window.addEventListener("favorites-change", syncFavorites);
+    window.addEventListener("storage", syncFavorites);
+    window.addEventListener("storage", syncNotifications);
+    return () => {
+      window.removeEventListener("favorites-change", syncFavorites);
+      window.removeEventListener("storage", syncFavorites);
+      window.removeEventListener("storage", syncNotifications);
+    };
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(NOTIFICATIONS_KEY, JSON.stringify(notifications));
+  }, [notifications]);
+
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
+        setActivePanel(null);
       }
     };
 
@@ -91,22 +136,50 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev);
+  const togglePanel = (panel) => {
+    setActivePanel((current) => (current === panel ? null : panel));
   };
 
   const handleLogin = () => {
-    setIsDropdownOpen(false);
+    setActivePanel(null);
     navigate("/signin");
   };
 
   const handleLogout = () => {
     localStorage.removeItem(AUTH_KEY);
     setCurrentUser(null);
-    setIsDropdownOpen(false);
+    setActivePanel(null);
     window.dispatchEvent(new Event("auth-change"));
     navigate("/signin");
   };
+
+  const openFavorite = (favorite) => {
+    setActivePanel(null);
+    navigate(favorite.route || "/experience", { state: favorite.state });
+  };
+
+  const removeFavorite = (event, favoriteId) => {
+    event.stopPropagation();
+    setFavorites(favorites.filter((favorite) => favorite.id !== favoriteId));
+  };
+
+  const markNotificationRead = (notificationId) => {
+    setNotifications(
+      notifications.map((notification) =>
+        notification.id === notificationId ? { ...notification, read: true } : notification
+      )
+    );
+  };
+
+  const markAllNotificationsRead = () => {
+    setNotifications(notifications.map((notification) => ({ ...notification, read: true })));
+  };
+
+  const removeNotification = (notificationId) => {
+    setNotifications(notifications.filter((notification) => notification.id !== notificationId));
+  };
+
+  const unreadCount = notifications.filter((notification) => !notification.read).length;
 
   return (
     <nav className="navbar">
@@ -157,34 +230,152 @@ const Navbar = () => {
           <input type="text" placeholder="Search experiences" />
         </div>
 
-        <div className="profile-wrapper" ref={dropdownRef}>
-          <div
-            className="profile-btn"
-            onClick={toggleDropdown}
-            title={currentUser ? currentUser.fullName || "User Profile" : "Sign In"}
+        <div className="navbar-actions" ref={dropdownRef}>
+          <button
+            className={`navbar-icon-button ${activePanel === "favorites" ? "is-active" : ""}`}
+            type="button"
+            aria-label={`Favorites${favorites.length ? `, ${favorites.length} saved` : ""}`}
+            aria-expanded={activePanel === "favorites"}
+            title="Favorites"
+            onClick={() => togglePanel("favorites")}
           >
-            {currentUser && currentUser.fullName
-              ? currentUser.fullName.charAt(0).toUpperCase()
-              : "P"}
+            <FiHeart aria-hidden="true" />
+            {favorites.length > 0 && <span className="navbar-count">{favorites.length}</span>}
+          </button>
+          <button
+            className={`navbar-icon-button ${activePanel === "notifications" ? "is-active" : ""}`}
+            type="button"
+            aria-label={`Notifications${unreadCount ? `, ${unreadCount} unread` : ""}`}
+            aria-expanded={activePanel === "notifications"}
+            title="Notifications"
+            onClick={() => togglePanel("notifications")}
+          >
+            <FiBell aria-hidden="true" />
+            {unreadCount > 0 && <span className="navbar-count notification-count">{unreadCount}</span>}
+          </button>
+
+          <div className="profile-wrapper">
+            <button
+              className="profile-btn"
+              type="button"
+              aria-expanded={activePanel === "profile"}
+              onClick={() => togglePanel("profile")}
+              title={currentUser ? currentUser.fullName || "User Profile" : "Sign In"}
+            >
+              {currentUser && currentUser.fullName
+                ? currentUser.fullName.charAt(0).toUpperCase()
+                : "P"}
+            </button>
+
+            {activePanel === "profile" && (
+              <div className="profile-dropdown">
+                {isLoggedIn ? (
+                  <>
+                    <button className="dropdown-item" onClick={() => setActivePanel(null)}>
+                      Profile
+                    </button>
+                    <button className="dropdown-item logout" onClick={handleLogout}>
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <button className="dropdown-item" onClick={handleLogin}>
+                    Sign In
+                  </button>
+                )}
+              </div>
+            )}
           </div>
 
-          {isDropdownOpen && (
-            <div className="profile-dropdown">
-              {isLoggedIn ? (
+          {activePanel === "favorites" && (
+            <section className="navbar-popover" aria-label="Saved experiences">
+              <div className="popover-heading">
+                <div>
+                  <h2>Favorites</h2>
+                  <span>{favorites.length} saved</span>
+                </div>
+                <button className="popover-close" type="button" aria-label="Close favorites" onClick={() => setActivePanel(null)}>
+                  <FiX aria-hidden="true" />
+                </button>
+              </div>
+              {favorites.length ? (
+                <div className="popover-list">
+                  {favorites.map((favorite) => (
+                    <article className="favorite-entry" key={favorite.id}>
+                      <button className="favorite-entry-open" type="button" onClick={() => openFavorite(favorite)}>
+                        {favorite.image && <img src={favorite.image} alt="" />}
+                        <span>
+                          <strong>{favorite.title}</strong>
+                          <small>{[favorite.category, favorite.location].filter(Boolean).join(" · ")}</small>
+                        </span>
+                      </button>
+                      <button
+                        className="entry-action"
+                        type="button"
+                        aria-label={`Remove ${favorite.title} from favorites`}
+                        title="Remove from favorites"
+                        onClick={(event) => removeFavorite(event, favorite.id)}
+                      >
+                        <FiX aria-hidden="true" />
+                      </button>
+                    </article>
+                  ))}
+                </div>
+              ) : (
+                <p className="popover-empty">No saved experiences yet.</p>
+              )}
+            </section>
+          )}
+
+          {activePanel === "notifications" && (
+            <section className="navbar-popover" aria-label="Notifications">
+              <div className="popover-heading">
+                <div>
+                  <h2>Notifications</h2>
+                  <span>{unreadCount ? `${unreadCount} unread` : "You're all caught up"}</span>
+                </div>
+                <button className="popover-close" type="button" aria-label="Close notifications" onClick={() => setActivePanel(null)}>
+                  <FiX aria-hidden="true" />
+                </button>
+              </div>
+              {notifications.length ? (
                 <>
-                  <button className="dropdown-item" onClick={() => setIsDropdownOpen(false)}>
-                    Profile
-                  </button>
-                  <button className="dropdown-item logout" onClick={handleLogout}>
-                    Logout
-                  </button>
+                  <div className="popover-tools">
+                    <button type="button" onClick={markAllNotificationsRead} disabled={!unreadCount}>
+                      <FiCheck aria-hidden="true" /> Mark all read
+                    </button>
+                    <button type="button" onClick={() => setNotifications([])}>
+                      <FiTrash2 aria-hidden="true" /> Clear all
+                    </button>
+                  </div>
+                  <div className="popover-list notification-list">
+                    {notifications.map((notification) => (
+                      <article className={`notification-entry ${notification.read ? "is-read" : ""}`} key={notification.id}>
+                        <button className="notification-entry-open" type="button" onClick={() => markNotificationRead(notification.id)}>
+                          <span className="notification-dot" aria-hidden="true" />
+                          <span>
+                            <strong>{notification.title}</strong>
+                            <small>{notification.message}</small>
+                            <time>{new Date(notification.createdAt).toLocaleDateString()}</time>
+                          </span>
+                        </button>
+                        <button
+                          className="entry-action"
+                          type="button"
+                          aria-label={`Dismiss ${notification.title}`}
+                          title="Dismiss notification"
+                          onClick={() => removeNotification(notification.id)}
+                        >
+                          <FiX aria-hidden="true" />
+                        </button>
+                      </article>
+                    ))}
+                  </div>
                 </>
               ) : (
-                <button className="dropdown-item" onClick={handleLogin}>
-                  Sign In
-                </button>
+                <p className="popover-empty">No notifications.</p>
               )}
-            </div>
+            </section>
           )}
         </div>
       </div>

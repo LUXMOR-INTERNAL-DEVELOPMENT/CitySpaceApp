@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 import BookingPage from "./screens/booking/BookingPage";
 import Guestcount from "./screens/guestcount/Guestcount";
@@ -17,10 +17,17 @@ import Diningdetail from "./screens/dinning/Diningdetail";
 import Eventscreen from "./screens/events/Eventscreen";
 import Eventdetails from "./screens/events/Eventdetail";
 import FeaturedMusicEvents from "./screens/events/FeaturedMusicEvents";
+import EventBooking from "./screens/events/EventBooking";
+
+function RouteNavbar() {
+  const { pathname } = useLocation();
+  return pathname === "/signin" || pathname === "/signup" ? null : <Navbar />;
+}
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <RouteNavbar />
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
@@ -54,6 +61,7 @@ function App() {
         <Route path="/events/nightlife" element={<FeaturedMusicEvents category="nightlife" />} />
         <Route path="/events/comedy" element={<FeaturedMusicEvents category="comedy" />} />
         <Route path="/events/sports" element={<FeaturedMusicEvents category="sports" />} />
+        <Route path="/events/:id/book" element={<EventBooking />} />
         <Route path="/events/:id" element={<Eventdetails />} />
         <Route path="/events/:category" element={<Eventscreen />} />
         <Route path="/Eventdetails" element={<Eventdetails />} />

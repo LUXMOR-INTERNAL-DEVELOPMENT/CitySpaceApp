@@ -25,6 +25,10 @@ const Eventdetail = () => {
         ];
         const selected = allEvents.find((item) => item.id === Number(id));
         setEvent(selected || null);
+
+        const selected = (data.Events || []).find((item) => String(item.id) === id);
+
+        setEvent(selected);
       } catch (err) {
         console.error(err);
       } finally {
@@ -72,6 +76,8 @@ const Eventdetail = () => {
           <button
             className="book-btn"
             onClick={() => navigate("/booking", { state: { experience: event } })}
+            type="button"
+            onClick={() => navigate(`/events/${event.id}/book`, { state: { experience: event } })}
           >
             Book Now
           </button>

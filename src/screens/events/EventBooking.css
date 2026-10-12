@@ -1,0 +1,487 @@
+.event-booking-page {
+  min-height: calc(100vh - 64px);
+  padding: 34px 24px 72px;
+  background: #f5f7f4;
+  color: #17251e;
+}
+
+.event-booking-container {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.event-booking-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  border: 0;
+  background: transparent;
+  color: #52645a;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.event-booking-back svg {
+  width: 17px;
+  height: 17px;
+}
+
+.event-booking-back:hover {
+  color: #14714e;
+}
+
+.event-booking-header {
+  margin: 24px 0 30px;
+}
+
+.event-booking-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #14714e;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.event-booking-step svg {
+  width: 16px;
+  height: 16px;
+}
+
+.event-booking-header h1 {
+  margin: 0;
+  color: #18261f;
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.event-booking-header > p {
+  margin: 9px 0 0;
+  color: #68776d;
+  font-size: 14px;
+}
+
+.event-booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  align-items: start;
+  gap: 24px;
+}
+
+.event-selection-column {
+  min-width: 0;
+}
+
+.event-booking-summary {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  min-height: 164px;
+  overflow: hidden;
+  border: 1px solid #e1e7e1;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.event-booking-summary > img {
+  width: 100%;
+  height: 100%;
+  min-height: 164px;
+  object-fit: cover;
+}
+
+.event-booking-summary > div {
+  align-self: center;
+  padding: 20px 22px;
+}
+
+.event-summary-category {
+  margin: 0 0 5px !important;
+  color: #16805a !important;
+  font-size: 11px !important;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.event-booking-summary h2 {
+  margin: 0 0 10px;
+  color: #1d2d24;
+  font-size: 19px;
+}
+
+.event-booking-summary p {
+  margin: 5px 0 0;
+  color: #66756b;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.ticket-area-section,
+.ticket-quantity-section {
+  margin-top: 18px;
+  padding: 21px;
+  border: 1px solid #e1e7e1;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.section-heading,
+.ticket-quantity-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.section-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.section-heading > div > span,
+.section-number {
+  color: #87948a;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.section-heading h2,
+.ticket-quantity-section h2 {
+  margin: 0;
+  color: #25342b;
+  font-size: 16px;
+}
+
+.section-heading small {
+  color: #819087;
+  font-size: 11px;
+}
+
+.ticket-area-options {
+  display: grid;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.ticket-area-option {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #e0e6e0;
+  border-radius: 7px;
+  background: #fff;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ticket-area-option:hover {
+  border-color: #77a88c;
+}
+
+.ticket-area-option.is-selected {
+  border-color: #19835d;
+  background: #f2f8f3;
+}
+
+.ticket-area-check {
+  display: grid;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #b7c3b9;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.ticket-area-option.is-selected .ticket-area-check {
+  border-color: #16805a;
+  background: #16805a;
+}
+
+.ticket-area-check svg {
+  width: 13px;
+  height: 13px;
+}
+
+.ticket-area-copy {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 4px;
+}
+
+.ticket-area-copy strong {
+  color: #26362c;
+  font-size: 13px;
+}
+
+.ticket-area-copy small {
+  color: #7a887f;
+  font-size: 11px;
+}
+
+.ticket-area-price {
+  flex: 0 0 auto;
+  color: #23352a;
+  font-size: 13px;
+}
+
+.ticket-quantity-section > div:first-child {
+  display: grid;
+  gap: 5px;
+}
+
+.ticket-quantity-section p {
+  margin: 0;
+  color: #829087;
+  font-size: 11px;
+}
+
+.ticket-stepper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ticket-stepper button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid #cbd5cd;
+  border-radius: 50%;
+  background: #fff;
+  color: #246446;
+  cursor: pointer;
+}
+
+.ticket-stepper button:disabled {
+  color: #b7c0b9;
+  cursor: not-allowed;
+}
+
+.ticket-stepper button svg {
+  width: 15px;
+  height: 15px;
+}
+
+.ticket-stepper output {
+  min-width: 20px;
+  color: #23352a;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.event-order-panel {
+  position: sticky;
+  top: 92px;
+  padding: 21px;
+  border: 1px solid #dfe7df;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.order-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #edf0ed;
+}
+
+.order-panel-heading h2 {
+  margin: 0;
+  color: #26362c;
+  font-size: 16px;
+}
+
+.order-panel-heading span {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border-radius: 50%;
+  background: #edf5ee;
+  color: #176749;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.order-event-name {
+  margin: 15px 0;
+  color: #25342b;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.order-detail-row,
+.order-price-breakdown > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  color: #758279;
+  font-size: 11px;
+}
+
+.order-detail-row strong,
+.order-price-breakdown strong {
+  color: #344239;
+  font-size: 11px;
+  text-align: right;
+}
+
+.order-price-breakdown {
+  margin-top: 18px;
+  padding-top: 4px;
+  border-top: 1px solid #edf0ed;
+}
+
+.order-price-breakdown .order-total {
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 14px;
+  border-top: 1px solid #edf0ed;
+  color: #25342b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.order-price-breakdown .order-total strong {
+  color: #14714e;
+  font-size: 17px;
+}
+
+.event-checkout-button {
+  display: flex;
+  width: 100%;
+  min-height: 46px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 19px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #176b4a;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.event-checkout-button:hover {
+  background: #10583c;
+}
+
+.event-checkout-button span {
+  font-size: 18px;
+}
+
+.order-note {
+  margin: 11px 0 0;
+  color: #869188;
+  font-size: 10px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.event-booking-status {
+  display: grid;
+  min-height: 50vh;
+  align-content: center;
+  justify-items: center;
+  gap: 12px;
+  color: #53645a;
+}
+
+.event-booking-status button {
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 5px;
+  background: #176b4a;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 780px) {
+  .event-booking-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .event-order-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 520px) {
+  .event-booking-page {
+    padding: 20px 14px 44px;
+  }
+
+  .event-booking-header {
+    margin: 17px 0 22px;
+  }
+
+  .event-booking-header h1 {
+    font-size: 27px;
+  }
+
+  .event-booking-header > p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .event-booking-summary {
+    grid-template-columns: 105px minmax(0, 1fr);
+    min-height: 135px;
+  }
+
+  .event-booking-summary > img {
+    min-height: 135px;
+  }
+
+  .event-booking-summary > div {
+    padding: 13px;
+  }
+
+  .event-booking-summary h2 {
+    font-size: 15px;
+  }
+
+  .event-booking-summary p {
+    font-size: 10px;
+  }
+
+  .ticket-area-section,
+  .ticket-quantity-section,
+  .event-order-panel {
+    padding: 16px;
+  }
+
+  .ticket-area-option {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .ticket-area-copy strong,
+  .ticket-area-price {
+    font-size: 11px;
+  }
+
+  .ticket-area-copy small {
+    font-size: 10px;
+  }
+}

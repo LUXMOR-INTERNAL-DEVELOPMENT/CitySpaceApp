@@ -11,10 +11,13 @@ function ConfirmationPage() {
   const guestSummary = booking?.guestSummary || "2 Adults";
   const total = booking?.priceDetails?.total ?? 3270;
   const bookingLocation = booking?.experience?.location || "Nungambakkam";
+  const experience = booking?.experience || {};
   const [locationName, setLocationName] = useState(bookingLocation);
   const formatPrice = (amount) => `₹${amount.toLocaleString("en-IN")}`;
 
   useEffect(() => {
+    if (experience.viewingArea) return;
+
     let isMounted = true;
 
     async function loadLocation() {
@@ -26,7 +29,7 @@ function ConfirmationPage() {
     return () => {
       isMounted = false;
     };
-  }, [bookingLocation]);
+  }, [bookingLocation, experience.viewingArea]);
 
   return (
     <main
@@ -112,10 +115,11 @@ function ConfirmationPage() {
             }}
           >
             {[
-              ["Experience", "Chef's Table Dinner"],
+              ["Experience", experience.title || experience.name || "Chef's Table Dinner"],
               ["Confirmation number", confirmationNumber],
-              ["Date", booking?.experience?.date || "Sat, 12 Sep"],
-              ["Time", booking?.experience?.time || "7:30 PM"],
+              ["Date", experience.date || "Sat, 12 Sep"],
+              ["Time", experience.time || "7:30 PM"],
+              ...(experience.viewingArea ? [["Viewing area", experience.viewingArea]] : []),
               ["Guests", guestSummary],
               ["Location", locationName],
               ["Payment", paymentMethod],
@@ -142,7 +146,9 @@ function ConfirmationPage() {
               textAlign: "left",
             }}
           >
-            Please arrive 15 minutes before your selected time. Keep your confirmation number available when you arrive.
+            {experience.viewingArea
+              ? "Keep your confirmation number available when you arrive. Your selected viewing area is included above."
+              : "Please arrive 15 minutes before your selected time. Keep your confirmation number available when you arrive."}
           </div>
 
           <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap" }}>

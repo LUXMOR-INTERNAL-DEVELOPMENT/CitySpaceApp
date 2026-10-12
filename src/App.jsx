@@ -16,6 +16,7 @@ import Diningexperience from "./screens/dinning/Diningexperience";
 import Diningdetail from "./screens/dinning/Diningdetail";
 import Eventscreen from "./screens/events/Eventscreen";
 import Eventdetails from "./screens/events/Eventdetail";
+import FeaturedMusicEvents from "./screens/events/FeaturedMusicEvents";
 function App() {
   return (
     <BrowserRouter>
@@ -49,7 +50,12 @@ function App() {
         <Route path="/dining" element={<Diningexperience />} />
         <Route path="/Diningexperience" element={<Diningexperience />} />
         <Route path="/events" element={<Eventscreen />} />
+        <Route path="/events/music" element={<FeaturedMusicEvents />} />
+        <Route path="/events/nightlife" element={<FeaturedMusicEvents category="nightlife" />} />
+        <Route path="/events/comedy" element={<FeaturedMusicEvents category="comedy" />} />
+        <Route path="/events/sports" element={<FeaturedMusicEvents category="sports" />} />
         <Route path="/events/:id" element={<Eventdetails />} />
+        <Route path="/events/:category" element={<Eventscreen />} />
         <Route path="/Eventdetails" element={<Eventdetails />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />

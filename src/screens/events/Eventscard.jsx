@@ -1,30 +1,22 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 import "./Eventscard.css";
 
-const Eventscard = ({ id, title, category, price, rating, image }) => {
-  const navigate = useNavigate();
-  const handleCardClick = () => {
-    navigate("/date-time", {
-      state: {
-        experience: { id, title, category, price, rating, image },
-      },
-    });
-  };
-
+const Eventscard = ({ id, title, location, date, image, showImage = true }) => {
   return (
-    <div className="event-card" onClick={handleCardClick}>
-      <div className="event-card-image">
-        <img src={image} alt={title} className="card-img" />
+    <Link className="event-card" to={`/events/${id}`}>
+      <div className="event-card-image" aria-hidden="true">
+        {showImage && image && <img src={image} alt="" loading="lazy" />}
       </div>
       <div className="event-card-content">
+        <p className="event-location">
+          <HiOutlineLocationMarker aria-hidden="true" />
+          <span>{location}</span>
+        </p>
         <h3 className="event-title">{title}</h3>
-        <p className="event-meta">{category} · {price}</p>
-        <div className="event-rating">
-          <span className="star">★</span>
-          <span>{rating}</span>
-        </div>
+        <p className="event-date">{date}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

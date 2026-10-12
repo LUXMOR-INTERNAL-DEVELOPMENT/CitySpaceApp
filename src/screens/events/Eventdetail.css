@@ -76,6 +76,34 @@
   font-size: 15px;
 }
 
+.event-detail-location,
+.event-detail-date {
+  margin: 0 0 8px;
+  color: #555;
+  font-size: 16px;
+}
+
+.event-detail-price {
+  margin: 18px 0 10px;
+  color: #9b3d13;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.event-detail-rating {
+  margin: 0 0 18px;
+  color: #595959;
+  font-size: 14px;
+}
+
+.event-detail-description {
+  max-width: 720px;
+  margin: 0 0 28px;
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
 .book-btn {
   background: #0f766e;
   color: white;

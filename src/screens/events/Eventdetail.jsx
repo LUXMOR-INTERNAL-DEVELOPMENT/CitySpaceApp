@@ -13,7 +13,18 @@ const Eventdetail = () => {
       try {
         setLoading(true);
         const response = await fetch("/db.json");
+        if (!response.ok) throw new Error("Could not load event details");
         const data = await response.json();
+        const allEvents = [
+          ...(data.Events || []),
+          ...(data.TheatreEvents || []),
+          ...(data.MusicEvents || []),
+          ...(data.ComedyEvents || []),
+          ...(data.SportsEvents || []),
+          ...(data.AllEvents || []),
+        ];
+        const selected = allEvents.find((item) => item.id === Number(id));
+        setEvent(selected || null);
 
         const selected = (data.Events || []).find((item) => String(item.id) === id);
 
@@ -52,20 +63,19 @@ const Eventdetail = () => {
 
         <div className="details-content">
           <h1>{event.title}</h1>
-          <p className="category">{event.category}</p>
-          <p className="price">{event.price}</p>
+          <p className="event-detail-location">{event.location}</p>
+          <p className="event-detail-date">{event.date}</p>
+          <p className="event-detail-price">Tickets from {event.price}</p>
 
-          <div className="rating">
-            <span className="star">★</span>
-            <span>{event.rating}</span>
-          </div>
+          <p className="event-detail-rating">Rated {event.rating} / 5</p>
 
-          <p className="description">
-            Experience the best of {event.title}. A wonderful {event.category} event!
+          <p className="event-detail-description">
+            {event.description}
           </p>
 
           <button
             className="book-btn"
+            onClick={() => navigate("/booking", { state: { experience: event } })}
             type="button"
             onClick={() => navigate(`/events/${event.id}/book`, { state: { experience: event } })}
           >
